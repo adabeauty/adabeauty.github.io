@@ -3,17 +3,29 @@
 <head>
   <meta charset="utf-8">
   
-  <title>技术随笔</title>
+  <title>java web 开发总结 | 技术随笔</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="技术随笔">
-<meta property="og:url" content="http://adabeauty.github.io/index.html">
+  <meta name="description" content="项目构建工具 — Gradle优点1.同时提供了构建和依赖管理的能力
+
+相比于类似Maven的一些构建工具使用xml进行配置书写，gradle使用Groovy作为构建语言，大大提升了自动化过程的可编程能力和脚本的可读性，插件的编写、构建逻辑的复用也变得更为容易。3.完全支持Maven的库（repository）
+
+使用 IDE 构建方法首先，我们需要了解gradle默认在src/main/java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="java web 开发总结">
+<meta property="og:url" content="http://adabeauty.github.io/2015/05/15/java-web-开发总结/uncategorized/index.html">
 <meta property="og:site_name" content="技术随笔">
-<meta property="og:description">
+<meta property="og:description" content="项目构建工具 — Gradle优点1.同时提供了构建和依赖管理的能力
+
+相比于类似Maven的一些构建工具使用xml进行配置书写，gradle使用Groovy作为构建语言，大大提升了自动化过程的可编程能力和脚本的可读性，插件的编写、构建逻辑的复用也变得更为容易。3.完全支持Maven的库（repository）
+
+使用 IDE 构建方法首先，我们需要了解gradle默认在src/main/java">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="技术随笔">
-<meta name="twitter:description">
+<meta name="twitter:title" content="java web 开发总结">
+<meta name="twitter:description" content="项目构建工具 — Gradle优点1.同时提供了构建和依赖管理的能力
+
+相比于类似Maven的一些构建工具使用xml进行配置书写，gradle使用Groovy作为构建语言，大大提升了自动化过程的可编程能力和脚本的可读性，插件的编写、构建逻辑的复用也变得更为容易。3.完全支持Maven的库（repository）
+
+使用 IDE 构建方法首先，我们需要了解gradle默认在src/main/java">
   
     <link rel="alternative" href="/atom.xml" title="技术随笔" type="application/atom+xml">
   
@@ -63,9 +75,7 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-java-web-开发总结" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-java-web-开发总结" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2015/05/15/java-web-开发总结/uncategorized/" class="article-date">
   <time datetime="2015-05-15T06:24:11.000Z" itemprop="datePublished">2015-05-15</time>
@@ -78,8 +88,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/05/15/java-web-开发总结/uncategorized/">java web 开发总结</a>
+    <h1 class="article-title" itemprop="name">
+      java web 开发总结
     </h1>
   
 
@@ -134,103 +144,20 @@ $ open <span class="function"><span class="title">gradle-file</span><span class=
     </footer>
   </div>
   
-</article>
-
-
+    
+<nav id="article-nav">
   
-    <article id="post-后台debug方法" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/04/22/后台debug方法/uncategorized/" class="article-date">
-  <time datetime="2015-04-22T07:03:30.000Z" itemprop="datePublished">2015-04-22</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/04/22/后台debug方法/uncategorized/">JS后台debug方法</a>
-    </h1>
+    <a href="/2015/04/22/后台debug方法/uncategorized/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">JS后台debug方法</div>
+    </a>
   
+</nav>
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>一直以来，我对于后台的调试方法都只是简单的在觉得可能出现错误的地方使用console.log( )，在控制台打印信息，<br>直到最近接触到了Node.js里一个插件<a href="Web Inspector based nodeJS debugger">inspector</a>。这是一个基于 Node.js的调试器，通过它，你可以像调试前端代码一样来调试你的后台代码。</p>
-<h2 id="首先，全局安装inspector">首先，全局安装inspector</h2><p><code>$ npm install -g node-inspector</code></p>
-<h2 id="启动inspector">启动inspector</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node-inspector 开启服务</span><br></pre></td></tr></table></figure>
-<h2 id="进入到需要调试的项目目录">进入到需要调试的项目目录</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> xxx(项目名称)</span><br></pre></td></tr></table></figure>
-<h2 id="运行该项目(app-js为你后台程序的入口文件)">运行该项目(app.js为你后台程序的入口文件)</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ node --debug app.js</span><br></pre></td></tr></table></figure>
-<h2 id="在浏览器打开&nbsp;&nbsp;localhost:8080/debug_&nbsp;端口">在浏览器打开&nbsp;&nbsp;localhost:8080/debug &nbsp;端口</h2><p>此时在该页面左侧会出现source字样，点击后可看到该项目源代码</p>
-<h2 id="设置断点">设置断点</h2><p>在需要调试的地方设置好断点</p>
-<h2 id="运行需要调试的项目">运行需要调试的项目</h2><p>在3000端口运行需要该项目（本人的项目是在3000端口下运行）</p>
-<h2 id="查看调试结果">查看调试结果</h2><p>在8080端口，查看调试结果</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://adabeauty.github.io/2015/04/22/后台debug方法/uncategorized/" data-id="ci9p816i30001322wat324219" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/技术分享/">技术分享</a></li></ul>
-
-    </footer>
-  </div>
   
 </article>
 
-
-  
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/04/16/hello-world/uncategorized/" class="article-date">
-  <time datetime="2015-04-16T03:56:32.000Z" itemprop="datePublished">2015-04-16</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/04/16/hello-world/uncategorized/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick_Start">Quick Start</h2><h3 id="Create_a_new_post">Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run_server">Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate_static_files">Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy_to_remote_sites">Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://adabeauty.github.io/2015/04/16/hello-world/uncategorized/" data-id="ci9p816hh0000322wks43qyjo" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-  
 </section>
         
           <aside id="sidebar">
