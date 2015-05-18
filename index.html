@@ -65,6 +65,64 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-java-测试" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/05/18/java-测试/Java/" class="article-date">
+  <time datetime="2015-05-18T02:53:34.000Z" itemprop="datePublished">2015-05-18</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Java/">Java</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/05/18/java-测试/Java/">java 测试</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="单元测试框架_-_Junit">单元测试框架 - Junit</h2><p>[Junit] 是 java 单元测试的框架，可以通过 maven<br>或者 gradle 方式管理。具体使用方法参考<a href="http://junit.org/" target="_blank" rel="external">官方网站</a>.</p>
+<h2 id="断言框架">断言框架</h2><h3 id="fest_断言框架">fest 断言框架</h3><p>fest 是一种断言框架，而且 IDE 可以显示所有可供使用的 Assertion. 而且<br>为 java 的反射机制提供了灵活的 API.<br>fest 可通过 maven 或者 gradle来管理，选择到 <a href="http://mvnrepository.com/" target="_blank" rel="external">mvnRepository</a> 下载依赖。</p>
+<h3 id="hamcrest_断言框架">hamcrest 断言框架</h3><p><a href="http://hamcrest.org/" target="_blank" rel="external">hamcrest</a> 源于 java， 但现在可支持多种语言，如 Phyton、Ruby、Objective-C、PHP、Erlang 和 Swift。<br>最大的特点是它的匹配器， 可以自由组合创建灵活的表达式， 也可以自定义你所需要的各种匹配器，从而满足<br>不同测试的需要。</p>
+<p>同样的， hamcrest 也可以通过 maven 或者 gradle 进行管理，选择到 <a href="http://mvnrepository.com/" target="_blank" rel="external">mvnRepository</a><br>下载依赖。</p>
+<hr>
+<p>对我自身而言，在不需要自定义一些 matchers 时， fest 断言框架的语法可读性更高一些，更像 BDD 风格。相比<br>之下，hamcrest 更像 TDD 风格。</p>
+<h2 id="Mock_框架_-_mockito">Mock 框架 - mockito</h2><p><a href="http://mockito.org/" target="_blank" rel="external">mockito</a> 是 java 单元测试的 mock 框架。你可以使用 mock、stub、spy方法。<br>而 mockito 能够所有被 mock 记录函数的交互（包括是否被调用、调用几次、使用什么参数调用等等）其功能<br>如下所示：  </p>
+<ol>
+<li>使用 mockito 验证行为。</li>
+<li>使方法调用返回特定期望的值，也称 stubbing.(默认情况下， 所有有返回值但是没有被 stub 的方法都会返回默认值， 如：<br>int/Integer 类型 会返回0， boolean/ Boolean 类型返回false， 其他类型则会返回 null)。</li>
+<li>参数匹配</li>
+<li>验证方法是否被调用，或者被调用的特定的次数。</li>
+<li>调用无返回值的方法时， 返回异常。（使用 doThrow）</li>
+<li>验证函数被调用顺序<br>更多功能参考 <a href="http://mockito.org/" target="_blank" rel="external">mockito 官网</a>.</li>
+</ol>
+<p>如果使用 maven 或者 gradle 进行管理时， 可选择到<a href="http://mvnrepository.com/" target="_blank" rel="external">mvnRepository</a><br>下载 mockito 库。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://adabeauty.github.io/2015/05/18/java-测试/Java/" data-id="ci9tasevv000875fyorntr497" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/测试/">测试</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-AngularJs-前台框架" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2015/05/15/AngularJs-前台框架/JavaScript/" class="article-date">
@@ -111,7 +169,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://adabeauty.github.io/2015/05/15/AngularJs-前台框架/JavaScript/" data-id="ci9sgj1k50007uo2w8yh7cca2" class="article-share-link">Share</a>
+      <a data-url="http://adabeauty.github.io/2015/05/15/AngularJs-前台框架/JavaScript/" data-id="ci9taseux000075fy4zbkieah" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/AngularJs/">AngularJs</a></li></ul>
@@ -178,7 +236,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://adabeauty.github.io/2015/05/15/gradle-总结/uncategorized/" data-id="ci9sgj1k40004uo2w1sgmnio2" class="article-share-link">Share</a>
+      <a data-url="http://adabeauty.github.io/2015/05/15/gradle-总结/uncategorized/" data-id="ci9tasevy000c75fy9kjzgvx8" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java-web-开发/">java web 开发</a></li></ul>
@@ -225,7 +283,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://adabeauty.github.io/2015/04/22/后台debug方法/uncategorized/" data-id="ci9sgj1jp0000uo2wlixrwwzk" class="article-share-link">Share</a>
+      <a data-url="http://adabeauty.github.io/2015/04/22/后台debug方法/uncategorized/" data-id="ci9tasevo000575fyvnrjbyy7" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -272,7 +330,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://adabeauty.github.io/2015/04/16/hello-world/uncategorized/" data-id="ci9sgj1k00003uo2w4esz6l7r" class="article-share-link">Share</a>
+      <a data-url="http://adabeauty.github.io/2015/04/16/hello-world/uncategorized/" data-id="ci9tasevx000b75fyglupg663" class="article-share-link">Share</a>
       
       
     </footer>
@@ -291,7 +349,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -300,7 +358,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AngularJs/">AngularJs</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java-web-开发/">java web 开发</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AngularJs/">AngularJs</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java-web-开发/">java web 开发</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/测试/">测试</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -309,7 +367,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/AngularJs/" style="font-size: NaNpx;">AngularJs</a><a href="/tags/JavaScript/" style="font-size: NaNpx;">JavaScript</a><a href="/tags/java-web-开发/" style="font-size: NaNpx;">java web 开发</a>
+      <a href="/tags/AngularJs/" style="font-size: NaNpx;">AngularJs</a><a href="/tags/JavaScript/" style="font-size: NaNpx;">JavaScript</a><a href="/tags/java-web-开发/" style="font-size: NaNpx;">java web 开发</a><a href="/tags/测试/" style="font-size: NaNpx;">测试</a>
     </div>
   </div>
 
@@ -318,7 +376,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">2</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">2</span></li></ul>
     </div>
   </div>
 
@@ -328,6 +386,10 @@
     <h3 class="widget-title">Recents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2015/05/18/java-测试/Java/">java 测试</a>
+          </li>
         
           <li>
             <a href="/2015/05/15/AngularJs-前台框架/JavaScript/">AngularJs-前台框架</a>
