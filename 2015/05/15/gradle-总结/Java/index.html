@@ -13,7 +13,7 @@
 使用 IDE 构建方法首先，我们需要了解gradle默认在src/main/java下寻找源代码，在src/test/j">
 <meta property="og:type" content="article">
 <meta property="og:title" content="项目构建工具 -- Gradle">
-<meta property="og:url" content="http://adabeauty.github.io/2015/05/15/gradle-总结/uncategorized/index.html">
+<meta property="og:url" content="http://adabeauty.github.io/2015/05/15/gradle-总结/Java/index.html">
 <meta property="og:site_name" content="技术随笔">
 <meta property="og:description" content="优点
 同时提供了构建和依赖管理的能力
@@ -80,10 +80,14 @@
       <div class="outer">
         <section id="main"><article id="post-gradle-总结" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2015/05/15/gradle-总结/uncategorized/" class="article-date">
+    <a href="/2015/05/15/gradle-总结/Java/" class="article-date">
   <time datetime="2015-05-15T06:24:11.000Z" itemprop="datePublished">2015-05-15</time>
 </a>
     
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Java/">Java</a>
+  </div>
+
   </div>
   <div class="article-inner">
     
@@ -116,9 +120,10 @@
 <li><p>初始化一个 java 的 gradle 项目</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ gradle init --type java-library</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>打开项目， 配置build.gradle文件（配置java、idea插件， 配置依赖仓库及各种依赖等）</p>
+<li><p>打开项目， 配置build.gradle文件（配置java、idea插件， 配置依赖仓库及各种依赖等），具体<br>配置参考 <a href="https://gradle.org/docs/current/userguide/tutorial_java_projects.html" target="_blank" rel="external">Gradle 官网</a>。</p>
 </li>
-<li>导入到IDE项目时，进行如下操作：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ gradle idea</span><br></pre></td></tr></table></figure>
+<li><p>导入到IDE项目时，进行如下操作：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ gradle idea</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 <h3 id="异常处理">异常处理</h3><ol>
@@ -133,7 +138,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://adabeauty.github.io/2015/05/15/gradle-总结/uncategorized/" data-id="ci9tbbhnf000fddfyheenmn4a" class="article-share-link">Share</a>
+      <a data-url="http://adabeauty.github.io/2015/05/15/gradle-总结/Java/" data-id="ci9v0wmro000fd72wx1kg95fu" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java-web-开发/">java web 开发</a></li></ul>
@@ -172,7 +177,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a><span class="category-list-count">2</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库/">数据库</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -181,7 +186,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AngularJs/">AngularJs</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/debug-方法/">debug 方法</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java-web-开发/">java web 开发</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/测试/">测试</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AngularJs/">AngularJs</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/debug-方法/">debug 方法</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java-web-开发/">java web 开发</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据迁移/">数据迁移</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/测试/">测试</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -190,7 +195,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/AngularJs/" style="font-size: NaNpx;">AngularJs</a><a href="/tags/debug-方法/" style="font-size: NaNpx;">debug 方法</a><a href="/tags/java-web-开发/" style="font-size: NaNpx;">java web 开发</a><a href="/tags/测试/" style="font-size: NaNpx;">测试</a>
+      <a href="/tags/AngularJs/" style="font-size: NaNpx;">AngularJs</a><a href="/tags/debug-方法/" style="font-size: NaNpx;">debug 方法</a><a href="/tags/java-web-开发/" style="font-size: NaNpx;">java web 开发</a><a href="/tags/数据迁移/" style="font-size: NaNpx;">数据迁移</a><a href="/tags/测试/" style="font-size: NaNpx;">测试</a>
     </div>
   </div>
 
@@ -199,7 +204,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">2</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">2</span></li></ul>
     </div>
   </div>
 
@@ -211,6 +216,10 @@
       <ul>
         
           <li>
+            <a href="/2015/05/19/flyway/数据库/"> flyway - 数据库版本控制工具 </a>
+          </li>
+        
+          <li>
             <a href="/2015/05/18/java-测试/Java/">java 测试</a>
           </li>
         
@@ -219,15 +228,11 @@
           </li>
         
           <li>
-            <a href="/2015/05/15/gradle-总结/uncategorized/">项目构建工具 -- Gradle</a>
+            <a href="/2015/05/15/gradle-总结/Java/">项目构建工具 -- Gradle</a>
           </li>
         
           <li>
             <a href="/2015/04/22/后台debug方法/JavaScript/">JS后台debug方法</a>
-          </li>
-        
-          <li>
-            <a href="/2015/04/16/hello-world/uncategorized/">Hello World</a>
           </li>
         
       </ul>

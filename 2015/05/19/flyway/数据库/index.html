@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title> flyway - 数据库版本控制工具  | 技术随笔</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="什么是数据迁移？什么情况下需要进行数据迁移？  
+
+数据库迁移包括两种情况：情况一是数据库迁移，由于项目需要，当前数据库需要从一种类型迁移为另一种类型，例如从 MySQl 迁移到 Oracle，另一种情况则是很多时候数据需要迁移到一台新的服务器上，此时也会用到数据迁移
+Flyway 特点Flyway 支持 sql 脚本，支持 Java 代码直接进行操作。是独立于数据库的应用，是能够管理并跟踪数据库">
+<meta property="og:type" content="website">
+<meta property="og:title" content=" flyway - 数据库版本控制工具 ">
+<meta property="og:url" content="http://adabeauty.github.io/2015/05/19/flyway/数据库/index.html">
+<meta property="og:site_name" content="技术随笔">
+<meta property="og:description" content="什么是数据迁移？什么情况下需要进行数据迁移？  
+
+数据库迁移包括两种情况：情况一是数据库迁移，由于项目需要，当前数据库需要从一种类型迁移为另一种类型，例如从 MySQl 迁移到 Oracle，另一种情况则是很多时候数据需要迁移到一台新的服务器上，此时也会用到数据迁移
+Flyway 特点Flyway 支持 sql 脚本，支持 Java 代码直接进行操作。是独立于数据库的应用，是能够管理并跟踪数据库">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content=" flyway - 数据库版本控制工具 ">
+<meta name="twitter:description" content="什么是数据迁移？什么情况下需要进行数据迁移？  
+
+数据库迁移包括两种情况：情况一是数据库迁移，由于项目需要，当前数据库需要从一种类型迁移为另一种类型，例如从 MySQl 迁移到 Oracle，另一种情况则是很多时候数据需要迁移到一台新的服务器上，此时也会用到数据迁移
+Flyway 特点Flyway 支持 sql 脚本，支持 Java 代码直接进行操作。是独立于数据库的应用，是能够管理并跟踪数据库">
+  
+    <link rel="alternative" href="/atom.xml" title="技术随笔" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  
+
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">技术随笔</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">记录生活和学习中的点点滴滴</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="q" value="site:http://adabeauty.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-flyway" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/05/19/flyway/数据库/" class="article-date">
+  <time datetime="2015-05-19T07:57:04.000Z" itemprop="datePublished">2015-05-19</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/数据库/">数据库</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+       flyway - 数据库版本控制工具 
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong><br>什么是数据迁移？什么情况下需要进行数据迁移？  
+</strong></p>
+<p>数据库迁移包括两种情况：情况一是数据库迁移，由于项目需要，当前数据库需要从一种类型<br>迁移为另一种类型，例如从 MySQl 迁移到 Oracle，另一种情况则是很多时候数据需要迁移到一台<br>新的服务器上，此时也会用到数据迁移</p>
+<h2 id="Flyway_特点">Flyway 特点</h2><p>Flyway 支持 sql 脚本，支持 Java 代码直接进行操作。<br>是独立于数据库的应用，是能够管理并跟踪数据库变更的数据库版本控制工具。</p>
+<p>而且Flyway 支持包括 Oracle、SQL Server、MySQL、DB2等多种关系型数据库类型。</p>
+<h2 id="Flyway_工作原理">Flyway 工作原理</h2><p>对于一个空的数据库，会有一张叫做 SCHEMA_VERSION 的表，这张表可以跟踪数据库的状态。<br>数据库的迁移会根据版本号进行排序，然后按照顺序应用，每次数据迁移进行后，SCHEMA_VERSION<br>表都会相应的进行更新。</p>
+<p>查看 SCHEMA_VERSION 表时，你可以发现其中有 version_rank、installed_rank、version<br>以及 description 等信息。</p>
+<h2 id="Flyway_快速学习">Flyway 快速学习</h2><p>Flyway 可以通过 Maven、Gradle、Ant 或者 SBT 来进行管理。下面是以 Flyway 3.2.1 版本，使用 Gradle 管理为例子进行讲解。</p>
+<p><strong> 先决条件： </strong></p>
+<ol>
+<li>Java 版本在 6.0 以上</li>
+<li>安装有 Gradle</li>
+</ol>
+<h3 id="配置_build_文件">配置 build 文件</h3><!-- ** 配置 build 文件 ** -->
+<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">apply plugin: <span class="string">'java'</span></span><br><span class="line">apply plugin: <span class="string">'org.flywaydb.flyway'</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/* 指定从 mvnRepository 中安装依赖*/</span></span><br><span class="line"><span class="keyword">buildscript</span> &#123;</span><br><span class="line">    <span class="keyword">repositories</span> &#123;</span><br><span class="line">        mavenCentral()</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">dependencies</span> &#123;</span><br><span class="line">        <span class="keyword">classpath</span> <span class="string">'org.flywaydb:flyway-gradle-plugin:3.2.1'</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 指定 flyway 连接的数据库的 url（此处连接的是数据库user_manadgement） 和</span><br><span class="line">用户名称(此处为user) */</span>到</span><br><span class="line">flyway &#123;</span><br><span class="line">    url = <span class="string">'jdbc:mysql://localhost:3306/user_manadgement'</span></span><br><span class="line">    user = <span class="string">'root'</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>需要注意的是，如果想要此时flyway 指定数据库的url 和 user 可以生效，必须在设置数据时，<br>设置远程登录权限。可以在 mysql 环境下通过下列指令实现：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 指定用户名为 root 的用户可以不通过设置密码，即可远程访问该数据库 */</span></span><br><span class="line"><span class="operator"><span class="keyword">grant</span> <span class="keyword">all</span> <span class="keyword">privileges</span> <span class="keyword">on</span> *.* <span class="keyword">to</span> <span class="string">'root'</span>@<span class="string">'%'</span> <span class="keyword">with</span> <span class="keyword">grant</span> <span class="keyword">option</span>;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/* mysql 新设置用户或更改密码后需用flush privileges刷新MySQL的系统权限相关表，否则会出现拒绝访问 */</span></span><br><span class="line"><span class="operator"><span class="keyword">flush</span> <span class="keyword">privileges</span>;</span></span><br></pre></td></tr></table></figure>
+<h3 id="创建第一个迁移">创建第一个迁移</h3><p>首先，我们可以在<code>src/main/resources/db/migration/</code>下创建一个名为<code>V1__Create_person_table.sql</code> 的 sql 脚本（命名规则：V1 是迁移版本的名称，’__’ 后紧跟的时对于这个版本的描述）。<br>在这个 sql 脚本中，我们可以写入以下代码（此脚本的的功能就是创建一张名为 PERSON 的表）。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator"><span class="keyword">create</span> <span class="keyword">table</span> PERSON (</span><br><span class="line">    ID <span class="built_in">int</span> <span class="keyword">not</span> <span class="literal">null</span>,</span><br><span class="line">    NAME <span class="built_in">varchar</span>(<span class="number">100</span>) <span class="keyword">not</span> <span class="literal">null</span></span><br><span class="line">);</span></span><br></pre></td></tr></table></figure>
+<h3 id="迁移数据库">迁移数据库</h3><p>为了执行数据迁移，需要执行以下指令：<br><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gradle flywayMigrate -<span class="built_in">i</span></span><br></pre></td></tr></table></figure></p>
+<p>如果此时新添加了一个<code>src/main/resources/db/migration/V2__Add_people.sql</code>，<br>可以直接执行以上指令，完成 V2 的迁移。</p>
+<p>如果你删除所有的对象重新开始，可以执行如下指令后重新对数据进行迁移：<br><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gradle flywayClean -<span class="built_in">i</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="为数据库插入数据">为数据库插入数据</h3><p>如果需要为所创建的数据库中插入原始的数据，可以在 <code>src/main/resource/db/seed</code> 下通过<br>sql 脚本，插入所需数据，并通过以下指令插入数据到数据库中：</p>
+<figure class="highlight puppet"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/* 此处执行的时 core/src/<span class="keyword">main</span>/<span class="keyword">resources</span>/db/seed 文件夹下的 init-<span class="keyword">user</span>.sql */</span><br><span class="line">mysql -<span class="constant">Duser_management</span> -uroot &lt; core/src/<span class="keyword">main</span>/<span class="keyword">resources</span>/db/seed/init-<span class="keyword">user</span>.sql</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>至此，flyway 的基本用法已经讲解完毕，关于flyway 的一些高级用法，或者通过 maven 或者<br>其他方式管理的使用方法可以参考<a href="http://flywaydb.org/" target="_blank" rel="external">flyway</a>.</p>
+</blockquote>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://adabeauty.github.io/2015/05/19/flyway/数据库/" data-id="ci9v0wmrp000jd72wbflyhnj3" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数据迁移/">数据迁移</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2015/05/18/java-测试/Java/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">java 测试</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库/">数据库</a><span class="category-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AngularJs/">AngularJs</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/debug-方法/">debug 方法</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java-web-开发/">java web 开发</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据迁移/">数据迁移</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/测试/">测试</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/AngularJs/" style="font-size: NaNpx;">AngularJs</a><a href="/tags/debug-方法/" style="font-size: NaNpx;">debug 方法</a><a href="/tags/java-web-开发/" style="font-size: NaNpx;">java web 开发</a><a href="/tags/数据迁移/" style="font-size: NaNpx;">数据迁移</a><a href="/tags/测试/" style="font-size: NaNpx;">测试</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2015/05/19/flyway/数据库/"> flyway - 数据库版本控制工具 </a>
+          </li>
+        
+          <li>
+            <a href="/2015/05/18/java-测试/Java/">java 测试</a>
+          </li>
+        
+          <li>
+            <a href="/2015/05/15/AngularJs-前台框架/JavaScript/">AngularJs-前台框架</a>
+          </li>
+        
+          <li>
+            <a href="/2015/05/15/gradle-总结/Java/">项目构建工具 -- Gradle</a>
+          </li>
+        
+          <li>
+            <a href="/2015/04/22/后台debug方法/JavaScript/">JS后台debug方法</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2015 Huan Wang<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+
+  </div>
+</body>
+</html>

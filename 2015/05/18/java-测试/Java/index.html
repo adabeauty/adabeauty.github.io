@@ -5,18 +5,21 @@
   
   <title>java 测试 | 技术随笔</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="单元测试框架 - Junit[Junit] 是 java 单元测试的框架，可以通过 maven或者 gradle 方式管理。具体使用方法参考官方网站.
-断言框架fest 断言框架fest 是一种断言框架，而且 IDE 可以显示所有可供使用的 Assertion. 而且为 java 的反射机制提供了灵活的 API.fest 可通过 maven 或者 gradle来管理，选择到 mvnReposito">
+  <meta name="description" content="单元测试框架 - JunitJunit 是 java 单元测试的框架，可以通过 maven或者 gradle 方式管理。具体使用方法参考官方网站.
+当前使用的时 Junit 最新版本 4.1.2，通过使用 @test 开始测试，具体使用如下：
+1234567891011121314/* 判断ArrayList 的 size 是否为 0*/@Testpublic void newArrayLists">
 <meta property="og:type" content="article">
 <meta property="og:title" content="java 测试">
 <meta property="og:url" content="http://adabeauty.github.io/2015/05/18/java-测试/Java/index.html">
 <meta property="og:site_name" content="技术随笔">
-<meta property="og:description" content="单元测试框架 - Junit[Junit] 是 java 单元测试的框架，可以通过 maven或者 gradle 方式管理。具体使用方法参考官方网站.
-断言框架fest 断言框架fest 是一种断言框架，而且 IDE 可以显示所有可供使用的 Assertion. 而且为 java 的反射机制提供了灵活的 API.fest 可通过 maven 或者 gradle来管理，选择到 mvnReposito">
+<meta property="og:description" content="单元测试框架 - JunitJunit 是 java 单元测试的框架，可以通过 maven或者 gradle 方式管理。具体使用方法参考官方网站.
+当前使用的时 Junit 最新版本 4.1.2，通过使用 @test 开始测试，具体使用如下：
+1234567891011121314/* 判断ArrayList 的 size 是否为 0*/@Testpublic void newArrayLists">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="java 测试">
-<meta name="twitter:description" content="单元测试框架 - Junit[Junit] 是 java 单元测试的框架，可以通过 maven或者 gradle 方式管理。具体使用方法参考官方网站.
-断言框架fest 断言框架fest 是一种断言框架，而且 IDE 可以显示所有可供使用的 Assertion. 而且为 java 的反射机制提供了灵活的 API.fest 可通过 maven 或者 gradle来管理，选择到 mvnReposito">
+<meta name="twitter:description" content="单元测试框架 - JunitJunit 是 java 单元测试的框架，可以通过 maven或者 gradle 方式管理。具体使用方法参考官方网站.
+当前使用的时 Junit 最新版本 4.1.2，通过使用 @test 开始测试，具体使用如下：
+1234567891011121314/* 判断ArrayList 的 size 是否为 0*/@Testpublic void newArrayLists">
   
     <link rel="alternative" href="/atom.xml" title="技术随笔" type="application/atom+xml">
   
@@ -92,27 +95,57 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="单元测试框架_-_Junit">单元测试框架 - Junit</h2><p>[Junit] 是 java 单元测试的框架，可以通过 maven<br>或者 gradle 方式管理。具体使用方法参考<a href="http://junit.org/" target="_blank" rel="external">官方网站</a>.</p>
-<h2 id="断言框架">断言框架</h2><h3 id="fest_断言框架">fest 断言框架</h3><p>fest 是一种断言框架，而且 IDE 可以显示所有可供使用的 Assertion. 而且<br>为 java 的反射机制提供了灵活的 API.<br>fest 可通过 maven 或者 gradle来管理，选择到 <a href="http://mvnrepository.com/" target="_blank" rel="external">mvnRepository</a> 下载依赖。</p>
-<h3 id="hamcrest_断言框架">hamcrest 断言框架</h3><p><a href="http://hamcrest.org/" target="_blank" rel="external">hamcrest</a> 源于 java， 但现在可支持多种语言，如 Phyton、Ruby、Objective-C、PHP、Erlang 和 Swift。<br>最大的特点是它的匹配器， 可以自由组合创建灵活的表达式， 也可以自定义你所需要的各种匹配器，从而满足<br>不同测试的需要。</p>
+        <h2 id="单元测试框架_-_Junit">单元测试框架 - Junit</h2><p><a href="http://junit.org/" target="_blank" rel="external">Junit</a> 是 java 单元测试的框架，可以通过 maven<br>或者 gradle 方式管理。具体使用方法参考<a href="http://junit.org/" target="_blank" rel="external">官方网站</a>.</p>
+<p>当前使用的时 Junit 最新版本 4.1.2，通过使用 @test 开始测试，具体使用如下：</p>
+<figure class="highlight processing"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 判断ArrayList 的 size 是否为 0*/</span></span><br><span class="line">@Test</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> newArrayListsHaveNoElements() &#123;</span><br><span class="line">    assertThat(<span class="keyword">new</span> ArrayList().<span class="built_in">size</span>(), is(<span class="number">0</span>));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 判断ArrayList 的 size 是否为 0 */</span></span><br><span class="line">@Test</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> sizeReturnsNumberOfElements() &#123;</span><br><span class="line">    List instance = <span class="keyword">new</span> ArrayList();</span><br><span class="line">    instance.<span class="built_in">add</span>(<span class="keyword">new</span> <span class="keyword">Object</span>());</span><br><span class="line">    instance.<span class="built_in">add</span>(<span class="keyword">new</span> <span class="keyword">Object</span>());</span><br><span class="line">    assertThat(instance.<span class="built_in">size</span>(), is(<span class="number">2</span>));</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<p>当然，Junit 有很多种assertion, 例如：</p>
+<figure class="highlight aspectj"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="annotation">@Test</span></span><br><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">void</span> <span class="title">testAssertFalse</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  org.junit.Assert.assertFalse(<span class="string">"failure - should be false"</span>, <span class="keyword">false</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="annotation">@Test</span></span><br><span class="line"> <span class="keyword">public</span> <span class="function"><span class="keyword">void</span> <span class="title">testAssertSame</span><span class="params">()</span> </span>&#123;</span><br><span class="line">   Integer aNumber = Integer.valueOf(<span class="number">768</span>);</span><br><span class="line">   org.junit.Assert.assertSame(<span class="string">"should be same"</span>, aNumber, aNumber);</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+<p>除此之外，Junit 还有许多高级功能， 如使用 @Ignore 忽略测试，对异常进行测试等。</p>
+<h2 id="断言框架">断言框架</h2><p>其实 Junit 也自带断言，但是我更倾向于使用一些断言框架。</p>
+<h3 id="fest_断言框架">fest 断言框架</h3><p>fest 是一种断言框架，而且 IDE 可以显示所有可供使用的 Assertion. 而且<br>为 java 的反射机制提供了灵活的 API.</p>
+<p>fest 可通过 maven 或者 gradle来管理，选择到 <a href="http://mvnrepository.com/" target="_blank" rel="external">mvnRepository</a> 下载依赖。</p>
+<p>然后通过 import 引入依赖的库，便可直接使用 fest 的断言。例如：</p>
+<figure class="highlight smali"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">@Test<span class="keyword"></span><br><span class="line">public</span> void<span class="function"> sizeReturnsNumberOfElements(</span><span class="function">)</span> &#123;</span><br><span class="line">    List<span class="instruction"> instance </span>=<span class="instruction"> new </span>ArrayList(<span class="function">)</span>;</span><br><span class="line">   <span class="function"> instance.add(</span>new<span class="function"> Object(</span><span class="function">)</span><span class="function">)</span>;</span><br><span class="line">   <span class="function"> instance.add(</span>new<span class="function"> Object(</span><span class="function">)</span><span class="function">)</span>;</span><br><span class="line"></span><br><span class="line">   <span class="function"> assertThat(</span>instance.size(<span class="function">)</span><span class="function">)</span>.isEqualTo(2<span class="function">)</span>;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<p>如果使用 Junit 自带的断言框架，则此处断言应表示为<br><figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">assertEquals<span class="list">(<span class="keyword">instance</span>.size<span class="list">()</span>, <span class="number">2</span>)</span><span class="comment">;</span></span><br></pre></td></tr></table></figure></p>
+<p>由此可见，相比于 Junit 自带的断言，fest 的语法可读性更强，</p>
+<h3 id="hamcrest_断言框架">hamcrest 断言框架</h3><p><a href="http://hamcrest.org/" target="_blank" rel="external">hamcrest</a> 源于 java， 但现在可支持多种语言，<br>如 Phyton、Ruby、Objective-C、PHP、Erlang 和 Swift。<br>最大的特点是它的匹配器， 可以自由组合创建灵活的表达式， 也可以自定义你所需要的各种匹配器，从而满足<br>不同测试的需要。</p>
 <p>同样的， hamcrest 也可以通过 maven 或者 gradle 进行管理，选择到 <a href="http://mvnrepository.com/" target="_blank" rel="external">mvnRepository</a><br>下载依赖。</p>
+<p>对于 Java，使用方法如下：</p>
+<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 引入需要的库 */</span></span><br><span class="line"><span class="keyword">import</span> static org.hamcrest.<span class="type">MatcherAssert</span>.assertThat;</span><br><span class="line"><span class="keyword">import</span> static org.hamcrest.<span class="type">Matchers</span>.*;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> junit.framework.<span class="type">TestCase</span>;</span><br><span class="line"></span><br><span class="line">public <span class="class"><span class="keyword">class</span> <span class="title">BiscuitTest</span> <span class="keyword"><span class="keyword">extends</span></span> <span class="title">TestCase</span> &#123;</span></span><br><span class="line">  public void testEquals() &#123;</span><br><span class="line">    <span class="type">Biscuit</span> theBiscuit = <span class="keyword">new</span> <span class="type">Biscuit</span>(<span class="string">"Ginger"</span>);</span><br><span class="line">    <span class="type">Biscuit</span> myBiscuit = <span class="keyword">new</span> <span class="type">Biscuit</span>(<span class="string">"Ginger"</span>);</span><br><span class="line">    assertThat(theBiscuit, equalTo(myBiscuit));</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>当然，如果有多个断言需要区分时， 你可以在断言中加入一个标识符， 比如：<br><figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">assertThat<span class="list">(<span class="string">"chocolate chips"</span>, theBiscuit.getChocolateChipCount<span class="list">()</span>, equalTo<span class="list">(<span class="number">10</span>)</span>)</span><span class="comment">;  </span></span><br><span class="line">assertThat<span class="list">(<span class="string">"hazelnuts"</span>, theBiscuit.getHazelnutCount<span class="list">()</span>, equalTo<span class="list">(<span class="number">3</span>)</span>)</span><span class="comment">;</span></span><br></pre></td></tr></table></figure></p>
+<p>为了使得你的测试可读性更好，hamcrest 支持以下三种断言的语法，它们相互之间是等价的：</p>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">assertThat<span class="list">(<span class="keyword">theBiscuit</span>, equalTo<span class="list">(<span class="keyword">myBiscuit</span>)</span>)</span><span class="comment">;</span></span><br><span class="line">assertThat<span class="list">(<span class="keyword">theBiscuit</span>, is<span class="list">(<span class="keyword">equalTo</span><span class="list">(<span class="keyword">myBiscuit</span>)</span>)</span>)</span><span class="comment">;</span></span><br><span class="line">assertThat<span class="list">(<span class="keyword">theBiscuit</span>, is<span class="list">(<span class="keyword">myBiscuit</span>)</span>)</span><span class="comment">;</span></span><br></pre></td></tr></table></figure>
 <hr>
-<p>对我自身而言，在不需要自定义一些 matchers 时， fest 断言框架的语法可读性更高一些，更像 BDD 风格。相比<br>之下，hamcrest 更像 TDD 风格。</p>
-<h2 id="Mock_框架_-_mockito">Mock 框架 - mockito</h2><p><a href="http://mockito.org/" target="_blank" rel="external">mockito</a> 是 java 单元测试的 mock 框架。你可以使用 mock、stub、spy方法。<br>而 mockito 能够记录所有被 mock 函数的交互（包括是否被调用、调用几次、使用什么参数调用等等）其功能<br>如下所示：  </p>
+<p>对我自身而言，在不需要自定义一些 matchers 时， fest 断言框架的语法可读性更高一些，更像 BDD 风格。</p>
+<h2 id="Mock_框架_-_mockito">Mock 框架 - mockito</h2><p><a href="http://mockito.org/" target="_blank" rel="external">mockito</a> 是 java 单元测试的 mock 框架。mockito 最大的价值在于<br>你可以以可读性更高的方式书写 mock、stub、spy方法，而不用记住这些容易让人困惑的概念。<br>而且 mockito 能够记录所有被 mock 函数的交互（包括是否被调用、调用几次、使用什么参数调用等等）其功能<br>如下所示：  </p>
 <ol>
-<li>使用 mockito 验证行为。</li>
-<li>使方法调用返回特定期望的值，也称 stubbing.(默认情况下， 所有有返回值但是没有被 stub 的方法都会返回默认值， 如：<br>int/Integer 类型 会返回0， boolean/ Boolean 类型返回false， 其他类型则会返回 null)。</li>
-<li>参数匹配</li>
-<li>验证方法是否被调用，或者被调用的特定的次数。</li>
-<li>调用无返回值的方法时， 返回异常。（使用 doThrow）</li>
-<li>验证函数被调用顺序<br>更多功能参考 <a href="http://mockito.org/" target="_blank" rel="external">mockito 官网</a>.</li>
+<li><p>使用 mockito 验证行为。</p>
+<figure class="highlight processing"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="keyword">static</span> org.mockito.Mockito.*;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 创建 mock 对象 */</span></span><br><span class="line">List mockedList = mock(List.class);</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 使用 mock 对象 */</span></span><br><span class="line">mockedList.<span class="built_in">add</span>(<span class="string">"one"</span>);</span><br><span class="line">mockedList.<span class="built_in">clear</span>();</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 验证 mock 对象的行为 */</span></span><br><span class="line">verify(mockedList).<span class="built_in">add</span>(<span class="string">"one"</span>);</span><br><span class="line">verify(mockedList).<span class="built_in">clear</span>();</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使方法调用返回特定期望的值，也称 stubbing.(默认情况下， 所有有返回值但是没有被 stub 的方法都会返回默认值， 如：<br>int/Integer 类型 会返回0， boolean/ Boolean 类型返回false， 其他类型则会返回 null)。</p>
+<figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">LinkedList mockedList = mock(LinkedList.class);</span><br><span class="line"></span><br><span class="line"><span class="comment">/* stubbing, 指定调用参数为0时， 返回"first", 参数为1时，抛出异常 */</span></span><br><span class="line"><span class="keyword">when</span>(mockedList.<span class="keyword">get</span>(<span class="number">0</span>)).thenReturn(<span class="string">"first"</span>);</span><br><span class="line"><span class="keyword">when</span>(mockedList.<span class="keyword">get</span>(<span class="number">1</span>)).thenThrow(<span class="keyword">new</span> RuntimeException());</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 结果会打印"first" */</span></span><br><span class="line">System.<span class="keyword">out</span>.println(mockedList.<span class="keyword">get</span>(<span class="number">0</span>));</span><br><span class="line"><span class="comment">/* 抛出 runtime 异常 */</span></span><br><span class="line">System.<span class="keyword">out</span>.println(mockedList.<span class="keyword">get</span>(<span class="number">1</span>));</span><br><span class="line"><span class="comment">/* 返回 null, 因为没有指定调用参数为999时的返回值 */</span></span><br><span class="line">System.<span class="keyword">out</span>.println(mockedList.<span class="keyword">get</span>(<span class="number">999</span>));</span><br><span class="line"></span><br><span class="line">verify(mockedList).<span class="keyword">get</span>(<span class="number">0</span>);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>参数匹配</p>
+<figure class="highlight ocaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/* 只要匹配到调用参数为<span class="built_in">int</span> 类型时， 就会返回<span class="string">"element"</span> */</span><br><span class="line"><span class="keyword">when</span>(mockedList.get(anyInt<span class="literal">()</span>)).thenReturn(<span class="string">"element"</span>);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>验证方法是否被调用，或者被调用的特定的次数。</p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">mockedList.<span class="built_in">add</span>(<span class="string">"once"</span>);</span><br><span class="line"></span><br><span class="line">mockedList.<span class="built_in">add</span>(<span class="string">"twice"</span>);</span><br><span class="line">mockedList.<span class="built_in">add</span>(<span class="string">"twice"</span>);</span><br><span class="line"></span><br><span class="line">/* 使用 times，判断 <span class="built_in">add</span>(<span class="string">"once"</span>) 被调用了几次  */</span><br><span class="line">verify(mockedList, times(<span class="number">1</span>)).<span class="built_in">add</span>(<span class="string">"once"</span>);</span><br><span class="line">verify(mockedList, times(<span class="number">2</span>)).<span class="built_in">add</span>(<span class="string">"twice"</span>);</span><br><span class="line">/* 使用never()， 判断<span class="built_in">add</span>(<span class="string">"never happened"</span>)是否没有被调用 */</span><br><span class="line">verify(mockedList, never()).<span class="built_in">add</span>(<span class="string">"never happened"</span>);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>调用无返回值的方法时， 返回异常。（使用 doThrow）</p>
+</li>
 </ol>
+<figure class="highlight ocaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">doThrow(<span class="keyword">new</span> <span class="type">RuntimeException</span><span class="literal">()</span>).<span class="keyword">when</span>(mockedList).clear<span class="literal">()</span>;</span><br><span class="line"></span><br><span class="line">/* 抛出 runtime 异常 */</span><br><span class="line">mockedList.clear<span class="literal">()</span>;</span><br></pre></td></tr></table></figure>
+<ol>
+<li>验证函数被调用顺序  </li>
+</ol>
+<figure class="highlight processing"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">List singleMock = mock(List.class);</span><br><span class="line"></span><br><span class="line">singleMock.<span class="built_in">add</span>(<span class="string">"was added first"</span>);</span><br><span class="line">singleMock.<span class="built_in">add</span>(<span class="string">"was added second"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 创建一个顺序验证器 */</span></span><br><span class="line">InOrder inOrder = inOrder(singleMock);</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 验证被顺序调用 */</span></span><br><span class="line">inOrder.verify(singleMock).<span class="built_in">add</span>(<span class="string">"was added first"</span>);</span><br><span class="line">inOrder.verify(singleMock).<span class="built_in">add</span>(<span class="string">"was added second"</span>);</span><br></pre></td></tr></table></figure>
+<p>更多功能参考 <a href="http://mockito.org/" target="_blank" rel="external">mockito 官网</a>.</p>
 <p>如果使用 maven 或者 gradle 进行管理时， 可选择到<a href="http://mvnrepository.com/" target="_blank" rel="external">mvnRepository</a><br>下载 mockito 库。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://adabeauty.github.io/2015/05/18/java-测试/Java/" data-id="ci9tbbhnc0009ddfykrt4r84a" class="article-share-link">Share</a>
+      <a data-url="http://adabeauty.github.io/2015/05/18/java-测试/Java/" data-id="ci9v0wmrk0009d72wdbt87qai" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/测试/">测试</a></li></ul>
@@ -122,6 +155,15 @@
   
     
 <nav id="article-nav">
+  
+    <a href="/2015/05/19/flyway/数据库/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+           flyway - 数据库版本控制工具 
+        
+      </div>
+    </a>
   
   
     <a href="/2015/05/15/AngularJs-前台框架/JavaScript/" id="article-nav-older" class="article-nav-link-wrap">
@@ -142,7 +184,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a><span class="category-list-count">2</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库/">数据库</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -151,7 +193,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AngularJs/">AngularJs</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/debug-方法/">debug 方法</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java-web-开发/">java web 开发</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/测试/">测试</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AngularJs/">AngularJs</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/debug-方法/">debug 方法</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java-web-开发/">java web 开发</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据迁移/">数据迁移</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/测试/">测试</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -160,7 +202,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/AngularJs/" style="font-size: NaNpx;">AngularJs</a><a href="/tags/debug-方法/" style="font-size: NaNpx;">debug 方法</a><a href="/tags/java-web-开发/" style="font-size: NaNpx;">java web 开发</a><a href="/tags/测试/" style="font-size: NaNpx;">测试</a>
+      <a href="/tags/AngularJs/" style="font-size: NaNpx;">AngularJs</a><a href="/tags/debug-方法/" style="font-size: NaNpx;">debug 方法</a><a href="/tags/java-web-开发/" style="font-size: NaNpx;">java web 开发</a><a href="/tags/数据迁移/" style="font-size: NaNpx;">数据迁移</a><a href="/tags/测试/" style="font-size: NaNpx;">测试</a>
     </div>
   </div>
 
@@ -169,7 +211,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">2</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">2</span></li></ul>
     </div>
   </div>
 
@@ -181,6 +223,10 @@
       <ul>
         
           <li>
+            <a href="/2015/05/19/flyway/数据库/"> flyway - 数据库版本控制工具 </a>
+          </li>
+        
+          <li>
             <a href="/2015/05/18/java-测试/Java/">java 测试</a>
           </li>
         
@@ -189,15 +235,11 @@
           </li>
         
           <li>
-            <a href="/2015/05/15/gradle-总结/uncategorized/">项目构建工具 -- Gradle</a>
+            <a href="/2015/05/15/gradle-总结/Java/">项目构建工具 -- Gradle</a>
           </li>
         
           <li>
             <a href="/2015/04/22/后台debug方法/JavaScript/">JS后台debug方法</a>
-          </li>
-        
-          <li>
-            <a href="/2015/04/16/hello-world/uncategorized/">Hello World</a>
           </li>
         
       </ul>
