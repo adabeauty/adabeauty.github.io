@@ -4,28 +4,38 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>AngularJs-前台框架 | 程序媛的Diary</title>
+    <title>Spring 框架 | 程序媛的Diary</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="Huan Wang">
     
 
     
-    <meta name="description" content="定义AngularJs 是一套由Google打造的JavaScript前端框架，对于动态网页的开发尤其适合。做过 JS 开发的人都会知道，对于用 DOM 或者 JQuery 动态操纵view上的元素是一件比较麻烦的事情。但是当使用了 AngularJs 之后，这个问题便迎刃而解。
-特性
- MVC  MVC 是模型(model)－视图(view)－控制器(controller)的缩写，使用一种业务逻">
+    <meta name="description" content="Spring是一个轻量级的控制反转(IoC)和面向切面(AOP)的容器框架。从简单性、可测试性和解耦合的角度而言，任何Java应用都可以从Spring中受益。
+组成首先，给大家贴上一张都很熟悉的图：
+
+从这个图里可以看出来，Spring 是一种分层架构，由七个定义良好的模块组成。而组成 spring 的每个模块可以单独存在，也可以与其他一个或者多个模块联合实现。每个模块的功能如下：
+
+Spring">
 <meta property="og:type" content="article">
-<meta property="og:title" content="AngularJs-前台框架">
-<meta property="og:url" content="http://adabeauty.github.io/2015/05/15/AngularJs-前台框架/JavaScript/index.html">
+<meta property="og:title" content="Spring 框架">
+<meta property="og:url" content="http://adabeauty.github.io/2015/05/21/Spring-框架/Java/index.html">
 <meta property="og:site_name" content="程序媛的Diary">
-<meta property="og:description" content="定义AngularJs 是一套由Google打造的JavaScript前端框架，对于动态网页的开发尤其适合。做过 JS 开发的人都会知道，对于用 DOM 或者 JQuery 动态操纵view上的元素是一件比较麻烦的事情。但是当使用了 AngularJs 之后，这个问题便迎刃而解。
-特性
- MVC  MVC 是模型(model)－视图(view)－控制器(controller)的缩写，使用一种业务逻">
+<meta property="og:description" content="Spring是一个轻量级的控制反转(IoC)和面向切面(AOP)的容器框架。从简单性、可测试性和解耦合的角度而言，任何Java应用都可以从Spring中受益。
+组成首先，给大家贴上一张都很熟悉的图：
+
+从这个图里可以看出来，Spring 是一种分层架构，由七个定义良好的模块组成。而组成 spring 的每个模块可以单独存在，也可以与其他一个或者多个模块联合实现。每个模块的功能如下：
+
+Spring">
+<meta property="og:image" content="../_image/spring_framework.gif">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="AngularJs-前台框架">
-<meta name="twitter:description" content="定义AngularJs 是一套由Google打造的JavaScript前端框架，对于动态网页的开发尤其适合。做过 JS 开发的人都会知道，对于用 DOM 或者 JQuery 动态操纵view上的元素是一件比较麻烦的事情。但是当使用了 AngularJs 之后，这个问题便迎刃而解。
-特性
- MVC  MVC 是模型(model)－视图(view)－控制器(controller)的缩写，使用一种业务逻">
+<meta name="twitter:title" content="Spring 框架">
+<meta name="twitter:description" content="Spring是一个轻量级的控制反转(IoC)和面向切面(AOP)的容器框架。从简单性、可测试性和解耦合的角度而言，任何Java应用都可以从Spring中受益。
+组成首先，给大家贴上一张都很熟悉的图：
+
+从这个图里可以看出来，Spring 是一种分层架构，由七个定义良好的模块组成。而组成 spring 的每个模块可以单独存在，也可以与其他一个或者多个模块联合实现。每个模块的功能如下：
+
+Spring">
 
     
     <link rel="alternative" href="/atom.xml" title="程序媛的Diary" type="application/atom+xml">
@@ -85,14 +95,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2015/05/15/AngularJs-前台框架/JavaScript/" title="AngularJs-前台框架" itemprop="url">AngularJs-前台框架</a>
+      <a href="/2015/05/21/Spring-框架/Java/" title="Spring 框架" itemprop="url">Spring 框架</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="Huan Wang" target="_blank" itemprop="author">Huan Wang</a>
 		
   <p class="article-time">
-    <time datetime="2015-05-15T08:33:06.000Z" itemprop="datePublished"> 發表於 2015-05-15</time>
+    <time datetime="2015-05-21T08:55:17.000Z" itemprop="datePublished"> 發表於 2015-05-21</time>
     
   </p>
 </header>
@@ -101,41 +111,39 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目錄</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#定义"><span class="toc-number">1.</span> <span class="toc-text">定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#特性"><span class="toc-number">2.</span> <span class="toc-text">特性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用方法"><span class="toc-number">3.</span> <span class="toc-text">使用方法</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#组成"><span class="toc-number">1.</span> <span class="toc-text">组成</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#特点"><span class="toc-number">2.</span> <span class="toc-text">特点</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#轻量级"><span class="toc-number">2.1.</span> <span class="toc-text">轻量级</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#控制反转(IoC)"><span class="toc-number">2.2.</span> <span class="toc-text">控制反转(IoC)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#面向切面编程（AOP）"><span class="toc-number">2.3.</span> <span class="toc-text">面向切面编程（AOP）</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="##"><span class="toc-number"></span> <span class="toc-text">#</span></a>
 		
 		</div>
 		
-		<h3 id="定义">定义</h3><p>AngularJs 是一套由Google打造的JavaScript前端框架，对于动态网页的开发尤其适合。<br>做过 JS 开发的人都会知道，对于用 DOM 或者 JQuery 动态操纵view上的元素是<br>一件比较麻烦的事情。但是当使用了 AngularJs 之后，这个问题便迎刃而解。</p>
-<h3 id="特性">特性</h3><ol>
-<li><p><strong> MVC  </strong><br>MVC 是模型(model)－视图(view)－控制器(controller)的缩写，使用一种业务逻辑、<br>数据、界面显示分离的方法来组织代码。其中：<br><strong> Model </strong>：就是应用中的数据，一般式 JavaScript 对象。<br><strong> View </strong>：是AngularJs 解析后渲染和数据绑定后生成的HTML。<br><strong> Controller </strong>: 可以初始化初始化页面对象，并且定义和实现一些 View 上需要的方法。  </p>
-</li>
-<li><p><strong> 数据双向绑定  </strong><br>通过 $scope 是 AngularJS 中的一个 JavaScript 对象， 可以完成数据绑定的任务。<br>在 Controller 中使用 $scope 可以针对特定的 View 来扩展数据和特定的功能。无论是<br>页面上被绑定的元素还是 controller 中的 $scope 的数据值发生了变化，另一方的值也会<br>发生变化。</p>
-</li>
+		<p>Spring是一个轻量级的控制反转(IoC)和面向切面(AOP)的容器框架。<br>从简单性、可测试性和解耦合的角度而言，任何Java应用都可以从Spring中受益。</p>
+<h2 id="组成">组成</h2><p>首先，给大家贴上一张都很熟悉的图：</p>
+<p><img src="../_image/spring_framework.gif" alt="正在努力加载..." title="spring 框架图"></p>
+<p>从这个图里可以看出来，Spring 是一种分层架构，由七个定义良好的模块组成。<br>而组成 spring 的每个模块可以单独存在，也可以与其他一个或者多个模块联合实现。<br>每个模块的功能如下：</p>
+<ol>
+<li>Spring Core：主要组件式 BeanFactory，使用控制反转模式（IoC）将配置和依赖性规范和实际应用<br>分开。</li>
+<li>Spring context：是一个配置文件，向 Spring 框架提供上下文信息</li>
+<li>Spring DAO： JDBC DAO 抽象层提供了有意义的一场节凑层次，用来管理和处理不同数据库供应商<br>提供的错误信息。在通常情况下，在DAO层与数据库进行交互。</li>
+<li>Spring ORM: 支持多种ORM框架，提供了ORM的对象关系工具。包括JDO、HibÂernate 和<br>iBatis SQL Map（其实我只知道 Hibernate ~(≧▽≦)/~啦啦啦）</li>
+<li>Spring AOP: 将面向方面的编程集成到 Spring 框架中。</li>
+<li>Spring Web: 为基于 Web 的应用程序提供了上下文。</li>
+<li>Spring MVC: MVC 框架是一个全功能的构建 Web 程序的 MVC 的实现。视图支持JSP、Velocity、Tiles、iText 和 POI。（这个嘛，我只用过 JSP 而已啦）</li>
 </ol>
-<h3 id="使用方法">使用方法</h3><ol>
-<li><p><strong> 建立index.html文件 </strong><br>在 body 标签上其中使用 ng-app ，给出 app 的名称，然后在 body<br>内的 div 上使用 ng-view=””, 最后引入所有需要的 js 文件（包括一些库函数和controller文件）。</p>
-</li>
-<li><p><strong> 建立app.js </strong><br>使用 <code>var app = angular.module(&#39;myApp&#39;, [ &#39;ngResource&#39;,&#39;ngRoute&#39;,&#39;checklist-model&#39;]);</code>，声明 module 的名称（此处声明为MyApp）。然后使用<code>.config</code> 和 <code>.when</code>来配置模板的 url 和 controller。</p>
-</li>
-</ol>
-<blockquote>
-<p>更多详情：请参考<a href="https://docs.angularjs.org/" target="_blank" rel="external">AngularJs官网</a></p>
-</blockquote>
-  
+<h2 id="特点">特点</h2><h3 id="轻量级">轻量级</h3><p>Spring 在大小和开销方面而言都是轻量的。完整的Spring框架可以在一个大小只有<br>1MB多的JAR文件里发布。并且Spring所需的处理开销也是微不足道的。此外，Spring是非侵入式的：<br>典型地，Spring应用中的对象不依赖于Spring的特定类。</p>
+<h3 id="控制反转(IoC)">控制反转(IoC)</h3><p>Spring 通过使用 IoC 的方式达到了解耦合的目的，也就是说，任何对象所依赖的其他对象应该通过<br>被动的方式传进来，而不是在这个对象的内部自己创建。在对象初始化时，容器就会主动请求将<br>对象所需要的依赖传递给他。例如，</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">@Service</span><br><span class="line">public class UserService &#123;</span><br><span class="line">    private UserDAO userDAO;</span><br><span class="line"></span><br><span class="line">    @Autowired</span><br><span class="line">    public UserService(UserDAO userDAO) &#123;</span><br><span class="line">        this.userDAO = userDAO;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Transactional</span><br><span class="line">    public List&lt;User&gt; <span class="function"><span class="title">listUser</span></span>() &#123;</span><br><span class="line">        <span class="built_in">return</span> userDAO.listUser();</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<p>  在上面这个例子中，UserService 是依赖于 UserDAO 的，为了降低这两个类之间的耦合性，<br>  使用 <code>@Autowired</code> (自动注解) 的方式，解除了这两个之间的耦合，而没有像下面这种方式，将这两个<br>  类紧紧的耦合在一起。</p>
+<pre><code><span class="comment"><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">@Service</span><br><span class="line">public class UserService &#123;</span><br><span class="line"></span><br><span class="line">    @Transactional</span><br><span class="line">    public List&lt;User&gt; <span class="function"><span class="title">listUser</span></span>() &#123;</span><br><span class="line">        UserDAO userDAO = new UserDAO();</span><br><span class="line">        <span class="built_in">return</span> userDAO.listUser();</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure></span>
+</code></pre><h3 id="面向切面编程（AOP）">面向切面编程（AOP）</h3><p>面向切面编程是我对 Spring 不太了解的一部分。现仅仅贴上网上一部分的<br>解释：“Spring AOP 模块为基于 Spring 的应用程序中的对象提供了事务管理服务。<br>通过使用 Spring AOP，不用依赖 EJB 组件，就可以将声明性事务管理集成到应用程序中”。<br>这个部分待我查一查，再回来继续更新这部分内容。</p>
+<h1 id="#">#</h1>  
 	</div>
 		<footer class="article-footer clearfix">
 <div class="article-catetags">
 
 <div class="article-categories">
   <span></span>
-  <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a>
+  <a class="article-category-link" href="/categories/Java/">Java</a>
 </div>
 
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/AngularJs/">AngularJs</a>
-  </div>
 
 </div>
 
@@ -143,7 +151,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://adabeauty.github.io/2015/05/15/AngularJs-前台框架/JavaScript/" data-title="AngularJs-前台框架 | 程序媛的Diary" data-tsina="null" class="share clearfix">
+	  <div data-url="http://adabeauty.github.io/2015/05/21/Spring-框架/Java/" data-title="Spring 框架 | 程序媛的Diary" data-tsina="null" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -156,19 +164,11 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2015/05/18/java-测试/Java/" title="java 测试">
-  <strong>上一篇：</strong><br/>
-  <span>
-  java 测试</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2015/05/15/gradle-总结/Java/"  title="项目构建工具 -- Gradle">
+<a href="/2015/05/20/flyway/数据库/"  title=" flyway - 数据库版本控制工具 ">
  <strong>下一篇：</strong><br/> 
- <span>项目构建工具 -- Gradle
+ <span> flyway - 数据库版本控制工具 
 </span>
 </a>
 </div>
@@ -183,7 +183,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目錄</strong>
  
- <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#定义"><span class="toc-number">1.</span> <span class="toc-text">定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#特性"><span class="toc-number">2.</span> <span class="toc-text">特性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用方法"><span class="toc-number">3.</span> <span class="toc-text">使用方法</span></a></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#组成"><span class="toc-number">1.</span> <span class="toc-text">组成</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#特点"><span class="toc-number">2.</span> <span class="toc-text">特点</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#轻量级"><span class="toc-number">2.1.</span> <span class="toc-text">轻量级</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#控制反转(IoC)"><span class="toc-number">2.2.</span> <span class="toc-text">控制反转(IoC)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#面向切面编程（AOP）"><span class="toc-number">2.3.</span> <span class="toc-text">面向切面编程（AOP）</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="##"><span class="toc-number"></span> <span class="toc-text">#</span></a>
  
   </div>
 

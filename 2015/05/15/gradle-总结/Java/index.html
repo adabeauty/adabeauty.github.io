@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>项目构建工具 -- Gradle | 技术随笔</title>
+    <title>项目构建工具 -- Gradle | 程序媛的Diary</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="Huan Wang">
@@ -16,17 +16,17 @@
 相比于类似Maven的一些构建工具使用xml进行配置书写，gradle使用Groovy作为构建语言，大大提升了自动化过程的可编程能力和脚本的可读性，插件的编写、构建逻辑的复用也变得更为容易。
 完全支持Maven的库（repository）
 
-使用 IDE 构建方法首先，我们需要了解gradle默认在src/main/java下寻找源代码，在src/test/j">
+基本概念首先，我们需要了解gradle默认在src/main/java下寻找源代码，在src/test/java下寻找测">
 <meta property="og:type" content="article">
 <meta property="og:title" content="项目构建工具 -- Gradle">
 <meta property="og:url" content="http://adabeauty.github.io/2015/05/15/gradle-总结/Java/index.html">
-<meta property="og:site_name" content="技术随笔">
+<meta property="og:site_name" content="程序媛的Diary">
 <meta property="og:description" content="优点
 同时提供了构建和依赖管理的能力
 相比于类似Maven的一些构建工具使用xml进行配置书写，gradle使用Groovy作为构建语言，大大提升了自动化过程的可编程能力和脚本的可读性，插件的编写、构建逻辑的复用也变得更为容易。
 完全支持Maven的库（repository）
 
-使用 IDE 构建方法首先，我们需要了解gradle默认在src/main/java下寻找源代码，在src/test/j">
+基本概念首先，我们需要了解gradle默认在src/main/java下寻找源代码，在src/test/java下寻找测">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="项目构建工具 -- Gradle">
 <meta name="twitter:description" content="优点
@@ -34,10 +34,10 @@
 相比于类似Maven的一些构建工具使用xml进行配置书写，gradle使用Groovy作为构建语言，大大提升了自动化过程的可编程能力和脚本的可读性，插件的编写、构建逻辑的复用也变得更为容易。
 完全支持Maven的库（repository）
 
-使用 IDE 构建方法首先，我们需要了解gradle默认在src/main/java下寻找源代码，在src/test/j">
+基本概念首先，我们需要了解gradle默认在src/main/java下寻找源代码，在src/test/java下寻找测">
 
     
-    <link rel="alternative" href="/atom.xml" title="技术随笔" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="程序媛的Diary" type="application/atom+xml">
     
     
     <link rel="icon" href="/img/favicon.ico">
@@ -55,12 +55,12 @@
 <div>
 		
 			<div id="imglogo">
-				<a href="/"><img src="/img/logo.png" alt="技术随笔" title="技术随笔"/></a>
+				<a href="/"><img src="/img/logo.png" alt="程序媛的Diary" title="程序媛的Diary"/></a>
 			</div>
 			
 			<div id="textlogo">
-				<h1 class="site-name"><a href="/" title="技术随笔">技术随笔</a></h1>
-				<h2 class="blog-motto">记录生活和学习中的点点滴滴</h2>
+				<h1 class="site-name"><a href="/" title="程序媛的Diary">程序媛的Diary</a></h1>
+				<h2 class="blog-motto">永远不要对自己的记性过于自信</h2>
 			</div>
 			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜單">
 			</a></div>
@@ -110,7 +110,7 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目錄</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#优点"><span class="toc-number">1.</span> <span class="toc-text">优点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用_IDE_构建方法"><span class="toc-number">2.</span> <span class="toc-text">使用 IDE 构建方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#异常处理"><span class="toc-number">3.</span> <span class="toc-text">异常处理</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#优点"><span class="toc-number">1.</span> <span class="toc-text">优点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#基本概念"><span class="toc-number">2.</span> <span class="toc-text">基本概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用_IDE_构建方法"><span class="toc-number">3.</span> <span class="toc-text">使用 IDE 构建方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#仓库管理"><span class="toc-number">4.</span> <span class="toc-text">仓库管理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#异常处理"><span class="toc-number">5.</span> <span class="toc-text">异常处理</span></a></li></ol>
 		
 		</div>
 		
@@ -119,8 +119,10 @@
 <li>相比于类似Maven的一些构建工具使用xml进行配置书写，gradle使用Groovy作为构建语言，<br>大大提升了自动化过程的可编程能力和脚本的可读性，插件的编写、构建逻辑的复用也变得更为容易。</li>
 <li>完全支持Maven的库（repository）</li>
 </ol>
-<h3 id="使用_IDE_构建方法">使用 IDE 构建方法</h3><p>首先，我们需要了解gradle默认在src/main/java下寻找源代码，在src/test/java下寻找测试代码，<br>src/main/resource下找到资源（resource 下的文件会被包含在jar包中，而且文件下的文件会被加<br>到classPath中执行）。当然我们也可以通过自己设定的方式改变源代码的位置。在使用IDE进行开发时<br>候，可进入File下的ProjectStructure指定该项目的srcs、tests和resources的位置。</p>
-<ol>
+<h3 id="基本概念">基本概念</h3><p>首先，我们需要了解gradle默认在src/main/java下寻找源代码，在src/test/java下寻找测试代码，<br>src/main/resource下找到资源（resource 下的文件会被包含在jar包中，而且文件下的文件会被加<br>到classPath中执行）。当然我们也可以通过自己设定的方式改变源代码的位置。在使用IDE进行开发时<br>候，可进入File下的ProjectStructure指定该项目的srcs、tests和resources的位置。</p>
+<p>其实，在gradle中有两个名词，一个是project，另一个是task。Project代表着整个项目，而一个project<br>可以由一个或者多个task组成。当然，你也可以通过如下命令来查看所有的tasks.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ gradle tasks</span><br></pre></td></tr></table></figure></p>
+<p>执行完后会发现，可以由Application tasks、Build tasks、Build Setup tasks、Documentation tasks、Flyway tasks等。总而言之，使用 gradle + task 名称即可执行相应的task.</p>
+<h3 id="使用_IDE_构建方法">使用 IDE 构建方法</h3><ol>
 <li><p>创建项目文件夹 gradle-file</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ mkdir gradle-file</span><br></pre></td></tr></table></figure>
 </li>
@@ -136,6 +138,16 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ gradle idea</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
+<h3 id="仓库管理">仓库管理</h3><p>仓库是一种存放依赖的容器，每一个项目都可以有一个或者多个仓库。<br>gradle支持一下三种仓库格式：</p>
+<ol>
+<li>Ivy仓库</li>
+<li>Maven仓库</li>
+<li>Flat directory仓库</li>
+</ol>
+<p>这每一种仓库类型都有自己的配置方式,需要在build.gradle文件中进行配置。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">//使用flat directory时候，配置如下所示，这意味着系统将在lib目录下搜索依赖</span><br><span class="line"></span><br><span class="line">repositories&#123;</span><br><span class="line">  flatDir&#123;</span><br><span class="line">    <span class="built_in">dirs</span> <span class="string">'lib'</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>而如果使用maven的话，配置如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">//表示从central maven <span class="number">2</span> 仓库中下载的依赖</span><br><span class="line"></span><br><span class="line">repositories&#123;</span><br><span class="line">  mavenCentral()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>如果使用jcenter则表示依赖是从Binary’s JCenter Maven仓库中获取的；如果使用<br>mavenLocal，则表示是从本地的Maven仓库中获取的。</p>
 <h3 id="异常处理">异常处理</h3><ol>
 <li><p>如果第一次 IDE 直接打开项目的时候dependencies安装好了，但external libraries下不显示，<br>也无法引用时， 执行命令</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ gradle idea</span><br></pre></td></tr></table></figure>
@@ -166,7 +178,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://adabeauty.github.io/2015/05/15/gradle-总结/Java/" data-title="项目构建工具 -- Gradle | 技术随笔" data-tsina="null" class="share clearfix">
+	  <div data-url="http://adabeauty.github.io/2015/05/15/gradle-总结/Java/" data-title="项目构建工具 -- Gradle | 程序媛的Diary" data-tsina="null" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -206,7 +218,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目錄</strong>
  
- <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#优点"><span class="toc-number">1.</span> <span class="toc-text">优点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用_IDE_构建方法"><span class="toc-number">2.</span> <span class="toc-text">使用 IDE 构建方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#异常处理"><span class="toc-number">3.</span> <span class="toc-text">异常处理</span></a></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#优点"><span class="toc-number">1.</span> <span class="toc-text">优点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#基本概念"><span class="toc-number">2.</span> <span class="toc-text">基本概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用_IDE_构建方法"><span class="toc-number">3.</span> <span class="toc-text">使用 IDE 构建方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#仓库管理"><span class="toc-number">4.</span> <span class="toc-text">仓库管理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#异常处理"><span class="toc-number">5.</span> <span class="toc-text">异常处理</span></a></li></ol>
  
   </div>
 
@@ -220,7 +232,7 @@
 		<ul>
 		
 		  
-			<li><a href="/categories/Java/" title="Java">Java<sup>2</sup></a></li>
+			<li><a href="/categories/Java/" title="Java">Java<sup>3</sup></a></li>
 		  
 		
 		  
@@ -241,10 +253,6 @@
 		<ul class="clearfix">
 		
 			
-				<li><a href="/tags/数据迁移/" title="数据迁移">数据迁移<sup>1</sup></a></li>
-			
-		
-			
 				<li><a href="/tags/debug-方法/" title="debug 方法">debug 方法<sup>1</sup></a></li>
 			
 		
@@ -257,9 +265,11 @@
 			
 		
 			
-				<li><a href="/tags/AngularJs/" title="AngularJs">AngularJs<sup>1</sup></a></li>
+				<li><a href="/tags/数据迁移/" title="数据迁移">数据迁移<sup>1</sup></a></li>
 			
 		
+			
+				<li><a href="/tags/AngularJs/" title="AngularJs">AngularJs<sup>1</sup></a></li>
 			
 		
 		</ul>
