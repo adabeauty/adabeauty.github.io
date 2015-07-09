@@ -16,7 +16,7 @@
 相比于类似Maven的一些构建工具使用xml进行配置书写，gradle使用Groovy作为构建语言，大大提升了自动化过程的可编程能力和脚本的可读性，插件的编写、构建逻辑的复用也变得更为容易。
 完全支持Maven的库（repository）
 
-基本概念首先，我们需要了解gradle默认在src/main/java下寻找源代码，在src/test/java下寻找测">
+安装配置一种是从官方下载压缩包然后解压配置环境变量。                 另一种是可以直接通过命令行安装执">
 <meta property="og:type" content="article">
 <meta property="og:title" content="项目构建工具 -- Gradle">
 <meta property="og:url" content="http://adabeauty.github.io/2015/05/15/gradle-总结/Java/index.html">
@@ -26,7 +26,7 @@
 相比于类似Maven的一些构建工具使用xml进行配置书写，gradle使用Groovy作为构建语言，大大提升了自动化过程的可编程能力和脚本的可读性，插件的编写、构建逻辑的复用也变得更为容易。
 完全支持Maven的库（repository）
 
-基本概念首先，我们需要了解gradle默认在src/main/java下寻找源代码，在src/test/java下寻找测">
+安装配置一种是从官方下载压缩包然后解压配置环境变量。                 另一种是可以直接通过命令行安装执">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="项目构建工具 -- Gradle">
 <meta name="twitter:description" content="优点
@@ -34,7 +34,7 @@
 相比于类似Maven的一些构建工具使用xml进行配置书写，gradle使用Groovy作为构建语言，大大提升了自动化过程的可编程能力和脚本的可读性，插件的编写、构建逻辑的复用也变得更为容易。
 完全支持Maven的库（repository）
 
-基本概念首先，我们需要了解gradle默认在src/main/java下寻找源代码，在src/test/java下寻找测">
+安装配置一种是从官方下载压缩包然后解压配置环境变量。                 另一种是可以直接通过命令行安装执">
 
     
     <link rel="alternative" href="/atom.xml" title="程序媛的Diary" type="application/atom+xml">
@@ -110,7 +110,7 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目錄</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#优点"><span class="toc-number">1.</span> <span class="toc-text">优点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#基本概念"><span class="toc-number">2.</span> <span class="toc-text">基本概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用_IDE_构建方法"><span class="toc-number">3.</span> <span class="toc-text">使用 IDE 构建方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#仓库管理"><span class="toc-number">4.</span> <span class="toc-text">仓库管理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#异常处理"><span class="toc-number">5.</span> <span class="toc-text">异常处理</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#优点"><span class="toc-number">1.</span> <span class="toc-text">优点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装配置"><span class="toc-number">2.</span> <span class="toc-text">安装配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#基本概念"><span class="toc-number">3.</span> <span class="toc-text">基本概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用_IDE_构建方法"><span class="toc-number">4.</span> <span class="toc-text">使用 IDE 构建方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#仓库管理"><span class="toc-number">5.</span> <span class="toc-text">仓库管理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Maven"><span class="toc-number">5.1.</span> <span class="toc-text">Maven</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Flat_directory"><span class="toc-number">5.2.</span> <span class="toc-text">Flat directory</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#依赖管理"><span class="toc-number">6.</span> <span class="toc-text">依赖管理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#依赖配置项"><span class="toc-number">6.1.</span> <span class="toc-text">依赖配置项</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#声明项目依赖"><span class="toc-number">6.2.</span> <span class="toc-text">声明项目依赖</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#异常处理"><span class="toc-number">7.</span> <span class="toc-text">异常处理</span></a></li></ol>
 		
 		</div>
 		
@@ -119,6 +119,7 @@
 <li>相比于类似Maven的一些构建工具使用xml进行配置书写，gradle使用Groovy作为构建语言，<br>大大提升了自动化过程的可编程能力和脚本的可读性，插件的编写、构建逻辑的复用也变得更为容易。</li>
 <li>完全支持Maven的库（repository）</li>
 </ol>
+<h3 id="安装配置">安装配置</h3><p>一种是从<a href="http://gradle.org/gradle-download/" target="_blank" rel="external">官方</a>下载压缩包然后解压配置环境变量。                 另一种是可以直接通过命令行安装执行。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install gradle</span><br></pre></td></tr></table></figure></p>
 <h3 id="基本概念">基本概念</h3><p>首先，我们需要了解gradle默认在src/main/java下寻找源代码，在src/test/java下寻找测试代码，<br>src/main/resource下找到资源（resource 下的文件会被包含在jar包中，而且文件下的文件会被加<br>到classPath中执行）。当然我们也可以通过自己设定的方式改变源代码的位置。在使用IDE进行开发时<br>候，可进入File下的ProjectStructure指定该项目的srcs、tests和resources的位置。</p>
 <p>其实，在gradle中有两个名词，一个是project，另一个是task。Project代表着整个项目，而一个project<br>可以由一个或者多个task组成。当然，你也可以通过如下命令来查看所有的tasks.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ gradle tasks</span><br></pre></td></tr></table></figure></p>
 <p>执行完后会发现，可以由Application tasks、Build tasks、Build Setup tasks、Documentation tasks、Flyway tasks等。总而言之，使用 gradle + task 名称即可执行相应的task.</p>
@@ -145,9 +146,31 @@
 <li>Flat directory仓库</li>
 </ol>
 <p>这每一种仓库类型都有自己的配置方式,需要在build.gradle文件中进行配置。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">//使用flat directory时候，配置如下所示，这意味着系统将在lib目录下搜索依赖</span><br><span class="line"></span><br><span class="line">repositories&#123;</span><br><span class="line">  flatDir&#123;</span><br><span class="line">    <span class="built_in">dirs</span> <span class="string">'lib'</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>而如果使用maven的话，配置如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">//表示从central maven <span class="number">2</span> 仓库中下载的依赖</span><br><span class="line"></span><br><span class="line">repositories&#123;</span><br><span class="line">  mavenCentral()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="Maven">Maven</h4><p>而如果使用maven的话，配置如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">//表示从central maven <span class="number">2</span> 仓库中下载的依赖</span><br><span class="line"></span><br><span class="line">repositories&#123;</span><br><span class="line">  mavenCentral()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>如果使用jcenter则表示依赖是从Binary’s JCenter Maven仓库中获取的；如果使用<br>mavenLocal，则表示是从本地的Maven仓库中获取的。</p>
+<h4 id="Flat_directory">Flat directory</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">//使用flat directory时候，配置如下所示，这意味着系统将在lib目录下搜索依赖</span><br><span class="line"></span><br><span class="line">repositories&#123;</span><br><span class="line">  flatDir&#123;</span><br><span class="line">    <span class="built_in">dirs</span> <span class="string">'lib'</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="依赖管理">依赖管理</h3><p>当想要声明一个新的依赖时，我们需要两步：</p>
+<ol>
+<li>指定依赖的配置（如指定compile、testCompile等）</li>
+<li>声明所需要的依赖</li>
+</ol>
+<h4 id="依赖配置项">依赖配置项</h4><p>可通过使用配置项来声明项目的外部依赖，依赖配置项有很多，具体如下：</p>
+<ol>
+<li>compile: 声明当项目被编译时需要的依赖</li>
+<li>runtime: 声明项目在运行时所需要的依赖</li>
+<li>testRuntime: 代码是在运行测试代码的时候是必须的</li>
+<li>archives: 包含项目生成的文件（如Jar文件）</li>
+<li>default: 包含运行时必须的依赖</li>
+</ol>
+<h4 id="声明项目依赖">声明项目依赖</h4><p>项目中最普遍的依赖外部依赖，这些依赖存放在外部仓库中，一个外部依赖可以由以下属性<br>指定：</p>
+<ol>
+<li>group: 指定依赖的分组（Maven中就是groupId）</li>
+<li>name: 指定依赖的名称（Maven中就是artifactId）</li>
+<li>version: 就是指定外部依赖的版本（Maven中就是version）</li>
+</ol>
+<p>举个例子来说，如果我们要声明一个以来的分组为foo, 名称为foo, 版本为0.1，<br>且在编译时候需要的依赖，<br>在build.gradle中配置如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">dependencies&#123;</span><br><span class="line">  compile group: <span class="string">'foo'</span>, name:<span class="string">'foo'</span>, version:<span class="string">'0.1'</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>当然也可以采用一种简介的方式声明依赖：[group]:[name]:[version]，即：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">dependencies&#123;</span><br><span class="line">  compile <span class="string">'foo:foo:0.1'</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>多个相同配置项的依赖可通过逗号隔开，如：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">dependencies&#123;</span><br><span class="line">  compile <span class="string">'foo:foo:0.1'</span>, <span class="string">'test:test：0.1'</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <h3 id="异常处理">异常处理</h3><ol>
 <li><p>如果第一次 IDE 直接打开项目的时候dependencies安装好了，但external libraries下不显示，<br>也无法引用时， 执行命令</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ gradle idea</span><br></pre></td></tr></table></figure>
@@ -218,7 +241,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目錄</strong>
  
- <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#优点"><span class="toc-number">1.</span> <span class="toc-text">优点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#基本概念"><span class="toc-number">2.</span> <span class="toc-text">基本概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用_IDE_构建方法"><span class="toc-number">3.</span> <span class="toc-text">使用 IDE 构建方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#仓库管理"><span class="toc-number">4.</span> <span class="toc-text">仓库管理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#异常处理"><span class="toc-number">5.</span> <span class="toc-text">异常处理</span></a></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#优点"><span class="toc-number">1.</span> <span class="toc-text">优点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装配置"><span class="toc-number">2.</span> <span class="toc-text">安装配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#基本概念"><span class="toc-number">3.</span> <span class="toc-text">基本概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用_IDE_构建方法"><span class="toc-number">4.</span> <span class="toc-text">使用 IDE 构建方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#仓库管理"><span class="toc-number">5.</span> <span class="toc-text">仓库管理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Maven"><span class="toc-number">5.1.</span> <span class="toc-text">Maven</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Flat_directory"><span class="toc-number">5.2.</span> <span class="toc-text">Flat directory</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#依赖管理"><span class="toc-number">6.</span> <span class="toc-text">依赖管理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#依赖配置项"><span class="toc-number">6.1.</span> <span class="toc-text">依赖配置项</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#声明项目依赖"><span class="toc-number">6.2.</span> <span class="toc-text">声明项目依赖</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#异常处理"><span class="toc-number">7.</span> <span class="toc-text">异常处理</span></a></li></ol>
  
   </div>
 
