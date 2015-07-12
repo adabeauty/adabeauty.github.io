@@ -1,0 +1,491 @@
+
+ <!DOCTYPE HTML>
+<html >
+<head>
+  <meta charset="UTF-8">
+  
+    <title>Hibernate---ORM框架.md | 程序媛的Diary</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    
+    <meta name="author" content="Huan Wang">
+    
+
+    
+    <meta name="description" content="Hibernate 介绍Hibernate是一个开源的ORM（object relations mapping）框架，用面向对象的思想来操作数据库，节省了我们开发处理数据的时间。它对JDBC进行了非常轻量级的对象封装，可以应用在任何使用JDBC的场合。
+Hibernate 配置Hibernate 的配置主要包括两方面的配置。
+对需要映射的对象进行配置第一个是要对需要映射的对象进行配置。可以采用xm">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hibernate---ORM框架.md">
+<meta property="og:url" content="http://adabeauty.github.io/2015/07/12/Hibernate-ORM框架/Java/index.html">
+<meta property="og:site_name" content="程序媛的Diary">
+<meta property="og:description" content="Hibernate 介绍Hibernate是一个开源的ORM（object relations mapping）框架，用面向对象的思想来操作数据库，节省了我们开发处理数据的时间。它对JDBC进行了非常轻量级的对象封装，可以应用在任何使用JDBC的场合。
+Hibernate 配置Hibernate 的配置主要包括两方面的配置。
+对需要映射的对象进行配置第一个是要对需要映射的对象进行配置。可以采用xm">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hibernate---ORM框架.md">
+<meta name="twitter:description" content="Hibernate 介绍Hibernate是一个开源的ORM（object relations mapping）框架，用面向对象的思想来操作数据库，节省了我们开发处理数据的时间。它对JDBC进行了非常轻量级的对象封装，可以应用在任何使用JDBC的场合。
+Hibernate 配置Hibernate 的配置主要包括两方面的配置。
+对需要映射的对象进行配置第一个是要对需要映射的对象进行配置。可以采用xm">
+
+    
+    <link rel="alternative" href="/atom.xml" title="程序媛的Diary" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/jacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/jacman.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+
+  <body>
+    <header>
+      
+<div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.png" alt="程序媛的Diary" title="程序媛的Diary"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="程序媛的Diary">程序媛的Diary</a></h1>
+				<h2 class="blog-motto">永远不要对自己的记性过于自信</h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜單">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">Home</a></li>
+					
+						<li><a href="/archives">Archives</a></li>
+					
+						<li><a href="/about">About</a></li>
+					
+					<li>
+ 					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
+						<input type="hidden" name="q" value="site:adabeauty.github.io">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+  
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2015/07/12/Hibernate-ORM框架/Java/" title="Hibernate---ORM框架.md" itemprop="url">Hibernate---ORM框架.md</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="Huan Wang" target="_blank" itemprop="author">Huan Wang</a>
+		
+  <p class="article-time">
+    <time datetime="2015-07-12T03:24:03.000Z" itemprop="datePublished"> 發表於 2015-07-12</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">文章目錄</strong>
+		
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Hibernate_介绍"><span class="toc-number">1.</span> <span class="toc-text">Hibernate 介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Hibernate_配置"><span class="toc-number">2.</span> <span class="toc-text">Hibernate 配置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#对需要映射的对象进行配置"><span class="toc-number">2.1.</span> <span class="toc-text">对需要映射的对象进行配置</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#xml方式配置"><span class="toc-number">2.1.1.</span> <span class="toc-text">xml方式配置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#注解配置方式"><span class="toc-number">2.1.2.</span> <span class="toc-text">注解配置方式</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#连接数据库部分的配置"><span class="toc-number">2.2.</span> <span class="toc-text">连接数据库部分的配置</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Hibernate_工作原理"><span class="toc-number">3.</span> <span class="toc-text">Hibernate 工作原理</span></a></li></ol>
+		
+		</div>
+		
+		<h2 id="Hibernate_介绍">Hibernate 介绍</h2><p>Hibernate是一个开源的ORM（object relations mapping）框架，<br>用面向对象的思想来操作数据库，节省了我们开发处理数据的时间。它对JDBC进行了非常轻量级的对象封装，<br>可以应用在任何使用JDBC的场合。</p>
+<h2 id="Hibernate_配置">Hibernate 配置</h2><p>Hibernate 的配置主要包括两方面的配置。</p>
+<h3 id="对需要映射的对象进行配置">对需要映射的对象进行配置</h3><p>第一个是要对需要映射的对象进行配置。可以采用xml文件的方式或者<br>直接使用注解Annotation的方式进行配置。</p>
+<h4 id="xml方式配置">xml方式配置</h4><p>使用xml方式进行配置的时候，可以创建一个以.hbm.xml结尾，前面加上<br>需要配置Entity的名字的配置文件（例如User.hbm.xml）。具体配置如下所示：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=<span class="string">"1.0"</span>?&gt;</span><br><span class="line">&lt;!DOCTYPE hibernate-mapping PUBLIC</span><br><span class="line">        <span class="string">"-//Hibernate/Hibernate Mapping DTD 3.0//EN"</span></span><br><span class="line">        <span class="string">"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"</span>&gt;</span><br><span class="line"></span><br><span class="line">&lt;hibernate-mapping package=<span class="string">"com.tw.entity"</span>&gt;</span><br><span class="line">  &lt;class name=<span class="string">"User"</span> table=<span class="string">"USER"</span>&gt;</span><br><span class="line">    &lt;id name=<span class="string">"id"</span> column=<span class="string">"Id"</span> <span class="built_in">type</span>=<span class="string">"int"</span>&gt;</span><br><span class="line">        &lt;generator class=<span class="string">"native"</span>/&gt;</span><br><span class="line">    &lt;/id&gt;</span><br><span class="line">    &lt;property name=<span class="string">"name"</span> <span class="built_in">type</span>=<span class="string">"String"</span> column=<span class="string">"name"</span>/&gt;</span><br><span class="line">    &lt;property name=<span class="string">"gender"</span> <span class="built_in">type</span>=<span class="string">"String"</span> column=<span class="string">"gender"</span>/&gt;</span><br><span class="line">    &lt;property name=<span class="string">"email"</span> <span class="built_in">type</span>=<span class="string">"String"</span> column=<span class="string">"email"</span>/&gt;</span><br><span class="line">    &lt;property name=<span class="string">"age"</span> <span class="built_in">type</span>=<span class="string">"int"</span> column=<span class="string">"age"</span>/&gt;</span><br><span class="line">  &lt;/class&gt;</span><br><span class="line">&lt;/hibernate-mapping&gt;</span><br></pre></td></tr></table></figure></p>
+<p>上边这部分配置，通过<code>package</code>指定了这个需要映射对象的包，然后通过<code>table</code>标签指明了这个entity在数据库中<br>映射的表的名称，然后通过<code>id</code>来指定table的主键，在我建表的过程中Id是主键，所以我将其设为<code>column=&quot;Id&quot;</code>，<br>表示其与表中名字为<code>Id</code>的列相对应。</p>
+<p>而这里的<code>generator</code>是用来指定主键的生成方式的，指定为<code>native</code>后，可以使得Hibernate在选择主键的时候根据底层<br>的数据库来自由选择。</p>
+<p>同理，可以配置其他的属性，如<code>name</code>，<code>gender</code>，<code>email</code>和<code>age</code>，分别来对应到<code>USER</code>表中的属性。完成对映射的配置。</p>
+<h4 id="注解配置方式">注解配置方式</h4><p>使用注解方式配置的时候并不需要增添多余的配置的文件，只需要在需要被映射的实体上添加注解即可。具体配置如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br></pre></td><td class="code"><pre><span class="line">@Entity</span><br><span class="line">@Table(name=<span class="string">"user"</span>)</span><br><span class="line">public class User &#123;</span><br><span class="line"></span><br><span class="line">    @Id</span><br><span class="line">    @Column(name=<span class="string">"Id"</span>)</span><br><span class="line">    private int id;</span><br><span class="line"></span><br><span class="line">    @Column(name=<span class="string">"Name"</span>)</span><br><span class="line">    private String name;</span><br><span class="line"></span><br><span class="line">    @Column(name=<span class="string">"Gender"</span>)</span><br><span class="line">    private String gender;</span><br><span class="line"></span><br><span class="line">    @Column(name=<span class="string">"Email"</span>)</span><br><span class="line">    private String email;</span><br><span class="line"></span><br><span class="line">    @Column(name=<span class="string">"Age"</span>)</span><br><span class="line">    private int age;</span><br><span class="line"></span><br><span class="line">    public <span class="function"><span class="title">User</span></span>() &#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public User(String name, String gender, String email, int age) &#123;</span><br><span class="line">        this.name = name;</span><br><span class="line">        this.gender = gender;</span><br><span class="line">        this.email = email;</span><br><span class="line">        this.age = age;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public User(int id, String name, String gender, String email, int age) &#123;</span><br><span class="line">        this.id = id;</span><br><span class="line">        this.name = name;</span><br><span class="line">        this.gender = gender;</span><br><span class="line">        this.email = email;</span><br><span class="line">        this.age = age;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public int <span class="function"><span class="title">getId</span></span>() &#123;</span><br><span class="line">        <span class="built_in">return</span> id;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void <span class="built_in">set</span>Id(int id) &#123;</span><br><span class="line">        this.id = id;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public String <span class="function"><span class="title">getName</span></span>() &#123;</span><br><span class="line">        <span class="built_in">return</span> name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void <span class="built_in">set</span>Name(String name) &#123;</span><br><span class="line">        this.name = name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public String <span class="function"><span class="title">getGender</span></span>() &#123;</span><br><span class="line">        <span class="built_in">return</span> gender;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void <span class="built_in">set</span>Gender(String gender) &#123;</span><br><span class="line">        this.gender = gender;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public String <span class="function"><span class="title">getEmail</span></span>() &#123;</span><br><span class="line">        <span class="built_in">return</span> email;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void <span class="built_in">set</span>Email(String email) &#123;</span><br><span class="line">        this.email = email;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public int <span class="function"><span class="title">getAge</span></span>() &#123;</span><br><span class="line">        <span class="built_in">return</span> age;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void <span class="built_in">set</span>Age(int age) &#123;</span><br><span class="line">        this.age = age;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>该方式通过<code>@Entity</code>注解来表明该类是一个要映射到数据库的实体，<code>@Table</code>指明了与该实体对应的数据库中<br>的表。通过<code>@Id</code>指明主键，当然你也可以添加‘@Generator’注解来指明主键生成方式。其他的属性通过<code>@Column</code><br>来指定与数据库对应的列。</p>
+<blockquote>
+<p>必须指明的是，在创建这个Entity的时候必须含有getter和setter方法以及午餐构造函数，因为Hibernate在执行<br>映射的时候会自动去寻找对应属性的getter和setter方法。</p>
+</blockquote>
+<p>以上这两种方式都可以完成对映射对象的配置。第一种方式看似复杂一点，需要书写一个配置文件，但其可以在数据表名或者<br>属性名称发生变化时仅仅修改这一个配置文件，便可使得程序继续正常工作，而不用去修改实现代码。</p>
+<p>对于方式二，我个人喜欢的原因是它比xml文件的可读性要高，让人可以一眼看出来每个注解的作用。当然缺点就是如果表发生<br>变化的时候，需要重新返回到Entity的实现代码部分进行修改，当有多个Entity需要配置的时候，这种方式便显得优势不再突出。</p>
+<h3 id="连接数据库部分的配置">连接数据库部分的配置</h3><p>上一部分的配置仅仅是把映射对象配置完成了，但是此时，Hibernate其实还并不知道要连接哪个数据库，怎么连接。所以接下来<br>我们将会对数据库连接这一部分进行配置。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE hibernate-configuration PUBLIC</span><br><span class="line">        <span class="string">"-//Hibernate/Hibernate Configuration DTD 3.0//EN"</span></span><br><span class="line">        <span class="string">"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd"</span>&gt;</span><br><span class="line"></span><br><span class="line">&lt;hibernate-configuration&gt;</span><br><span class="line">    &lt;session-factory&gt;</span><br><span class="line">        &lt;property name=<span class="string">"connection.driver_class"</span>&gt;com.mysql.jdbc.Driver&lt;/property&gt;</span><br><span class="line">        &lt;property name=<span class="string">"hibernate.connection.url"</span>&gt;</span><br><span class="line">            jdbc:mysql://localhost:<span class="number">3306</span>/users_management&lt;/property&gt;</span><br><span class="line">        &lt;property name=<span class="string">"hibernate.connection.username"</span>&gt;root&lt;/property&gt;</span><br><span class="line">        &lt;property name=<span class="string">"hibernate.connection.password"</span>&gt;&lt;/property&gt;</span><br><span class="line">        &lt;property name=<span class="string">"hibernate.connection.pool_size"</span>&gt;<span class="number">10</span>&lt;/property&gt;</span><br><span class="line">        &lt;property name=<span class="string">"show_sql"</span>&gt;<span class="literal">true</span>&lt;/property&gt;</span><br><span class="line">        &lt;property name=<span class="string">"dialect"</span>&gt;org.hibernate.dialect.MySQLDialect&lt;/property&gt;</span><br><span class="line">            &lt;mapping class=<span class="string">"com.tw.entity.User"</span>/&gt;</span><br><span class="line">    &lt;/session-factory&gt;</span><br><span class="line">&lt;/hibernate-configuration&gt;</span><br></pre></td></tr></table></figure>
+<p>在<code>&lt;session-factory&gt;</code>中配置关于连接的这部分的操作。</p>
+<p>首先，配置<code>hibernate.connection.url</code><br>设置数据库连接的url，<code>username</code>和<code>password</code>来设置连接数据库时候使用的用户名和密码。<br><code>pool_size</code>设置连接池中的连接数量，<code>show_sql</code>设置为true后，Hibernate可以在执行完SQL<br>语句后显示执行的SQL语句内容，<code>dialect</code>指定的时候hibernate使用的方言，这个跟使用的数据<br>库有关，我这里使用的时MySQL的数据库，所以选用<code>org.hibernate.dialect.MySQLDialect</code>.</p>
+<h2 id="Hibernate_工作原理">Hibernate 工作原理</h2><p>Hibernate使用部分，我是自己书写了一个Util来帮助我产生session.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">public class HibernateUtil &#123;</span><br><span class="line"></span><br><span class="line">    private static SessionFactory sessionFactory ;</span><br><span class="line">    static &#123;</span><br><span class="line">        Configuration configuration = new Configuration().configure();</span><br><span class="line">        StandardServiceRegistryBuilder builder = new StandardServiceRegistryBuilder().applySettings(configuration.getProperties());</span><br><span class="line">        sessionFactory = configuration.buildSessionFactory(builder.build());</span><br><span class="line">    &#125;</span><br><span class="line">    public static SessionFactory <span class="function"><span class="title">getSessionFactory</span></span>() &#123;</span><br><span class="line">        <span class="built_in">return</span> sessionFactory;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>具体的工作原理如下：</p>
+<ol>
+<li><p>Hibernate 初始化，读取Hibernate 的配置信息（即Hibernate config.xm文件），一个Configeration 实例代表Hibernate 所有Java类到Sql数据库映射的集合.</p>
+<p><code>Configuration configuration = new Configuration().configure();</code></p>
+</li>
+<li><p>创建一个Session Factory，把Configeration 对象中的所有配置信息拷贝到<br>SessionFactory的缓存中。 SessionFactory的实例代表一个数据库存储源，创建后<br>不再与Configeration 对象关联。</p>
+</li>
+<li><p>调用SessionFactory创建Session的方法。<br>此处可以由两种方式来创建连接，一种是通过openSession的方式。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">//HibernateUtil是我自己定义的一个用于连接数据库的工具类，getSessionFactory（）是用于创建一个SessionFactory</span><br><span class="line">Session session = HibernateUtil.getSessionFactory().openSession()</span><br></pre></td></tr></table></figure>
+<p>注意这种方式是需要在最后使用完成后关闭Session</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">session.close();</span><br></pre></td></tr></table></figure>
+<p>还有一种方式是通过getCurrentSession的方式来得到Session。当使用此种方式报错信息如下的时候：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ERROR:</span><br></pre></td></tr></table></figure>
+<p>需要在hibernate的配置文件下对Context进行配置，具体配置如下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;propety name=<span class="string">""</span>&gt;Thread&lt;/propety&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>通过Session 接口提供的各种方法来操纵数据库访问。比如增加一条数据可以用session.save(Object object)，<br>删除一条数据可以 session.delete(Object object)，更新数据session.update(Object object),<br>查询可以使用Query query = session.createQuery(hql)的方法。</p>
+<blockquote>
+<p>需要注意的是对于添加的时候，当执行完hibernate提供的方法后，该期望被保存的对象只是Hibernate的一个持久的对象<br>而已，这个时候Hibernate还不会真正的执行insert语句，当进行session的刷新同部或事务提交时，<br>Hibernate会把session缓存中的所有SQL语句一起执行，对于更新、删除操作也是采用类似的机制。</p>
+</blockquote>
+</li>
+</ol>
+<p>执行以下代码，即完成了事务的创建和提交<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//创建事务</span><br><span class="line">session.beginTransaction();</span><br><span class="line">//提交事务</span><br><span class="line">session.getTransaction().commit();</span><br></pre></td></tr></table></figure></p>
+  
+	</div>
+		<footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/Java/">Java</a>
+</div>
+
+
+</div>
+
+
+
+	<div class="article-share" id="share">
+	
+	  <div data-url="http://adabeauty.github.io/2015/07/12/Hibernate-ORM框架/Java/" data-title="Hibernate---ORM框架.md | 程序媛的Diary" data-tsina="null" class="share clearfix">
+	  </div>
+	
+	</div>
+
+
+</footer>
+
+   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+
+<div class="next">
+<a href="/2015/05/21/Spring-框架/Java/"  title="Spring 框架">
+ <strong>下一篇：</strong><br/> 
+ <span>Spring 框架
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="顯示側邊欄"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">文章目錄</strong>
+ 
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Hibernate_介绍"><span class="toc-number">1.</span> <span class="toc-text">Hibernate 介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Hibernate_配置"><span class="toc-number">2.</span> <span class="toc-text">Hibernate 配置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#对需要映射的对象进行配置"><span class="toc-number">2.1.</span> <span class="toc-text">对需要映射的对象进行配置</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#xml方式配置"><span class="toc-number">2.1.1.</span> <span class="toc-text">xml方式配置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#注解配置方式"><span class="toc-number">2.1.2.</span> <span class="toc-text">注解配置方式</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#连接数据库部分的配置"><span class="toc-number">2.2.</span> <span class="toc-text">连接数据库部分的配置</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Hibernate_工作原理"><span class="toc-number">3.</span> <span class="toc-text">Hibernate 工作原理</span></a></li></ol>
+ 
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="隱藏側邊欄"></a></div>
+<aside class="clearfix">
+
+  
+<div class="categorieslist">
+	<p class="asidetitle">分類</p>
+		<ul>
+		
+		  
+			<li><a href="/categories/Java/" title="Java">Java<sup>4</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/JavaScript/" title="JavaScript">JavaScript<sup>2</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/数据库/" title="数据库">数据库<sup>1</sup></a></li>
+		  
+		
+		</ul>
+</div>
+
+
+  
+<div class="tagslist">
+	<p class="asidetitle">標簽</p>
+		<ul class="clearfix">
+		
+			
+				<li><a href="/tags/debug-方法/" title="debug 方法">debug 方法<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/测试/" title="测试">测试<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/java-web-开发/" title="java web 开发">java web 开发<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/数据迁移/" title="数据迁移">数据迁移<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/AngularJs/" title="AngularJs">AngularJs<sup>1</sup></a></li>
+			
+		
+		</ul>
+</div>
+
+
+  <div class="linkslist">
+  <p class="asidetitle">友情鏈接</p>
+    <ul>
+        
+          <li>
+            
+            	<a href="https://coderq.com" target="_blank" title="一个面向程序员交流分享的新一代社区">码农圈</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://www.cnbeta.com" target="_blank" title="cnBeta">cnBeta</a>
+            
+          </li>
+        
+    </ul>
+</div>
+
+  
+
+
+  <div class="rsspart">
+	<a href="/atom.xml" target="_blank" title="rss">RSS 訂閱</a>
+</div>
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<section class="info">
+		<p> Hello ,I&#39;m Ada in Xi&#39;an. <br/>
+			This is my blog, I hope you can find something you need there.</p>
+	</section>
+	 
+	<div class="social-font" class="clearfix">
+		
+		
+		<a href="https://github.com/https://github.com/adabeauty" target="_blank" class="icon-github" title="github"></a>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	</div>
+			
+		
+
+		<p class="copyright">
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2015 
+		
+		<a href="/about" target="_blank" title="Huan Wang">Huan Wang</a>
+		
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+  
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else{
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  c.click(function(){
+    ta.css('display', 'block').addClass('fadeIn');
+  });
+  o.click(function(){
+    ta.css('display', 'none');
+  });
+  $(window).scroll(function(){
+    ta.css("top",Math.max(140,320-$(this).scrollTop()));
+  });
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina'),
+      description = $this.attr('description');
+  var html = [
+  '<a href="#" class="overlay" id="qrcode"></a>',
+  '<div class="qrcode clearfix"><span>扫描二维码分享到微信朋友圈</span><a class="qrclose" href="#nothing"></a><strong>Loading...Please wait</strong><img id="qrcode-pic" data-src="http://s.jiathis.com/qrcode.php?url=' + encodedUrl + '"/></div>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="微信"></a>',
+  '<a href="http://widget.renren.com/dialog/share?resourceUrl=' + encodedUrl + '&srcUrl=' + encodedUrl + '&title=' + title +'" class="article-share-renren" target="_blank" title="人人"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="微博"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+  $('.article-share-qrcode').click(function(){
+    var imgSrc = $('#qrcode-pic').attr('data-src');
+    $('#qrcode-pic').attr('src', imgSrc);
+    $('#qrcode-pic').load(function(){
+        $('.qrcode strong').text(' ');
+    });
+  });
+});     
+</script>
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
+
+
+
+<!-- Analytics Begin -->
+
+
+
+
+
+<!-- Analytics End -->
+
+<!-- Totop Begin -->
+
+	<div id="totop">
+	<a title="返回頂部"><img src="/img/scrollup.png"/></a>
+	</div>
+	<script src="/js/totop.js"></script>
+
+<!-- Totop End -->
+
+<!-- MathJax Begin -->
+<!-- mathjax config similar to math.stackexchange -->
+
+
+<!-- MathJax End -->
+
+<!-- Tiny_search Begin -->
+
+<!-- Tiny_search End -->
+
+  </body>
+</html>
