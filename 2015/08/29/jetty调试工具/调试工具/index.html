@@ -4,22 +4,29 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>程序媛的Diary</title>
+    <title>inteliJ上调试jetty程序 | 程序媛的Diary</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="Huan Wang">
     
 
     
-    <meta name="description" content="不想写blog的时候抬头望望天，低头瞅瞅地，瞄见镜子里的自己，哎，还是去继续写blog吧">
+    <meta name="description" content="gradle也是java项目里一种常用的自动化构建工具。jetty是一个我们在java web开发时经常会选择的一种服务器。而且gradle提供jetty的插件。然而当两者结合起来的时候，我竟一度不知道如何去调试后台的代码。
+前段时间在此使用jetty时，周围的小伙伴分享了一个调试在jetty上运行的方法，觉得还挺不错，今天写出来分享给大家。
+第一步进入到使用gradle和jetty的项目路径下(">
 <meta property="og:type" content="website">
-<meta property="og:title" content="程序媛的Diary">
-<meta property="og:url" content="http://adabeauty.github.io/index.html">
+<meta property="og:title" content="inteliJ上调试jetty程序">
+<meta property="og:url" content="http://adabeauty.github.io/2015/08/29/jetty调试工具/调试工具/index.html">
 <meta property="og:site_name" content="程序媛的Diary">
-<meta property="og:description" content="不想写blog的时候抬头望望天，低头瞅瞅地，瞄见镜子里的自己，哎，还是去继续写blog吧">
+<meta property="og:description" content="gradle也是java项目里一种常用的自动化构建工具。jetty是一个我们在java web开发时经常会选择的一种服务器。而且gradle提供jetty的插件。然而当两者结合起来的时候，我竟一度不知道如何去调试后台的代码。
+前段时间在此使用jetty时，周围的小伙伴分享了一个调试在jetty上运行的方法，觉得还挺不错，今天写出来分享给大家。
+第一步进入到使用gradle和jetty的项目路径下(">
+<meta property="og:image" content="/image/jetty_debug_setting_intelij.jpg">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="程序媛的Diary">
-<meta name="twitter:description" content="不想写blog的时候抬头望望天，低头瞅瞅地，瞄见镜子里的自己，哎，还是去继续写blog吧">
+<meta name="twitter:title" content="inteliJ上调试jetty程序">
+<meta name="twitter:description" content="gradle也是java项目里一种常用的自动化构建工具。jetty是一个我们在java web开发时经常会选择的一种服务器。而且gradle提供jetty的插件。然而当两者结合起来的时候，我竟一度不知道如何去调试后台的代码。
+前段时间在此使用jetty时，周围的小伙伴分享了一个调试在jetty上运行的方法，觉得还挺不错，今天写出来分享给大家。
+第一步进入到使用gradle和jetty的项目路径下(">
 
     
     <link rel="alternative" href="/atom.xml" title="程序媛的Diary" type="application/atom+xml">
@@ -73,143 +80,86 @@
 </div>
     </header>
     <div id="container">
-      <div id="main">
-
+      <div id="main" class="_draft" itemscope itemprop="blogPost">
   
-<section class="post" itemscope itemprop="blogitem">
-  
-    <a href="/2015/08/29/jetty调试工具/调试工具/" title="inteliJ上调试jetty程序" itemprop="url">
-  
-    <h1 itemprop="name">inteliJ上调试jetty程序</h1>
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
     
-     
-           <p itemprop="description" >gradle也是java项目里一种常用的自动化构建工具。jetty是一个我们在java web开发时经常会选择的一种服务器。而且gradle提供jetty的插件。然而当两者结合起来的时候，我竟一度不知道如何去调试后台的代码。
-前段时间在此使用jetty时，周围的小伙伴分享了一个调</p>
-        
+      <a href="/2015/08/29/jetty调试工具/调试工具/" title="inteliJ上调试jetty程序" itemprop="url">inteliJ上调试jetty程序</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="Huan Wang" target="_blank" itemprop="author">Huan Wang</a>
+		
+  <p class="article-time">
+    <time datetime="2015-08-29T13:28:16.000Z" itemprop="datePublished"> 發表於 2015-08-29</time>
     
-    <time datetime="2015-08-29T13:28:16.000Z" itemprop="datePublished">2015-08-29</time>
-  </a>
-</section>
-
-
-
-
-
-
+  </p>
+</header>
+	<div class="article-content">
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">文章目錄</strong>
+		
+			<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#第一步"><span class="toc-number">1.</span> <span class="toc-text">第一步</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#第二部"><span class="toc-number">2.</span> <span class="toc-text">第二部</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#第三步"><span class="toc-number">3.</span> <span class="toc-text">第三步</span></a></li></ol>
+		
+		</div>
+		
+		<p>gradle也是java项目里一种常用的自动化构建工具。jetty是一个我们在java web开发时经常会选择的一种服务器。<br>而且gradle提供jetty的插件。然而当两者结合起来的时候，我竟一度不知道如何去调试后台的代码。</p>
+<p>前段时间在此使用jetty时，周围的小伙伴分享了一个调试在jetty上运行的方法，觉得还挺不错，今天写出来分享给大家。</p>
+<h3 id="第一步">第一步</h3><p>进入到使用<code>gradle</code>和<code>jetty</code>的项目路径下(我的项目是export)，执行以下命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$example</span> <span class="built_in">export</span> GRADLE_OPTS=<span class="string">"-Xdebug -Xrunjdwp:transport=dt_socket,address=5005,server=y,suspend=n"</span></span><br></pre></td></tr></table></figure>
+<p>此命令上在对gradle进行设置，然后gradle会把这些设置的参数传递给jetty，对指定的端口（这里设置的是5005）<br>开启一个监听。</p>
+<h3 id="第二部">第二部</h3><p>直接运行gradle jettyRun，运行该项目<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$example</span> gradle jR</span><br></pre></td></tr></table></figure></p>
+<p>然后会出现<code>Listening for transport dt_socket at address: 5005</code>，这表示现在已经在监听5005。</p>
+<h3 id="第三步">第三步</h3><p>在inteliJ中打开该程序，然后为该项目添加一个Debug Configuration，点击“+”选择添加一个Remote，然后命名后，点击apply，成功后<br>点击Ok退出。<br><img src="/image/jetty_debug_setting_intelij.jpg" alt="image"></p>
+<p>默认配置里设置的监听端口是5005，这里的端口和第一步中设置的端口保持一致。<br>这时候就可以设置断点，执行debug操作了。<br>然后当你在前台页面里触发该断点的时候，自动调到inteliJ里设置断点的地方。</p>
+<p>好啦，到此全部的操作就已经完成了，赶快开心的去试试新get到的这项技能吧~~~</p>
   
-<section class="post" itemscope itemprop="blogitem">
-  
-    <a href="/2015/07/12/Hibernate-ORM框架/Java/" title="Hibernate---ORM框架.md" itemprop="url">
-  
-    <h1 itemprop="name">Hibernate---ORM框架.md</h1>
-    
-     
-           <p itemprop="description" >Hibernate 介绍Hibernate是一个开源的ORM（object relations mapping）框架，用面向对象的思想来操作数据库，节省了我们开发处理数据的时间。它对JDBC进行了非常轻量级的对象封装，可以应用在任何使用JDBC的场合。
-Hibernate 配置H</p>
-        
-    
-    <time datetime="2015-07-12T03:24:03.000Z" itemprop="datePublished">2015-07-12</time>
-  </a>
-</section>
+	</div>
+		<footer class="article-footer clearfix">
+<div class="article-catetags">
 
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/调试工具/">调试工具</a>
+</div>
 
-
-
-
-
-  
-<section class="post" itemscope itemprop="blogitem">
-  
-    <a href="/2015/05/21/Spring-框架/Java/" title="Spring 框架" itemprop="url">
-  
-    <h1 itemprop="name">Spring 框架</h1>
-    
-     
-           <p itemprop="description" >Spring是一个轻量级的控制反转(IoC)和面向切面(AOP)的容器框架。从简单性、可测试性和解耦合的角度而言，任何Java应用都可以从Spring中受益。
-组成首先，给大家贴上一张都很熟悉的图：
-
-从这个图里可以看出来，Spring 是一种分层架构，由七个定义良好的模块组成。</p>
-        
-    
-    <time datetime="2015-05-21T08:55:17.000Z" itemprop="datePublished">2015-05-21</time>
-  </a>
-</section>
-
-
-
-
-
-
-  
-<section class="post" itemscope itemprop="blogitem">
-  
-    <a href="/2015/05/20/flyway/数据库/" title=" flyway - 数据库版本控制工具 " itemprop="url">
-  
-    <h1 itemprop="name"> flyway - 数据库版本控制工具 </h1>
-    
-     
-           <p itemprop="description" >什么是数据迁移？什么情况下需要进行数据迁移？  
-
-数据库迁移在传统意义上包括两种情况：情况一是数据库迁移，由于项目需要，当前数据库需要从一种类型迁移为另一种类型，例如从 MySQl 迁移到 Oracle，另一种情况则是很多时候数据需要迁移到一台新的服务器上，此时也会用到数据迁移</p>
-        
-    
-    <time datetime="2015-05-20T08:12:20.000Z" itemprop="datePublished">2015-05-20</time>
-  </a>
-</section>
-
-
-
-
-
-
-  
-<section class="post" itemscope itemprop="blogitem">
-  
-    <a href="/2015/05/18/java-测试/Java/" title="java 测试" itemprop="url">
-  
-    <h1 itemprop="name">java 测试</h1>
-    
-     
-           <p itemprop="description" >单元测试框架 - JunitJunit 是 java 单元测试的框架，可以通过 maven或者 gradle 方式管理。具体使用方法参考官方网站.
-当前使用的时 Junit 最新版本 4.1.2，通过使用 @test 开始测试，具体使用如下：
-123456789101112131</p>
-        
-    
-    <time datetime="2015-05-18T02:53:34.000Z" itemprop="datePublished">2015-05-18</time>
-  </a>
-</section>
-
-
-
-
-
-
-  
-<section class="post" itemscope itemprop="blogitem">
-  
-    <a href="/2015/05/15/AngularJs-前台框架/JavaScript/" title="AngularJs-前台框架" itemprop="url">
-  
-    <h1 itemprop="name">AngularJs-前台框架</h1>
-    
-     
-           <p itemprop="description" >定义AngularJs 是一套由Google打造的JavaScript前端框架，对于动态网页的开发尤其适合。做过 JS 开发的人都会知道，对于用 DOM 或者 JQuery 动态操纵view上的元素是一件比较麻烦的事情。但是当使用了 AngularJs 之后，这个问题便迎刃而解。</p>
-        
-    
-    <time datetime="2015-05-15T08:33:06.000Z" itemprop="datePublished">2015-05-15</time>
-  </a>
-</section>
-
-
-
-
-
-
-
-  <nav id="page-nav" class="clearfix unexpand">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next<span></span></a>
-  </nav>
 
 </div>
+
+
+
+	<div class="article-share" id="share">
+	
+	  <div data-url="http://adabeauty.github.io/2015/08/29/jetty调试工具/调试工具/" data-title="inteliJ上调试jetty程序 | 程序媛的Diary" data-tsina="null" class="share clearfix">
+	  </div>
+	
+	</div>
+
+
+</footer>
+
+   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+
+<div class="next">
+<a href="/2015/07/12/Hibernate-ORM框架/Java/"  title="Hibernate---ORM框架.md">
+ <strong>下一篇：</strong><br/> 
+ <span>Hibernate---ORM框架.md
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+
+</div>  
       <div class="openaside"><a class="navbutton" href="#" title="顯示側邊欄"></a></div>
 
 <div id="asidepart">
