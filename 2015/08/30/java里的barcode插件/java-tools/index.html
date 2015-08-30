@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>java里的条码生成工具 | 程序媛的Diary</title>
+    <title>java里的条码生成工具 - barcode4j | 程序媛的Diary</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="Huan Wang">
@@ -14,13 +14,13 @@
     <meta name="description" content="由于项目需要，近两天看了一些关于生成条码的插件。最开始我是使用了一个叫做niceLable的软件。这个软件可以安装在Windows平台上，有图形化界面，用户可以根据自己的需要来设计需要的条码。也可以通过导入文件作为database，来批量生成条码。
 然而，如果我们想在我们的java web程序中来产生条码的时候，我们则不能再依靠第三方的软件。幸好现在有多种java 插件可以用来生成条码，今天我就给">
 <meta property="og:type" content="website">
-<meta property="og:title" content="java里的条码生成工具">
+<meta property="og:title" content="java里的条码生成工具 - barcode4j">
 <meta property="og:url" content="http://adabeauty.github.io/2015/08/30/java里的barcode插件/java-tools/index.html">
 <meta property="og:site_name" content="程序媛的Diary">
 <meta property="og:description" content="由于项目需要，近两天看了一些关于生成条码的插件。最开始我是使用了一个叫做niceLable的软件。这个软件可以安装在Windows平台上，有图形化界面，用户可以根据自己的需要来设计需要的条码。也可以通过导入文件作为database，来批量生成条码。
 然而，如果我们想在我们的java web程序中来产生条码的时候，我们则不能再依靠第三方的软件。幸好现在有多种java 插件可以用来生成条码，今天我就给">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="java里的条码生成工具">
+<meta name="twitter:title" content="java里的条码生成工具 - barcode4j">
 <meta name="twitter:description" content="由于项目需要，近两天看了一些关于生成条码的插件。最开始我是使用了一个叫做niceLable的软件。这个软件可以安装在Windows平台上，有图形化界面，用户可以根据自己的需要来设计需要的条码。也可以通过导入文件作为database，来批量生成条码。
 然而，如果我们想在我们的java web程序中来产生条码的时候，我们则不能再依靠第三方的软件。幸好现在有多种java 插件可以用来生成条码，今天我就给">
 
@@ -82,7 +82,7 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2015/08/30/java里的barcode插件/java-tools/" title="java里的条码生成工具" itemprop="url">java里的条码生成工具</a>
+      <a href="/2015/08/30/java里的barcode插件/java-tools/" title="java里的条码生成工具 - barcode4j" itemprop="url">java里的条码生成工具 - barcode4j</a>
   </h1>
   <p class="article-author">By
        
@@ -98,45 +98,46 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目錄</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#barcode4j"><span class="toc-number">1.</span> <span class="toc-text">barcode4j</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#提供一个Avalon的配置对象来对barcode的引擎进行配置"><span class="toc-number">1.0.1.</span> <span class="toc-text">提供一个Avalon的配置对象来对barcode的引擎进行配置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#创建一个BarcodeGenerator"><span class="toc-number">1.0.2.</span> <span class="toc-text">创建一个BarcodeGenerator</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#创建一个CanvasProvider(根据输出文件不同而异)"><span class="toc-number">1.0.3.</span> <span class="toc-text">创建一个CanvasProvider(根据输出文件不同而异)</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#SVG_类型"><span class="toc-number">1.0.3.1.</span> <span class="toc-text">SVG 类型</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#EPS_类型"><span class="toc-number">1.0.3.2.</span> <span class="toc-text">EPS 类型</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Bitmaps_类型"><span class="toc-number">1.0.3.3.</span> <span class="toc-text">Bitmaps 类型</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Java2D_(AWT)_类型"><span class="toc-number">1.0.3.4.</span> <span class="toc-text">Java2D (AWT) 类型</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#生成barcode"><span class="toc-number">1.0.4.</span> <span class="toc-text">生成barcode</span></a></li></ol></li></ol></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#提供一个Avalon的配置对象来对barcode的引擎进行配置"><span class="toc-number">1.</span> <span class="toc-text">提供一个Avalon的配置对象来对barcode的引擎进行配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#创建一个BarcodeGenerator"><span class="toc-number">2.</span> <span class="toc-text">创建一个BarcodeGenerator</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#创建一个CanvasProvider(根据输出文件不同而异)"><span class="toc-number">3.</span> <span class="toc-text">创建一个CanvasProvider(根据输出文件不同而异)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#SVG_类型"><span class="toc-number">3.1.</span> <span class="toc-text">SVG 类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#EPS_类型"><span class="toc-number">3.2.</span> <span class="toc-text">EPS 类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Bitmaps_类型"><span class="toc-number">3.3.</span> <span class="toc-text">Bitmaps 类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Java2D_(AWT)_类型"><span class="toc-number">3.4.</span> <span class="toc-text">Java2D (AWT) 类型</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#生成barcode"><span class="toc-number">4.</span> <span class="toc-text">生成barcode</span></a></li></ol>
 		
 		</div>
 		
 		<p>由于项目需要，近两天看了一些关于生成条码的插件。最开始我是使用了一个叫做niceLable的软件。<br>这个软件可以安装在Windows平台上，有图形化界面，用户可以根据自己的需要来设计需要的条码。<br>也可以通过导入文件作为database，来批量生成条码。</p>
 <p>然而，如果我们想在我们的java web程序中来产生条码的时候，我们则不能再依靠第三方的软件。<br>幸好现在有多种java 插件可以用来生成条码，今天我就给大家介绍一下我了解到的两种<a href="https://github.com/zxing/zxing" target="_blank" rel="external">barcode4j</a><br>和 <a href="https://github.com/zxing/zxing" target="_blank" rel="external">zxing</a>。当然这两种工具都可以支持生成一维码和二维码，但是呢今天只跟大家先介绍一下一维码的<br>生成，因为二维码的人家也没有写过啦~ 不过我相信原理都是类似的。</p>
-<h2 id="barcode4j">barcode4j</h2><p>barcode4j是由java语言编写的一种条码生成器，采用Apache License V2.0许可。可以用来生成<br>一维码和二维码，而且可以输出SVG、EPS、Bitmaps(如png、jpg)和java2D类型输出。而且text类型的输出<br>类型目前正在测试之中。</p>
+<p>今天呢，我就先奉上barcode4j实现条形码生成的方法。</p>
+<p>barcode4j是由java语言编写的一种条码生成器，采用Apache License V2.0许可。可以用来生成<br>一维码和二维码，而且可以输出SVG、EPS、Bitmaps(如png、jpg)和java2D类型输出。而且text类型的输出<br>类型目前正在测试之中。</p>
 <p>然而要想使用barcode4j，首先必须先下载它依赖的两个包，分别是：barcode4j和avalon.framework</p>
 <p>可以支持code39、code128、EAN-128、GS1-128(基于code128的一种编码)、codabar、UPC-A和UPC-E等多种<br>编码方式。</p>
 <p>来说了这么多我们先看一下使用barcode4j后产生的效果吧（我这里使用的是code39编码，输出是选择的EPS格式，<br>当然你可以选择你需要的编码类型）</p>
-<div align="center"><br>  <image src="/image/barcode_code29.png" width="300" height="150" align="middle" alt="code39类型的一维码"><br></image></div>
+<div align="center"><br>  <image src="/image/barcode_code39.png" width="300" height="150" align="middle" alt="code39类型的一维码"><br></image></div>
 
 <p>要生成像上面这样的条形码，在生成一维码的时候需要四步:</p>
-<h4 id="提供一个Avalon的配置对象来对barcode的引擎进行配置">提供一个Avalon的配置对象来对barcode的引擎进行配置</h4><p>这里我们通过DefaultConfigurationBuilder的buildFromFile方法来读取一个barcode配置文件。<br>（也就是下面的config.xml文件）<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">DefaultConfigurationBuilder builder = new DefaultConfigurationBuilder();</span><br><span class="line">Configuration cfg = builder.buildFromFile(new File(<span class="string">"/Users/hgwang/barcode_example/src/main/resources/config.xml"</span>));</span><br></pre></td></tr></table></figure></p>
+<h2 id="提供一个Avalon的配置对象来对barcode的引擎进行配置">提供一个Avalon的配置对象来对barcode的引擎进行配置</h2><p>这里我们通过DefaultConfigurationBuilder的buildFromFile方法来读取一个barcode配置文件。<br>（也就是下面的config.xml文件）<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">DefaultConfigurationBuilder builder = new DefaultConfigurationBuilder();</span><br><span class="line">Configuration cfg = builder.buildFromFile(new File(<span class="string">"/Users/hgwang/barcode_example/src/main/resources/config.xml"</span>));</span><br></pre></td></tr></table></figure></p>
 <p>在config.xml文件中可以对barcode使用的编码方式、高度、长度、字体等进行设置。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=<span class="string">"1.0"</span> encoding=<span class="string">"UTF-8"</span>?&gt;</span><br><span class="line">&lt;barcode&gt;</span><br><span class="line">    &lt;code39&gt;</span><br><span class="line">      &lt;module-width&gt;<span class="number">0.4</span>mm&lt;/module-width&gt;</span><br><span class="line">        &lt;height&gt;<span class="number">20</span>mm&lt;/height&gt;</span><br><span class="line">        &lt;human-readable&gt;</span><br><span class="line">            &lt;placement&gt;bottom&lt;/placement&gt;</span><br><span class="line">            &lt;font-size&gt;<span class="number">20</span>pt&lt;/font-size&gt;</span><br><span class="line">        &lt;/human-readable&gt;</span><br><span class="line">    &lt;/code39&gt;</span><br><span class="line">&lt;/barcode&gt;</span><br></pre></td></tr></table></figure>
 <p>其中code39是它的编码方式，条码宽度是0.4mm，高度是20mm（这里值得是一维码黑色的那根线的长度和宽度。可怜我最开始一直以为是在设置整个<br>条形码的长度和宽度……）。而<human-readable>里设置的则是我们人类可以看懂的条形码下面的条码值部分的信息（包括放置的位置、字体、<br>文字大小等）。我上面的这几个配置项已经完全满足生成一个基本条码。</human-readable></p>
-<h4 id="创建一个BarcodeGenerator">创建一个BarcodeGenerator</h4><p>通过使用BarcodeUtil的一个实例来读取配置cfg对象，然后创建一个BarcodeGenerator。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">BarcodeUtil barcodeUtil = BarcodeUtil.getInstance();</span><br><span class="line">BarcodeGenerator barcodeGenerator = barcodeUtil.createBarcodeGenerator(cfg);</span><br></pre></td></tr></table></figure></p>
-<h4 id="创建一个CanvasProvider(根据输出文件不同而异)">创建一个CanvasProvider(根据输出文件不同而异)</h4><p>CanvasProvider函数有两个参数，第一个参数用于确定是否使用output的命名空间，false代表不使用output的命名空间。<br>对于第二个参数它只可以是0，90，-90，180，-180，270和-27，一般数情况下我们都直接指定它为0. 可以执行绘制条码的指令，然后将他们转换成需要输出的模式。所以选择不同类型的输出文件，这一步的操<br>作方法也不一样，那么我们一个个来说举例说明。</p>
-<h5 id="SVG_类型">SVG 类型</h5><p>不知道有木有小伙伴跟我一样并不知道SVG格式是什么格式，我也是写这篇博客的时候才去查了一下子。SVG（Scalable Vector Graphics）也是一种图像文件格式，<br>是一种用XML定义的语言，用来描述二维矢量及矢量/栅格图形。</p>
+<h2 id="创建一个BarcodeGenerator">创建一个BarcodeGenerator</h2><p>通过使用BarcodeUtil的一个实例来读取配置cfg对象，然后创建一个BarcodeGenerator。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">BarcodeUtil barcodeUtil = BarcodeUtil.getInstance();</span><br><span class="line">BarcodeGenerator barcodeGenerator = barcodeUtil.createBarcodeGenerator(cfg);</span><br></pre></td></tr></table></figure></p>
+<h2 id="创建一个CanvasProvider(根据输出文件不同而异)">创建一个CanvasProvider(根据输出文件不同而异)</h2><p>CanvasProvider函数有两个参数，第一个参数用于确定是否使用output的命名空间，false代表不使用output的命名空间。<br>对于第二个参数它只可以是0，90，-90，180，-180，270和-27，一般数情况下我们都直接指定它为0. 可以执行绘制条码的指令，然后将他们转换成需要输出的模式。所以选择不同类型的输出文件，这一步的操<br>作方法也不一样，那么我们一个个来说举例说明。</p>
+<h3 id="SVG_类型">SVG 类型</h3><p>不知道有木有小伙伴跟我一样并不知道SVG格式是什么格式，我也是写这篇博客的时候才去查了一下子。SVG（Scalable Vector Graphics）也是一种图像文件格式，<br>是一种用XML定义的语言，用来描述二维矢量及矢量/栅格图形。</p>
 <p>对于输出你可以选择输出W3C DOM或者JDOM两种形式。其实这实现这不同两种类型的输出方法其实大同小异，我以W3C DOM为例子<br>进行讲解。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">//W3 DOM格式</span><br><span class="line">  String msg = <span class="string">"012345679"</span>;</span><br><span class="line">  SVGCanvasProvider provider = new SVGCanvasProvider(<span class="literal">false</span>, <span class="number">0</span>);</span><br><span class="line">  barcodeGenerator.generateBarcode(provider, msg);</span><br><span class="line">  org.w3c.dom.DocumentFragment frag = provider.getDOMFragment();</span><br></pre></td></tr></table></figure>
 <p>这样得到的frag就是一个W3C DOM。如果你需要一个将其序列化到一个svg类型的输出文件里，那么你可以利用下面的方式：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">//序列化DOM到xml文件</span><br><span class="line">TransformerFactory factory = TransformerFactory.newInstance();</span><br><span class="line">Transformer trans = factory.newTransformer();</span><br><span class="line">Source src = new DOMSource(frag);</span><br><span class="line">Result res = new StreamResult(new File(<span class="string">"svg_barcode.svg"</span>));</span><br><span class="line">trans.transform(src, res);</span><br></pre></td></tr></table></figure>
 <p>这样的话，就会生成在当前项目的根目录下生成一个名为<code>svg_barcode.svg</code>的文件。<br>至于另一种方式JDOM只是使用了不同的SVGCanvasProvider，最后产生的是一个JDOM而已，有兴趣的自己了解哈</p>
-<h5 id="EPS_类型">EPS 类型</h5><p>其实我在我的程序里采用的是这种EPS格式。关于EPS格式是什么类型的格式，这个我也并不是很了解，附上一段我在网上看到的解释吧：</p>
+<h3 id="EPS_类型">EPS 类型</h3><p>其实我在我的程序里采用的是这种EPS格式。关于EPS格式是什么类型的格式，这个我也并不是很了解，附上一段我在网上看到的解释吧：</p>
 <p>EPS文件是目前桌面印刷系统普遍使用的通用交换格式当中的一种综合格式。EPS文件格式又被称为带有预视图象的PS格式，它是由一个PostScript语言的文本文件和一个（可选）低分辨率的由PICT或TIFF格式描述的代表像组成。 EPS文件就是包括文件头信息的PostScript 文件，利用文件头信息可使其他应用程序将此文件嵌入文档。</p>
 <p>其实我也并不是很理解，但是总之一点，这个格式好多打印机都只支持，所以我果断选择了它。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">//        EPS格式</span><br><span class="line">  String msg = <span class="string">"A010101-2"</span>;</span><br><span class="line">  OutputStream out = new java.io.FileOutputStream(new File(<span class="string">"eps_barcode.eps"</span>));</span><br><span class="line">  EPSCanvasProvider provider = new EPSCanvasProvider(out, <span class="number">0</span>);</span><br><span class="line">  barcodeGenerator.generateBarcode(provider, msg);</span><br><span class="line">  provider.finish();</span><br></pre></td></tr></table></figure>
 <p>这里需要说明的一点是使用这种方式必须在生成barcode后调用<code>finish</code>方法。然后你就可以看到项目根目录下多了一个<br>叫做<code>eps_barcode.eps</code>的文件。</p>
-<h5 id="Bitmaps_类型">Bitmaps 类型</h5><p>Bitmaps 就是位图文件，扩展名为<code>.bmp</code>或者<code>.dib</code>，是Windows上的标准图形文件，它将图像定义为由点（像素）组成，每个点可以由多种色彩表示。<br>Bitmaps类型图像效果非常好，但是是非压缩的，所以需要较大内存。</p>
+<h3 id="Bitmaps_类型">Bitmaps 类型</h3><p>Bitmaps 就是位图文件，扩展名为<code>.bmp</code>或者<code>.dib</code>，是Windows上的标准图形文件，它将图像定义为由点（像素）组成，每个点可以由多种色彩表示。<br>Bitmaps类型图像效果非常好，但是是非压缩的，所以需要较大内存。</p>
 <p>Bitmaps 类型和EPS类型都是将输出流写到对应的文件之中。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">// bitmaps类型， 输出一个.png文件</span><br><span class="line">  String msg = <span class="string">"A010101-2"</span>;</span><br><span class="line">  OutputStream out = new java.io.FileOutputStream(new File(<span class="string">"bitmaps.png"</span>));</span><br><span class="line">  BitmapCanvasProvider provider = new BitmapCanvasProvider(</span><br><span class="line">        out, <span class="string">"image/x-png"</span>, <span class="number">300</span>, BufferedImage.TYPE_BYTE_GRAY, <span class="literal">true</span>, <span class="number">0</span>);</span><br><span class="line">  barcodeGenerator.generateBarcode(provider, msg);</span><br><span class="line">  provider.finish();</span><br></pre></td></tr></table></figure></p>
 <p>当然你也可以选择生成<code>.jpg</code>格式，但是不推荐，因为<code>.jpg</code>格式是一种有损压缩格式，对比就会受到影响,<br>因此会降低生成的条形码的可读性。</p>
-<h5 id="Java2D_(AWT)_类型">Java2D (AWT) 类型</h5><p>Java2D是一套用于高级图形和图像处理的类，而AWT(Abstract Window Toolkit)是java抽象窗口工具包，提供了许多设计<br>GUI的组件。<br>额……我要很不好意思的告诉大家一个不幸的消息，这个类型的生成方法我还没搞明白，所以暂时没办法跟大家演示了。要是你们搞定了来教教<br>我呀。</p>
-<h4 id="生成barcode">生成barcode</h4><p>其实细心地小伙伴应该一经发现，在第三步中我们已经生成了条码，因为条码的生成跟它选择的输出方式紧密相连，所以第三步里就直接<br>把条码的生成一起讲了。</p>
+<h3 id="Java2D_(AWT)_类型">Java2D (AWT) 类型</h3><p>Java2D是一套用于高级图形和图像处理的类，而AWT(Abstract Window Toolkit)是java抽象窗口工具包，提供了许多设计<br>GUI的组件。<br>额……我要很不好意思的告诉大家一个不幸的消息，这个类型的生成方法我还没搞明白，所以暂时没办法跟大家演示了。要是你们搞定了来教教<br>我呀。</p>
+<h2 id="生成barcode">生成barcode</h2><p>其实细心地小伙伴应该一经发现，在第三步中我们已经生成了条码，因为条码的生成跟它选择的输出方式紧密相连，所以第三步里就直接<br>把条码的生成一起讲了。</p>
 <blockquote>
 <p>如果大家想更多详细的配置和使用方法可以参考一下<a href="http://barcode4j.sourceforge.net/2.1/embedding.html" target="_blank" rel="external">官网</a>里的介绍。<br>其实，我这从官网里偷了不少东西，不过官网是英文的，我就权当翻译了一遍，也加深一下理解啦!</p>
 </blockquote>
-<p>这一周学的东西都跟大家讲完了，下周继续~</p>
+<p>接下来我会跟大家讲讲如何使用zxing来生成barcode，继续关注我啦~~</p>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -154,7 +155,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://adabeauty.github.io/2015/08/30/java里的barcode插件/java-tools/" data-title="java里的条码生成工具 | 程序媛的Diary" data-tsina="null" class="share clearfix">
+	  <div data-url="http://adabeauty.github.io/2015/08/30/java里的barcode插件/java-tools/" data-title="java里的条码生成工具 - barcode4j | 程序媛的Diary" data-tsina="null" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -186,7 +187,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目錄</strong>
  
- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#barcode4j"><span class="toc-number">1.</span> <span class="toc-text">barcode4j</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#提供一个Avalon的配置对象来对barcode的引擎进行配置"><span class="toc-number">1.0.1.</span> <span class="toc-text">提供一个Avalon的配置对象来对barcode的引擎进行配置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#创建一个BarcodeGenerator"><span class="toc-number">1.0.2.</span> <span class="toc-text">创建一个BarcodeGenerator</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#创建一个CanvasProvider(根据输出文件不同而异)"><span class="toc-number">1.0.3.</span> <span class="toc-text">创建一个CanvasProvider(根据输出文件不同而异)</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#SVG_类型"><span class="toc-number">1.0.3.1.</span> <span class="toc-text">SVG 类型</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#EPS_类型"><span class="toc-number">1.0.3.2.</span> <span class="toc-text">EPS 类型</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Bitmaps_类型"><span class="toc-number">1.0.3.3.</span> <span class="toc-text">Bitmaps 类型</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Java2D_(AWT)_类型"><span class="toc-number">1.0.3.4.</span> <span class="toc-text">Java2D (AWT) 类型</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#生成barcode"><span class="toc-number">1.0.4.</span> <span class="toc-text">生成barcode</span></a></li></ol></li></ol></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#提供一个Avalon的配置对象来对barcode的引擎进行配置"><span class="toc-number">1.</span> <span class="toc-text">提供一个Avalon的配置对象来对barcode的引擎进行配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#创建一个BarcodeGenerator"><span class="toc-number">2.</span> <span class="toc-text">创建一个BarcodeGenerator</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#创建一个CanvasProvider(根据输出文件不同而异)"><span class="toc-number">3.</span> <span class="toc-text">创建一个CanvasProvider(根据输出文件不同而异)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#SVG_类型"><span class="toc-number">3.1.</span> <span class="toc-text">SVG 类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#EPS_类型"><span class="toc-number">3.2.</span> <span class="toc-text">EPS 类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Bitmaps_类型"><span class="toc-number">3.3.</span> <span class="toc-text">Bitmaps 类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Java2D_(AWT)_类型"><span class="toc-number">3.4.</span> <span class="toc-text">Java2D (AWT) 类型</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#生成barcode"><span class="toc-number">4.</span> <span class="toc-text">生成barcode</span></a></li></ol>
  
   </div>
 
