@@ -4,28 +4,31 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>JS后台debug方法 | 程序媛的Diary</title>
+    <title>java里的barcode工具-zxing | 程序媛的Diary</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="Huan Wang">
     
 
     
-    <meta name="description" content="一直以来，我对于后台的调试方法都只是简单的在觉得可能出现错误的地方使用console.log()，在控制台打印信息，直到最近接触到了Node.js里一个插件inspector。这是一个基于 Node.js的调试器，通过它，你可以像调试前端代码一样来调试你的后台代码。
-首先，全局安装inspector1$ npm install -g node-inspector
-启动inspector1node-">
-<meta property="og:type" content="article">
-<meta property="og:title" content="JS后台debug方法">
-<meta property="og:url" content="http://adabeauty.github.io/2015/04/22/后台debug方法/JavaScript/index.html">
+    <meta name="description" content="简要介绍zxing是一个开源Java类库用于解析多种格式的条形码和二维码。不仅可以生成条码和二维码，而且提供scanner的方法来解析这些条码。
+zxing对于条形码，可支持Code 39，Code 93，Code 128，Codabar，ITF等多种编码规则。
+好了言归正传，我们一起来看看怎么使用zxing来生成条形码吧。
+使用方法首先想要使用zxing，我们需要安装两个包，分别是zxing:c">
+<meta property="og:type" content="website">
+<meta property="og:title" content="java里的barcode工具-zxing">
+<meta property="og:url" content="http://adabeauty.github.io/2015/08/30/java里的barcode工具-zxing/java-tools/index.html">
 <meta property="og:site_name" content="程序媛的Diary">
-<meta property="og:description" content="一直以来，我对于后台的调试方法都只是简单的在觉得可能出现错误的地方使用console.log()，在控制台打印信息，直到最近接触到了Node.js里一个插件inspector。这是一个基于 Node.js的调试器，通过它，你可以像调试前端代码一样来调试你的后台代码。
-首先，全局安装inspector1$ npm install -g node-inspector
-启动inspector1node-">
+<meta property="og:description" content="简要介绍zxing是一个开源Java类库用于解析多种格式的条形码和二维码。不仅可以生成条码和二维码，而且提供scanner的方法来解析这些条码。
+zxing对于条形码，可支持Code 39，Code 93，Code 128，Codabar，ITF等多种编码规则。
+好了言归正传，我们一起来看看怎么使用zxing来生成条形码吧。
+使用方法首先想要使用zxing，我们需要安装两个包，分别是zxing:c">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JS后台debug方法">
-<meta name="twitter:description" content="一直以来，我对于后台的调试方法都只是简单的在觉得可能出现错误的地方使用console.log()，在控制台打印信息，直到最近接触到了Node.js里一个插件inspector。这是一个基于 Node.js的调试器，通过它，你可以像调试前端代码一样来调试你的后台代码。
-首先，全局安装inspector1$ npm install -g node-inspector
-启动inspector1node-">
+<meta name="twitter:title" content="java里的barcode工具-zxing">
+<meta name="twitter:description" content="简要介绍zxing是一个开源Java类库用于解析多种格式的条形码和二维码。不仅可以生成条码和二维码，而且提供scanner的方法来解析这些条码。
+zxing对于条形码，可支持Code 39，Code 93，Code 128，Codabar，ITF等多种编码规则。
+好了言归正传，我们一起来看看怎么使用zxing来生成条形码吧。
+使用方法首先想要使用zxing，我们需要安装两个包，分别是zxing:c">
 
     
     <link rel="alternative" href="/atom.xml" title="程序媛的Diary" type="application/atom+xml">
@@ -85,14 +88,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2015/04/22/后台debug方法/JavaScript/" title="JS后台debug方法" itemprop="url">JS后台debug方法</a>
+      <a href="/2015/08/30/java里的barcode工具-zxing/java-tools/" title="java里的barcode工具-zxing" itemprop="url">java里的barcode工具-zxing</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="Huan Wang" target="_blank" itemprop="author">Huan Wang</a>
 		
   <p class="article-time">
-    <time datetime="2015-04-22T07:03:30.000Z" itemprop="datePublished"> 發表於 2015-04-22</time>
+    <time datetime="2015-08-30T09:19:33.000Z" itemprop="datePublished"> 發表於 2015-08-30</time>
     
   </p>
 </header>
@@ -101,19 +104,20 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目錄</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#首先，全局安装inspector"><span class="toc-number">1.</span> <span class="toc-text">首先，全局安装inspector</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#启动inspector"><span class="toc-number">2.</span> <span class="toc-text">启动inspector</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#进入到需要调试的项目目录"><span class="toc-number">3.</span> <span class="toc-text">进入到需要调试的项目目录</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#运行该项目(app-js为你后台程序的入口文件)"><span class="toc-number">4.</span> <span class="toc-text">运行该项目(app.js为你后台程序的入口文件)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#在浏览器打开  localhost:8080/debug_ 端口"><span class="toc-number">5.</span> <span class="toc-text">在浏览器打开  localhost:8080/debug  端口</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#设置断点"><span class="toc-number">6.</span> <span class="toc-text">设置断点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#运行需要调试的项目"><span class="toc-number">7.</span> <span class="toc-text">运行需要调试的项目</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#查看调试结果"><span class="toc-number">8.</span> <span class="toc-text">查看调试结果</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#简要介绍"><span class="toc-number">1.</span> <span class="toc-text">简要介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用方法"><span class="toc-number">2.</span> <span class="toc-text">使用方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#总结"><span class="toc-number">3.</span> <span class="toc-text">总结</span></a></li></ol>
 		
 		</div>
 		
-		<p>一直以来，我对于后台的调试方法都只是简单的在觉得可能出现错误的地方使用console.log()，在控制台打印信息，<br>直到最近接触到了Node.js里一个插件<a href="Web Inspector based nodeJS debugger">inspector</a>。这是一个基于 Node.js的调试器，通过它，你可以像调试前端代码一样来调试你的后台代码。</p>
-<h3 id="首先，全局安装inspector">首先，全局安装inspector</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g node-inspector</span><br></pre></td></tr></table></figure>
-<h3 id="启动inspector">启动inspector</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node-inspector 开启服务</span><br></pre></td></tr></table></figure>
-<h3 id="进入到需要调试的项目目录">进入到需要调试的项目目录</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> xxx(项目名称)</span><br></pre></td></tr></table></figure>
-<h3 id="运行该项目(app-js为你后台程序的入口文件)">运行该项目(app.js为你后台程序的入口文件)</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ node --debug app.js</span><br></pre></td></tr></table></figure>
-<h3 id="在浏览器打开&nbsp;&nbsp;localhost:8080/debug_&nbsp;端口">在浏览器打开&nbsp;&nbsp;localhost:8080/debug &nbsp;端口</h3><p>此时在该页面左侧会出现source字样，点击后可看到该项目源代码</p>
-<h3 id="设置断点">设置断点</h3><p>在需要调试的地方设置好断点</p>
-<h3 id="运行需要调试的项目">运行需要调试的项目</h3><p>在3000端口运行需要该项目（本人的项目是在3000端口下运行）</p>
-<h3 id="查看调试结果">查看调试结果</h3><p>在8080端口，查看调试结果</p>
+		<h3 id="简要介绍">简要介绍</h3><p><a href="https://github.com/zxing/zxing" target="_blank" rel="external">zxing</a>是一个开源Java类库用于解析多种格式的条形码和二维码。不仅可以生成条码和二维码，而且提供scanner的方法来解析这些条码。</p>
+<p>zxing对于条形码，可支持<code>Code 39</code>，<code>Code 93</code>，<code>Code 128</code>，<code>Codabar</code>，<code>ITF</code>等多种<br>编码规则。</p>
+<p>好了言归正传，我们一起来看看怎么使用zxing来生成条形码吧。</p>
+<h3 id="使用方法">使用方法</h3><p>首先想要使用zxing，我们需要安装两个包，分别是<code>zxing:core</code>和`zxing:javase’。</p>
+<p>具体代码如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">import com.google.zxing.BarcodeFormat;</span><br><span class="line">import com.google.zxing.EncodeHintType;</span><br><span class="line">import com.google.zxing.MultiFormatWriter;</span><br><span class="line">import com.google.zxing.WriterException;</span><br><span class="line">import com.google.zxing.client.j2se.MatrixToImageWriter;</span><br><span class="line">import com.google.zxing.common.BitMatrix;</span><br><span class="line"></span><br><span class="line">import java.io.File;</span><br><span class="line">import java.io.IOException;</span><br><span class="line">import java.util.Hashtable;</span><br><span class="line"></span><br><span class="line">public class Zxing &#123;</span><br><span class="line">    public static void main(String[] args) throws WriterException, IOException &#123;</span><br><span class="line"></span><br><span class="line">        int width = <span class="number">100</span>;</span><br><span class="line">        int height = <span class="number">100</span>;</span><br><span class="line">        String format = <span class="string">"png"</span>;</span><br><span class="line">        Hashtable hints= new Hashtable();</span><br><span class="line">        hints.put(EncodeHintType.CHARACTER_SET, <span class="string">"utf-8"</span>);</span><br><span class="line"></span><br><span class="line">        String text = <span class="string">"A01010101-1"</span>;</span><br><span class="line">        BitMatrix bitMatrix = new MultiFormatWriter().encode(text, BarcodeFormat.CODE_128, width, height, hints);</span><br><span class="line">        File outputFile = new File(<span class="string">"zxing.png"</span>);</span><br><span class="line"></span><br><span class="line">        MatrixToImageWriter.writeToFile(bitMatrix, format, outputFile);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>这样就可以在项目的根目录下生成一个名为<code>zxing.png</code>的文件。粘上效果图来跟大家分享一下：</p>
+<div align="center"><br>  <image src="/image/zxing.png" alt="code128编码的条形码" width="240" height="60"><br></image></div>
+
+<h3 id="总结">总结</h3><p>不过也像大家看到的，这种方式生成的条形码，真的只有条形码，没有我们平常看到的条码下面的那一串数字。我也纠结过这个问题，所以最终在选择使用zxing，还是barcode4j的时候，我果断选择了后者。</p>
+<p>好吧，这个的介绍就这么多，待我研究一下如何解析条码，再给大家继续连载~</p>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -121,14 +125,9 @@
 
 <div class="article-categories">
   <span></span>
-  <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a>
+  <a class="article-category-link" href="/categories/java-tools/">java tools</a>
 </div>
 
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/debug-方法/">debug 方法</a>
-  </div>
 
 </div>
 
@@ -136,7 +135,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://adabeauty.github.io/2015/04/22/后台debug方法/JavaScript/" data-title="JS后台debug方法 | 程序媛的Diary" data-tsina="null" class="share clearfix">
+	  <div data-url="http://adabeauty.github.io/2015/08/30/java里的barcode工具-zxing/java-tools/" data-title="java里的barcode工具-zxing | 程序媛的Diary" data-tsina="null" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -149,19 +148,11 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2015/05/15/gradle-总结/Java/" title="项目构建工具 -- Gradle">
-  <strong>上一篇：</strong><br/>
-  <span>
-  项目构建工具 -- Gradle</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2015/04/16/hello-world/uncategorized/"  title="Hello World">
+<a href="/2015/08/30/java里的barcode工具-barcode4j/java-tools/"  title="java里的条码生成工具 - barcode4j">
  <strong>下一篇：</strong><br/> 
- <span>Hello World
+ <span>java里的条码生成工具 - barcode4j
 </span>
 </a>
 </div>
@@ -176,7 +167,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目錄</strong>
  
- <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#首先，全局安装inspector"><span class="toc-number">1.</span> <span class="toc-text">首先，全局安装inspector</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#启动inspector"><span class="toc-number">2.</span> <span class="toc-text">启动inspector</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#进入到需要调试的项目目录"><span class="toc-number">3.</span> <span class="toc-text">进入到需要调试的项目目录</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#运行该项目(app-js为你后台程序的入口文件)"><span class="toc-number">4.</span> <span class="toc-text">运行该项目(app.js为你后台程序的入口文件)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#在浏览器打开  localhost:8080/debug_ 端口"><span class="toc-number">5.</span> <span class="toc-text">在浏览器打开  localhost:8080/debug  端口</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#设置断点"><span class="toc-number">6.</span> <span class="toc-text">设置断点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#运行需要调试的项目"><span class="toc-number">7.</span> <span class="toc-text">运行需要调试的项目</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#查看调试结果"><span class="toc-number">8.</span> <span class="toc-text">查看调试结果</span></a></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#简要介绍"><span class="toc-number">1.</span> <span class="toc-text">简要介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用方法"><span class="toc-number">2.</span> <span class="toc-text">使用方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#总结"><span class="toc-number">3.</span> <span class="toc-text">总结</span></a></li></ol>
  
   </div>
 
@@ -361,36 +352,8 @@ $(document).ready(function(){
       m.removeClass('moveMain');
       a.css('display', 'block').removeClass('fadeOut');
       o.css('display', 'none');
-      
-      $('#toc.toc-aside').css('display', 'none');
         
     }
-  });
-});
-</script>
-
-<script type="text/javascript">
-$(document).ready(function(){ 
-  var ai = $('.article-content>iframe'),
-      ae = $('.article-content>embed'),
-      t  = $('#toc'),
-      ta = $('#toc.toc-aside'),
-      o  = $('.openaside'),
-      c  = $('.closeaside');
-  if(ai.length>0){
-    ai.wrap('<div class="video-container" />');
-  };
-  if(ae.length>0){
-   ae.wrap('<div class="video-container" />');
-  };
-  c.click(function(){
-    ta.css('display', 'block').addClass('fadeIn');
-  });
-  o.click(function(){
-    ta.css('display', 'none');
-  });
-  $(window).scroll(function(){
-    ta.css("top",Math.max(140,320-$(this).scrollTop()));
   });
 });
 </script>
