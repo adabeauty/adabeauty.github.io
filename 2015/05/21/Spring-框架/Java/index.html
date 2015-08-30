@@ -13,29 +13,31 @@
     
     <meta name="description" content="Spring是一个轻量级的控制反转(IoC)和面向切面(AOP)的容器框架。从简单性、可测试性和解耦合的角度而言，任何Java应用都可以从Spring中受益。
 组成首先，给大家贴上一张都很熟悉的图：
+  
 
 从这个图里可以看出来，Spring 是一种分层架构，由七个定义良好的模块组成。而组成 spring 的每个模块可以单独存在，也可以与其他一个或者多个模块联合实现。每个模块的功能如下：
 
-Spring">
+Spr">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Spring 框架">
 <meta property="og:url" content="http://adabeauty.github.io/2015/05/21/Spring-框架/Java/index.html">
 <meta property="og:site_name" content="程序媛的Diary">
 <meta property="og:description" content="Spring是一个轻量级的控制反转(IoC)和面向切面(AOP)的容器框架。从简单性、可测试性和解耦合的角度而言，任何Java应用都可以从Spring中受益。
 组成首先，给大家贴上一张都很熟悉的图：
+  
 
 从这个图里可以看出来，Spring 是一种分层架构，由七个定义良好的模块组成。而组成 spring 的每个模块可以单独存在，也可以与其他一个或者多个模块联合实现。每个模块的功能如下：
 
-Spring">
-<meta property="og:image" content="../_image/spring_framework.gif">
+Spr">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Spring 框架">
 <meta name="twitter:description" content="Spring是一个轻量级的控制反转(IoC)和面向切面(AOP)的容器框架。从简单性、可测试性和解耦合的角度而言，任何Java应用都可以从Spring中受益。
 组成首先，给大家贴上一张都很熟悉的图：
+  
 
 从这个图里可以看出来，Spring 是一种分层架构，由七个定义良好的模块组成。而组成 spring 的每个模块可以单独存在，也可以与其他一个或者多个模块联合实现。每个模块的功能如下：
 
-Spring">
+Spr">
 
     
     <link rel="alternative" href="/atom.xml" title="程序媛的Diary" type="application/atom+xml">
@@ -111,13 +113,14 @@ Spring">
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目錄</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#组成"><span class="toc-number">1.</span> <span class="toc-text">组成</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#特点"><span class="toc-number">2.</span> <span class="toc-text">特点</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#轻量级"><span class="toc-number">2.1.</span> <span class="toc-text">轻量级</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#控制反转(IoC)"><span class="toc-number">2.2.</span> <span class="toc-text">控制反转(IoC)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#面向切面编程（AOP）"><span class="toc-number">2.3.</span> <span class="toc-text">面向切面编程（AOP）</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="##"><span class="toc-number"></span> <span class="toc-text">#</span></a>
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#组成"><span class="toc-number">1.</span> <span class="toc-text">组成</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#特点"><span class="toc-number">2.</span> <span class="toc-text">特点</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#轻量级"><span class="toc-number">2.1.</span> <span class="toc-text">轻量级</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#控制反转(IoC)"><span class="toc-number">2.2.</span> <span class="toc-text">控制反转(IoC)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#面向切面编程（AOP）"><span class="toc-number">2.3.</span> <span class="toc-text">面向切面编程（AOP）</span></a></li></ol></li></ol>
 		
 		</div>
 		
 		<p>Spring是一个轻量级的控制反转(IoC)和面向切面(AOP)的容器框架。<br>从简单性、可测试性和解耦合的角度而言，任何Java应用都可以从Spring中受益。</p>
 <h2 id="组成">组成</h2><p>首先，给大家贴上一张都很熟悉的图：</p>
-<p><img src="../_image/spring_framework.gif" alt="正在努力加载..." title="spring 框架图"></p>
+<div align="center"><br>  <image src="/image/spring_framework.png" alt="spring组成模块图" width="600" height="400"><br></image></div>
+
 <p>从这个图里可以看出来，Spring 是一种分层架构，由七个定义良好的模块组成。<br>而组成 spring 的每个模块可以单独存在，也可以与其他一个或者多个模块联合实现。<br>每个模块的功能如下：</p>
 <ol>
 <li>Spring Core：主要组件式 BeanFactory，使用控制反转模式（IoC）将配置和依赖性规范和实际应用<br>分开。</li>
@@ -132,9 +135,9 @@ Spring">
 <h3 id="控制反转(IoC)">控制反转(IoC)</h3><p>Spring 通过使用 IoC 的方式达到了解耦合的目的，也就是说，任何对象所依赖的其他对象应该通过<br>被动的方式传进来，而不是在这个对象的内部自己创建。在对象初始化时，容器就会主动请求将<br>对象所需要的依赖传递给他。例如，</p>
   <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">@Service</span><br><span class="line">public class UserService &#123;</span><br><span class="line">    private UserDAO userDAO;</span><br><span class="line"></span><br><span class="line">    @Autowired</span><br><span class="line">    public UserService(UserDAO userDAO) &#123;</span><br><span class="line">        this.userDAO = userDAO;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Transactional</span><br><span class="line">    public List&lt;User&gt; <span class="function"><span class="title">listUser</span></span>() &#123;</span><br><span class="line">        <span class="built_in">return</span> userDAO.listUser();</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
 <p>  在上面这个例子中，UserService 是依赖于 UserDAO 的，为了降低这两个类之间的耦合性，<br>  使用 <code>@Autowired</code> (自动注解) 的方式，解除了这两个之间的耦合，而没有像下面这种方式，将这两个<br>  类紧紧的耦合在一起。</p>
-<pre><code><span class="comment"><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">@Service</span><br><span class="line">public class UserService &#123;</span><br><span class="line"></span><br><span class="line">    @Transactional</span><br><span class="line">    public List&lt;User&gt; <span class="function"><span class="title">listUser</span></span>() &#123;</span><br><span class="line">        UserDAO userDAO = new UserDAO();</span><br><span class="line">        <span class="built_in">return</span> userDAO.listUser();</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure></span>
-</code></pre><h3 id="面向切面编程（AOP）">面向切面编程（AOP）</h3><p>面向切面编程是我对 Spring 不太了解的一部分。现仅仅贴上网上一部分的<br>解释：“Spring AOP 模块为基于 Spring 的应用程序中的对象提供了事务管理服务。<br>通过使用 Spring AOP，不用依赖 EJB 组件，就可以将声明性事务管理集成到应用程序中”。<br>这个部分待我查一查，再回来继续更新这部分内容。</p>
-<h1 id="#">#</h1>  
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">@Service</span><br><span class="line">public class UserService &#123;</span><br><span class="line"></span><br><span class="line">    @Transactional</span><br><span class="line">    public List&lt;User&gt; <span class="function"><span class="title">listUser</span></span>() &#123;</span><br><span class="line">        UserDAO userDAO = new UserDAO();</span><br><span class="line">        <span class="built_in">return</span> userDAO.listUser();</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="面向切面编程（AOP）">面向切面编程（AOP）</h3><p>面向切面编程是我对 Spring 不太了解的一部分。现仅仅贴上网上一部分的<br>解释：“Spring AOP 模块为基于 Spring 的应用程序中的对象提供了事务管理服务。<br>通过使用 Spring AOP，不用依赖 EJB 组件，就可以将声明性事务管理集成到应用程序中”。<br>这个部分待我查一查，再回来继续更新这部分内容。</p>
+  
 	</div>
 		<footer class="article-footer clearfix">
 <div class="article-catetags">
@@ -197,7 +200,7 @@ Spring">
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目錄</strong>
  
- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#组成"><span class="toc-number">1.</span> <span class="toc-text">组成</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#特点"><span class="toc-number">2.</span> <span class="toc-text">特点</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#轻量级"><span class="toc-number">2.1.</span> <span class="toc-text">轻量级</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#控制反转(IoC)"><span class="toc-number">2.2.</span> <span class="toc-text">控制反转(IoC)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#面向切面编程（AOP）"><span class="toc-number">2.3.</span> <span class="toc-text">面向切面编程（AOP）</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="##"><span class="toc-number"></span> <span class="toc-text">#</span></a>
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#组成"><span class="toc-number">1.</span> <span class="toc-text">组成</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#特点"><span class="toc-number">2.</span> <span class="toc-text">特点</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#轻量级"><span class="toc-number">2.1.</span> <span class="toc-text">轻量级</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#控制反转(IoC)"><span class="toc-number">2.2.</span> <span class="toc-text">控制反转(IoC)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#面向切面编程（AOP）"><span class="toc-number">2.3.</span> <span class="toc-text">面向切面编程（AOP）</span></a></li></ol></li></ol>
  
   </div>
 
