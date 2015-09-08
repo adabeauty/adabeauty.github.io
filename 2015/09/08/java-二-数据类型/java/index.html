@@ -4,28 +4,31 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>JS后台debug方法 | 程序媛的Diary</title>
+    <title>java(二)-数据类型 | 程序媛的Diary</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="Huan Wang">
     
 
     
-    <meta name="description" content="一直以来，我对于后台的调试方法都只是简单的在觉得可能出现错误的地方使用console.log()，在控制台打印信息，直到最近接触到了Node.js里一个插件inspector。这是一个基于 Node.js的调试器，通过它，你可以像调试前端代码一样来调试你的后台代码。
-首先，全局安装inspector1$ npm install -g node-inspector
-启动inspector1node-">
+    <meta name="description" content="在java中数据类型可分为两大类，分别是内置类型和引用类型。
+primitive 内置数据类型包含类型java的内置数据类型包括八种,可以分为以下三大类：
+数值类型这几种数值类型分别是byte、short、int和long。它们的比较如下表所示：
+  数据类型  位数  值域      byte    8 bit    -128~127        short    16 bit    -327">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JS后台debug方法">
-<meta property="og:url" content="http://adabeauty.github.io/2015/04/22/后台debug方法/JavaScript/index.html">
+<meta property="og:title" content="java(二)-数据类型">
+<meta property="og:url" content="http://adabeauty.github.io/2015/09/08/java-二-数据类型/java/index.html">
 <meta property="og:site_name" content="程序媛的Diary">
-<meta property="og:description" content="一直以来，我对于后台的调试方法都只是简单的在觉得可能出现错误的地方使用console.log()，在控制台打印信息，直到最近接触到了Node.js里一个插件inspector。这是一个基于 Node.js的调试器，通过它，你可以像调试前端代码一样来调试你的后台代码。
-首先，全局安装inspector1$ npm install -g node-inspector
-启动inspector1node-">
+<meta property="og:description" content="在java中数据类型可分为两大类，分别是内置类型和引用类型。
+primitive 内置数据类型包含类型java的内置数据类型包括八种,可以分为以下三大类：
+数值类型这几种数值类型分别是byte、short、int和long。它们的比较如下表所示：
+  数据类型  位数  值域      byte    8 bit    -128~127        short    16 bit    -327">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JS后台debug方法">
-<meta name="twitter:description" content="一直以来，我对于后台的调试方法都只是简单的在觉得可能出现错误的地方使用console.log()，在控制台打印信息，直到最近接触到了Node.js里一个插件inspector。这是一个基于 Node.js的调试器，通过它，你可以像调试前端代码一样来调试你的后台代码。
-首先，全局安装inspector1$ npm install -g node-inspector
-启动inspector1node-">
+<meta name="twitter:title" content="java(二)-数据类型">
+<meta name="twitter:description" content="在java中数据类型可分为两大类，分别是内置类型和引用类型。
+primitive 内置数据类型包含类型java的内置数据类型包括八种,可以分为以下三大类：
+数值类型这几种数值类型分别是byte、short、int和long。它们的比较如下表所示：
+  数据类型  位数  值域      byte    8 bit    -128~127        short    16 bit    -327">
 
     
     <link rel="alternative" href="/atom.xml" title="程序媛的Diary" type="application/atom+xml">
@@ -85,14 +88,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2015/04/22/后台debug方法/JavaScript/" title="JS后台debug方法" itemprop="url">JS后台debug方法</a>
+      <a href="/2015/09/08/java-二-数据类型/java/" title="java(二)-数据类型" itemprop="url">java(二)-数据类型</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="Huan Wang" target="_blank" itemprop="author">Huan Wang</a>
 		
   <p class="article-time">
-    <time datetime="2015-04-22T07:03:30.000Z" itemprop="datePublished"> 發表於 2015-04-22</time>
+    <time datetime="2015-09-08T10:02:08.000Z" itemprop="datePublished"> 發表於 2015-09-08</time>
     
   </p>
 </header>
@@ -101,19 +104,26 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目錄</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#首先，全局安装inspector"><span class="toc-number">1.</span> <span class="toc-text">首先，全局安装inspector</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#启动inspector"><span class="toc-number">2.</span> <span class="toc-text">启动inspector</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#进入到需要调试的项目目录"><span class="toc-number">3.</span> <span class="toc-text">进入到需要调试的项目目录</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#运行该项目(app-js为你后台程序的入口文件)"><span class="toc-number">4.</span> <span class="toc-text">运行该项目(app.js为你后台程序的入口文件)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#在浏览器打开  localhost:8080/debug_ 端口"><span class="toc-number">5.</span> <span class="toc-text">在浏览器打开  localhost:8080/debug  端口</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#设置断点"><span class="toc-number">6.</span> <span class="toc-text">设置断点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#运行需要调试的项目"><span class="toc-number">7.</span> <span class="toc-text">运行需要调试的项目</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#查看调试结果"><span class="toc-number">8.</span> <span class="toc-text">查看调试结果</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#primitive_内置数据类型"><span class="toc-number">1.</span> <span class="toc-text">primitive 内置数据类型</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#包含类型"><span class="toc-number">1.1.</span> <span class="toc-text">包含类型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#数值类型"><span class="toc-number">1.1.1.</span> <span class="toc-text">数值类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#浮点数"><span class="toc-number">1.1.2.</span> <span class="toc-text">浮点数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#基本特点"><span class="toc-number">1.2.</span> <span class="toc-text">基本特点</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#引用数据类型"><span class="toc-number">2.</span> <span class="toc-text">引用数据类型</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#包含类型-1"><span class="toc-number">2.1.</span> <span class="toc-text">包含类型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Java封装类"><span class="toc-number">2.1.1.</span> <span class="toc-text">Java封装类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#对象"><span class="toc-number">2.1.2.</span> <span class="toc-text">对象</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数组"><span class="toc-number">2.1.3.</span> <span class="toc-text">数组</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#基本特点-1"><span class="toc-number">2.2.</span> <span class="toc-text">基本特点</span></a></li></ol></li></ol>
 		
 		</div>
 		
-		<p>一直以来，我对于后台的调试方法都只是简单的在觉得可能出现错误的地方使用console.log()，在控制台打印信息，<br>直到最近接触到了Node.js里一个插件<a href="Web Inspector based nodeJS debugger">inspector</a>。这是一个基于 Node.js的调试器，通过它，你可以像调试前端代码一样来调试你的后台代码。</p>
-<h3 id="首先，全局安装inspector">首先，全局安装inspector</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g node-inspector</span><br></pre></td></tr></table></figure>
-<h3 id="启动inspector">启动inspector</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node-inspector 开启服务</span><br></pre></td></tr></table></figure>
-<h3 id="进入到需要调试的项目目录">进入到需要调试的项目目录</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> xxx(项目名称)</span><br></pre></td></tr></table></figure>
-<h3 id="运行该项目(app-js为你后台程序的入口文件)">运行该项目(app.js为你后台程序的入口文件)</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ node --debug app.js</span><br></pre></td></tr></table></figure>
-<h3 id="在浏览器打开&nbsp;&nbsp;localhost:8080/debug_&nbsp;端口">在浏览器打开&nbsp;&nbsp;localhost:8080/debug &nbsp;端口</h3><p>此时在该页面左侧会出现source字样，点击后可看到该项目源代码</p>
-<h3 id="设置断点">设置断点</h3><p>在需要调试的地方设置好断点</p>
-<h3 id="运行需要调试的项目">运行需要调试的项目</h3><p>在3000端口运行需要该项目（本人的项目是在3000端口下运行）</p>
-<h3 id="查看调试结果">查看调试结果</h3><p>在8080端口，查看调试结果</p>
+		<p>在java中数据类型可分为两大类，分别是内置类型和引用类型。</p>
+<h1 id="primitive_内置数据类型">primitive 内置数据类型</h1><h2 id="包含类型">包含类型</h2><p>java的内置数据类型包括八种,可以分为以下三大类：</p>
+<h3 id="数值类型">数值类型</h3><p>这几种数值类型分别是byte、short、int和long。它们的比较如下表所示：</p>
+<table><br>  <th>数据类型</th><br>  <th>位数</th><br>  <th>值域</th><br>  <tr><br>    <td>byte</td><br>    <td>8 bit</td><br>    <td>-128~127</td><br>  </tr><br>  <tr><br>    <td>short</td><br>    <td>16 bit</td><br>    <td>-32768~32767</td><br>  </tr><br>  <tr><br>    <td>int</td><br>    <td>32 bit</td><br>    <td>-2147483648~2147483647</td><br>  </tr><br>  <tr><br>    <td>long</td><br>    <td>64 bit</td><br>    <td>-很大~很大</td><br>  </tr><br></table>
+
+<h3 id="浮点数">浮点数</h3><p>浮点数类型就是float和double两种。它们的比较如下表所示：</p>
+<table><br>  <th>数据类型</th><br>  <th>位数</th><br>  <th>值域</th><br>  <tr><br>    <td>float</td><br>    <td>32 bit</td><br>    <td>范围规模可变</td><br>  </tr><br>  <tr><br>    <td>double</td><br>    <td>64 bit</td><br>    <td>范围规模可变</td><br>  </tr><br></table><br>### 其他类型<br>除了以上六种类型外，内置数据类型还包括boolean和char。它们的比较如下所示：<br><table><br>  <th>数据类型</th><br>  <th>位数</th><br>  <th>值域</th><br>  <tr><br>    <td>boolean</td><br>    <td>java随机决定</td><br>    <td>true或false</td><br>  </tr><br>  <tr><br>    <td>char</td><br>    <td>16 bit</td><br>    <td>0~65535</td><br>  </tr><br></table>
+
+<h2 id="基本特点">基本特点</h2><p>对于内置数据类型而言，它保存的是基本类型的值。</p>
+<h1 id="引用数据类型">引用数据类型</h1><h2 id="包含类型-1">包含类型</h2><p>总体来说对象和数组都是引用类型。具体包含的类型如下：</p>
+<h3 id="Java封装类">Java封装类</h3><p>java的封装类都是引用类型，例如Integer、Double、Float、Byte等。</p>
+<h3 id="对象">对象</h3><p>所有的对象都是引用类型，它存储的是该对象在内存当中的地址。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Dog myDog = new Dog();</span><br></pre></td></tr></table></figure>
+<p>要求java虚拟机分配栈空间给引用变量，并将这个变量命名为myDog。</p>
+<h3 id="数组">数组</h3><p>数组永远是引用类型，但是它其中存储的元素本身可以是primitive类型或者引用类型均可。</p>
+<h2 id="基本特点-1">基本特点</h2><p>对于引用数据类型而言，它最基本的特点就是存储的不是数据本身，而是数据在内存中的地址。然后java虚拟机知道如何根据这个地址去找到该数据本身。</p>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -121,13 +131,13 @@
 
 <div class="article-categories">
   <span></span>
-  <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a>
+  <a class="article-category-link" href="/categories/java/">java</a>
 </div>
 
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/debug-方法/">debug 方法</a>
+  <span></span> <a href="/tags/java数据类型/">java数据类型</a>
   </div>
 
 </div>
@@ -136,7 +146,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://adabeauty.github.io/2015/04/22/后台debug方法/JavaScript/" data-title="JS后台debug方法 | 程序媛的Diary" data-tsina="null" class="share clearfix">
+	  <div data-url="http://adabeauty.github.io/2015/09/08/java-二-数据类型/java/" data-title="java(二)-数据类型 | 程序媛的Diary" data-tsina="null" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -149,19 +159,11 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2015/05/15/gradle-总结/Java/" title="项目构建工具 -- Gradle">
-  <strong>上一篇：</strong><br/>
-  <span>
-  项目构建工具 -- Gradle</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2015/04/16/hello-world/uncategorized/"  title="Hello World">
+<a href="/2015/09/08/Java(-)-基础概念/java/"  title="java(一) - 基础概念">
  <strong>下一篇：</strong><br/> 
- <span>Hello World
+ <span>java(一) - 基础概念
 </span>
 </a>
 </div>
@@ -182,7 +184,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目錄</strong>
  
- <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#首先，全局安装inspector"><span class="toc-number">1.</span> <span class="toc-text">首先，全局安装inspector</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#启动inspector"><span class="toc-number">2.</span> <span class="toc-text">启动inspector</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#进入到需要调试的项目目录"><span class="toc-number">3.</span> <span class="toc-text">进入到需要调试的项目目录</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#运行该项目(app-js为你后台程序的入口文件)"><span class="toc-number">4.</span> <span class="toc-text">运行该项目(app.js为你后台程序的入口文件)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#在浏览器打开  localhost:8080/debug_ 端口"><span class="toc-number">5.</span> <span class="toc-text">在浏览器打开  localhost:8080/debug  端口</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#设置断点"><span class="toc-number">6.</span> <span class="toc-text">设置断点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#运行需要调试的项目"><span class="toc-number">7.</span> <span class="toc-text">运行需要调试的项目</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#查看调试结果"><span class="toc-number">8.</span> <span class="toc-text">查看调试结果</span></a></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#primitive_内置数据类型"><span class="toc-number">1.</span> <span class="toc-text">primitive 内置数据类型</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#包含类型"><span class="toc-number">1.1.</span> <span class="toc-text">包含类型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#数值类型"><span class="toc-number">1.1.1.</span> <span class="toc-text">数值类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#浮点数"><span class="toc-number">1.1.2.</span> <span class="toc-text">浮点数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#基本特点"><span class="toc-number">1.2.</span> <span class="toc-text">基本特点</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#引用数据类型"><span class="toc-number">2.</span> <span class="toc-text">引用数据类型</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#包含类型-1"><span class="toc-number">2.1.</span> <span class="toc-text">包含类型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Java封装类"><span class="toc-number">2.1.1.</span> <span class="toc-text">Java封装类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#对象"><span class="toc-number">2.1.2.</span> <span class="toc-text">对象</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数组"><span class="toc-number">2.1.3.</span> <span class="toc-text">数组</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#基本特点-1"><span class="toc-number">2.2.</span> <span class="toc-text">基本特点</span></a></li></ol></li></ol>
  
   </div>
 
