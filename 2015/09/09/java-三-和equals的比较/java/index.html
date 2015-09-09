@@ -4,28 +4,25 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>JS后台debug方法 | 程序媛的Diary</title>
+    <title>java(三) - ==和equals的比较 | 程序媛的Diary</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="Huan Wang">
     
 
     
-    <meta name="description" content="一直以来，我对于后台的调试方法都只是简单的在觉得可能出现错误的地方使用console.log()，在控制台打印信息，直到最近接触到了Node.js里一个插件inspector。这是一个基于 Node.js的调试器，通过它，你可以像调试前端代码一样来调试你的后台代码。
-首先，全局安装inspector1$ npm install -g node-inspector
-启动inspector1node-">
+    <meta name="description" content="说道==和equals我必须吐槽一下我曾经在不懂得他们区别的时候遇到的各种坑，我以为我用的==或者equals方法可以完成我想要的判断，信誓旦旦的就执行程序去了，结果……然后也看不出大问题，就一步步调试，才发现他所谓的==和euqals根本没起到我想它起的作用。
+说实话物品确实是个比较懒的人，这个问题困扰我好多次了，直到最近我才真正的去了解他们之间的区别于联系。其实很简单，那么我们就一起来看看吧，">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JS后台debug方法">
-<meta property="og:url" content="http://adabeauty.github.io/2015/04/22/后台debug方法/JavaScript/index.html">
+<meta property="og:title" content="java(三) - ==和equals的比较">
+<meta property="og:url" content="http://adabeauty.github.io/2015/09/09/java-三-和equals的比较/Java/index.html">
 <meta property="og:site_name" content="程序媛的Diary">
-<meta property="og:description" content="一直以来，我对于后台的调试方法都只是简单的在觉得可能出现错误的地方使用console.log()，在控制台打印信息，直到最近接触到了Node.js里一个插件inspector。这是一个基于 Node.js的调试器，通过它，你可以像调试前端代码一样来调试你的后台代码。
-首先，全局安装inspector1$ npm install -g node-inspector
-启动inspector1node-">
+<meta property="og:description" content="说道==和equals我必须吐槽一下我曾经在不懂得他们区别的时候遇到的各种坑，我以为我用的==或者equals方法可以完成我想要的判断，信誓旦旦的就执行程序去了，结果……然后也看不出大问题，就一步步调试，才发现他所谓的==和euqals根本没起到我想它起的作用。
+说实话物品确实是个比较懒的人，这个问题困扰我好多次了，直到最近我才真正的去了解他们之间的区别于联系。其实很简单，那么我们就一起来看看吧，">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JS后台debug方法">
-<meta name="twitter:description" content="一直以来，我对于后台的调试方法都只是简单的在觉得可能出现错误的地方使用console.log()，在控制台打印信息，直到最近接触到了Node.js里一个插件inspector。这是一个基于 Node.js的调试器，通过它，你可以像调试前端代码一样来调试你的后台代码。
-首先，全局安装inspector1$ npm install -g node-inspector
-启动inspector1node-">
+<meta name="twitter:title" content="java(三) - ==和equals的比较">
+<meta name="twitter:description" content="说道==和equals我必须吐槽一下我曾经在不懂得他们区别的时候遇到的各种坑，我以为我用的==或者equals方法可以完成我想要的判断，信誓旦旦的就执行程序去了，结果……然后也看不出大问题，就一步步调试，才发现他所谓的==和euqals根本没起到我想它起的作用。
+说实话物品确实是个比较懒的人，这个问题困扰我好多次了，直到最近我才真正的去了解他们之间的区别于联系。其实很简单，那么我们就一起来看看吧，">
 
     
     <link rel="alternative" href="/atom.xml" title="程序媛的Diary" type="application/atom+xml">
@@ -85,14 +82,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2015/04/22/后台debug方法/JavaScript/" title="JS后台debug方法" itemprop="url">JS后台debug方法</a>
+      <a href="/2015/09/09/java-三-和equals的比较/Java/" title="java(三) - ==和equals的比较" itemprop="url">java(三) - ==和equals的比较</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="Huan Wang" target="_blank" itemprop="author">Huan Wang</a>
 		
   <p class="article-time">
-    <time datetime="2015-04-22T07:03:30.000Z" itemprop="datePublished"> 發表於 2015-04-22</time>
+    <time datetime="2015-09-09T02:39:07.000Z" itemprop="datePublished"> 發表於 2015-09-09</time>
     
   </p>
 </header>
@@ -101,19 +98,24 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目錄</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#首先，全局安装inspector"><span class="toc-number">1.</span> <span class="toc-text">首先，全局安装inspector</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#启动inspector"><span class="toc-number">2.</span> <span class="toc-text">启动inspector</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#进入到需要调试的项目目录"><span class="toc-number">3.</span> <span class="toc-text">进入到需要调试的项目目录</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#运行该项目(app-js为你后台程序的入口文件)"><span class="toc-number">4.</span> <span class="toc-text">运行该项目(app.js为你后台程序的入口文件)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#在浏览器打开  localhost:8080/debug_ 端口"><span class="toc-number">5.</span> <span class="toc-text">在浏览器打开  localhost:8080/debug  端口</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#设置断点"><span class="toc-number">6.</span> <span class="toc-text">设置断点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#运行需要调试的项目"><span class="toc-number">7.</span> <span class="toc-text">运行需要调试的项目</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#查看调试结果"><span class="toc-number">8.</span> <span class="toc-text">查看调试结果</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#primitive类型"><span class="toc-number">1.</span> <span class="toc-text">primitive类型</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#==_使用"><span class="toc-number">1.1.</span> <span class="toc-text">== 使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#equals_使用"><span class="toc-number">1.2.</span> <span class="toc-text">equals 使用</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#引用类型"><span class="toc-number">2.</span> <span class="toc-text">引用类型</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#==_使用-1"><span class="toc-number">2.1.</span> <span class="toc-text">== 使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#equals_使用-1"><span class="toc-number">2.2.</span> <span class="toc-text">equals 使用</span></a></li></ol></li></ol>
 		
 		</div>
 		
-		<p>一直以来，我对于后台的调试方法都只是简单的在觉得可能出现错误的地方使用console.log()，在控制台打印信息，<br>直到最近接触到了Node.js里一个插件<a href="Web Inspector based nodeJS debugger">inspector</a>。这是一个基于 Node.js的调试器，通过它，你可以像调试前端代码一样来调试你的后台代码。</p>
-<h3 id="首先，全局安装inspector">首先，全局安装inspector</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g node-inspector</span><br></pre></td></tr></table></figure>
-<h3 id="启动inspector">启动inspector</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node-inspector 开启服务</span><br></pre></td></tr></table></figure>
-<h3 id="进入到需要调试的项目目录">进入到需要调试的项目目录</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> xxx(项目名称)</span><br></pre></td></tr></table></figure>
-<h3 id="运行该项目(app-js为你后台程序的入口文件)">运行该项目(app.js为你后台程序的入口文件)</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ node --debug app.js</span><br></pre></td></tr></table></figure>
-<h3 id="在浏览器打开&nbsp;&nbsp;localhost:8080/debug_&nbsp;端口">在浏览器打开&nbsp;&nbsp;localhost:8080/debug &nbsp;端口</h3><p>此时在该页面左侧会出现source字样，点击后可看到该项目源代码</p>
-<h3 id="设置断点">设置断点</h3><p>在需要调试的地方设置好断点</p>
-<h3 id="运行需要调试的项目">运行需要调试的项目</h3><p>在3000端口运行需要该项目（本人的项目是在3000端口下运行）</p>
-<h3 id="查看调试结果">查看调试结果</h3><p>在8080端口，查看调试结果</p>
+		<p>说道==和equals我必须吐槽一下我曾经在不懂得他们区别的时候遇到的各种坑，我以为我用的==或者equals方法可以完成我想要的判断，信誓旦旦的就执行程序去了，结果……然后也看不出大问题，就一步步调试，才发现他所谓的==和euqals根本没起到我想它起的作用。</p>
+<p>说实话物品确实是个比较懒的人，这个问题困扰我好多次了，直到最近我才真正的去了解他们之间的区别于联系。其实很简单，那么我们就一起来看看吧，相信你们以后也不会再出现我那样的问题……</p>
+<p>要想讲清楚这个问题，我们还必须回想一下上一篇中讲过的java数据类型：primitive类型和引用数据类型。这两种类型在讲解==和equals的区别的时候起到了巨大的作用。</p>
+<p>复习一下，primitive基本类型保存的是变量的真实值（包括八种：byte,short,char,int,long,float,double,boolean），而引用类型则是保存变量的引用，即它们在内存中被分配的地址。好的，知道这些，我们就可以正式开始学习 <code>==</code> 和 <code>equals</code>的区别了。</p>
+<h1 id="primitive类型">primitive类型</h1><h2 id="==_使用">== 使用</h2><p>对于primitive类型的数据，它们之间的比较用的就是<code>==</code>，比较他们的值是否相等。</p>
+<h2 id="equals_使用">equals 使用</h2><p>对于这些数据类型是不存在equals方法的，因为他们不是对象，所以就不会具备方法，那么也就觉得不会出现下列这种情况：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">int num_1 = <span class="number">1</span>;</span><br><span class="line">int num_2 = <span class="number">2</span>;</span><br><span class="line"></span><br><span class="line">//这种情况是错误的，编译就无法通过</span><br><span class="line">num_1.equals(num_2);</span><br></pre></td></tr></table></figure></p>
+<h1 id="引用类型">引用类型</h1><p>引用类型在<code>==</code>和<code>equals</code>使用上是有点差别的。</p>
+<h2 id="==_使用-1">== 使用</h2><p>对于引用类型而言，<code>==</code>比较的是两者在内存中存放的地址，除非是一个new出来的对象，否则即使数据完全相同的两个对象使用<code>==</code>比较，结果也是false。</p>
+<h2 id="equals_使用-1">equals 使用</h2><p>在java中所有的类都是继承于Object这个类的，在Object中就定义了一个<code>equals</code>方法，这个方法是用来比较对象的内存地址的，也就是说和<code>==</code>功能相同。但是一些库类当中这个方法被覆盖掉了，比如String、Integer、Date等类中，<code>equals</code>就有其自身的实现，而不是去比较内存地址了。这一点大家可以通过查看这些库类的<code>equals</code>方法的源码来了解它们的实现方式。</p>
+<p>例如对于String而言，<code>equals</code>方法比较的就是字符串本身。下面就讲几个例子来帮助大家理解：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">public class TestString &#123;</span><br><span class="line"> public static void main(String[] args) &#123;</span><br><span class="line">  String s1 = <span class="string">"Monday"</span>;</span><br><span class="line">  String s2 = <span class="string">"Monday"</span>;</span><br><span class="line">  <span class="keyword">if</span> (s1 == s2)</span><br><span class="line">  &#123;</span><br><span class="line">    System.out.println(<span class="string">"s1 == s2"</span>);&#125;</span><br><span class="line">  <span class="keyword">else</span>&#123;</span><br><span class="line">    System.out.println(<span class="string">"s1 != s2"</span>);&#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>在这段代码中输入结果将会是<code>s1 == s2</code>，为什么呢？<code>==</code>比较的不是内存地址么？明明s1和s2是两个不同的String对象呀。这个呢…其实跟java的工作机制有关.</p>
+<p>原来，程序在运行的时候会创建一个字符串缓冲池当使用 s2 = “Monday” 这样的表达是创建字符串的时候，程序首先会在这个String缓冲池中寻找相同值的对象，在第一个程序中，s1先被放到了池，所以在s2被创建的时候，程序找到了具有相同值的s1将s2引用s1所引用的对象”Monday”.所以返回结果就是tru。</p>
+<p>但是看看接下来的这段代码：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">public class TestString &#123;</span><br><span class="line">  public static void main(String[] args) &#123;</span><br><span class="line">  String s1 = <span class="string">"Monday"</span>;</span><br><span class="line">  String s2 = new String(<span class="string">"Monday"</span>);</span><br><span class="line">  <span class="keyword">if</span> (s1 == s2)</span><br><span class="line">  &#123;</span><br><span class="line">    System.out.println(<span class="string">"s1 == s2"</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">else</span></span><br><span class="line">  &#123;</span><br><span class="line">    System.out.println(<span class="string">"s1 != s2"</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">if</span> (s1.equals(s2)) &#123;</span><br><span class="line">    System.out.println(<span class="string">"s1 equals s2"</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">else</span>&#123;</span><br><span class="line">    System.out.println(<span class="string">"s1 not equals s2"</span>);&#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>这个时候就会分别输出<code>s1 != s2</code>和<code>s1 equals s2</code>了。在这段中明确声s2需要重新new一个String的实例化对象，所以不会再去引用s1的地址。对于这样的输出结果是因为虽然s1和s2存储的是不同的内存地址，但是字符串本身都是相等的。</p>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -121,14 +123,9 @@
 
 <div class="article-categories">
   <span></span>
-  <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a>
+  <a class="article-category-link" href="/categories/Java/">Java</a>
 </div>
 
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/debug-方法/">debug 方法</a>
-  </div>
 
 </div>
 
@@ -136,7 +133,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://adabeauty.github.io/2015/04/22/后台debug方法/JavaScript/" data-title="JS后台debug方法 | 程序媛的Diary" data-tsina="null" class="share clearfix">
+	  <div data-url="http://adabeauty.github.io/2015/09/09/java-三-和equals的比较/Java/" data-title="java(三) - ==和equals的比较 | 程序媛的Diary" data-tsina="null" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -149,19 +146,11 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2015/05/15/gradle-总结/Java/" title="项目构建工具 -- Gradle">
-  <strong>上一篇：</strong><br/>
-  <span>
-  项目构建工具 -- Gradle</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2015/04/16/hello-world/uncategorized/"  title="Hello World">
+<a href="/2015/09/08/java-二-数据类型/Java/"  title="java(二) - java数据类型">
  <strong>下一篇：</strong><br/> 
- <span>Hello World
+ <span>java(二) - java数据类型
 </span>
 </a>
 </div>
@@ -182,7 +171,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目錄</strong>
  
- <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#首先，全局安装inspector"><span class="toc-number">1.</span> <span class="toc-text">首先，全局安装inspector</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#启动inspector"><span class="toc-number">2.</span> <span class="toc-text">启动inspector</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#进入到需要调试的项目目录"><span class="toc-number">3.</span> <span class="toc-text">进入到需要调试的项目目录</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#运行该项目(app-js为你后台程序的入口文件)"><span class="toc-number">4.</span> <span class="toc-text">运行该项目(app.js为你后台程序的入口文件)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#在浏览器打开  localhost:8080/debug_ 端口"><span class="toc-number">5.</span> <span class="toc-text">在浏览器打开  localhost:8080/debug  端口</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#设置断点"><span class="toc-number">6.</span> <span class="toc-text">设置断点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#运行需要调试的项目"><span class="toc-number">7.</span> <span class="toc-text">运行需要调试的项目</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#查看调试结果"><span class="toc-number">8.</span> <span class="toc-text">查看调试结果</span></a></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#primitive类型"><span class="toc-number">1.</span> <span class="toc-text">primitive类型</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#==_使用"><span class="toc-number">1.1.</span> <span class="toc-text">== 使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#equals_使用"><span class="toc-number">1.2.</span> <span class="toc-text">equals 使用</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#引用类型"><span class="toc-number">2.</span> <span class="toc-text">引用类型</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#==_使用-1"><span class="toc-number">2.1.</span> <span class="toc-text">== 使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#equals_使用-1"><span class="toc-number">2.2.</span> <span class="toc-text">equals 使用</span></a></li></ol></li></ol>
  
   </div>
 
