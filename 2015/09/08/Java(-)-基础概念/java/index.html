@@ -107,6 +107,9 @@
 <p><div align="center"><br>  <image src="/image/jdk_structure.png" alt="jdk home文件" width="400" ,="" height="200"><br></image></div><br>可以看到这里有一个<code>JRE</code>文件夹，这个JRE是JDK的java代码运行的环境。为了保证JDK的完整性和独立性，在JDK的安装过程中，也安装了它自己的JRE.</p>
 <h2 id="JVM">JVM</h2><p>JVM（Java Virtual Machine）Java虚拟机，是JRE的一部分，它就是虚拟出来的一个专门运行java编译后文件的地方。对于java来说，最大的特点就是跨平台性，而这部分的实现就主要是通过JVM来实现的，因为JVM会将编译后的字节码转换成平台能够理解的形式来运行，从而实现了跨平台。</p>
 <h1 id="编译器和解释器">编译器和解释器</h1><h2 id="编译器">编译器</h2><p>编译器完成编译的功能，即将我们编写的.java文件编译成一种中间代码-字节码（一种可以被java解释器解释的独立于平台的代码），也就是.class文件。</p>
+<p>在这里可能一些初学者会纳闷了，要运行java编译程序还需要编译？我怎么什么都没做，就在IDE点了一下运行按钮，程序就执行了。这是因为像<code>eclipse</code>，<code>InteliJ</code>这样的开发环境内置了编译器，它帮我们完成了编译这一部分功能，所以我们才不用显式的自己使用编译器来编译。</p>
+<p>那么如果你不想通过IDE来完成这件事，你也可以通过JDK里提供的<code>javac</code>命令来完成编译工作：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">//编译Test.java到Test.class文件</span><br><span class="line">javac Test.java</span><br><span class="line"></span><br><span class="line">//执行编译好的Test.class文件</span><br><span class="line">java Test</span><br></pre></td></tr></table></figure></p>
+<p>具体的编译和执行的命令大家可以上网自己查一下，里面还有很多参数可以设置，我就不一一陈列了。</p>
 <blockquote>
 <p>高级学习：<br>大家应该都知道Java是一种强类型语言，这代表着它不能允许变量保存类型的数据。这是关键的类型安全性功能。所以类型错误会在编译时候就被发现，然后执行的时候数据就是类型安全的，就不需要再保存数据的类型。即在编译的时候会对数据类型进行擦除。</p>
 </blockquote>
@@ -202,7 +205,7 @@
 		  
 		
 		  
-			<li><a href="/categories/java/" title="java">java<sup>3</sup></a></li>
+			<li><a href="/categories/java/" title="java">java<sup>4</sup></a></li>
 		  
 		
 		  
@@ -224,7 +227,7 @@
   
   <div class="archiveslist">
     <p class="asidetitle"><a href="/archives">歸檔</a></p>
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">July 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">2</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">July 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">2</span></li></ul>
   </div>
 
 
