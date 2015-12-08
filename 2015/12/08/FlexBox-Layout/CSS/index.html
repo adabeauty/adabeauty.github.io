@@ -1,0 +1,520 @@
+
+ <!DOCTYPE HTML>
+<html >
+<head>
+  <meta charset="UTF-8">
+  
+    <title>FlexBox Layout | 程序媛的Diary</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    
+    <meta name="author" content="Huan Wang">
+    
+
+    
+    <meta name="description" content="Introductionflexbox是css灵活盒布局模块，旨在提供一种更加高效的方法来布局、分配容器中的各个item之间的空间，即使他们的大小是未知或者动态的（因此才使用flex，意为灵活的）。
+其核心四星就是赋予容器去更改它的每个item的宽/高从而最好的填充可用空间（大多时候都是为了适应各种各样的显示设备和屏幕的大小）。一个灵活的容器可以扩展它的item去填充可用空间，也可以通过shrin">
+<meta property="og:type" content="article">
+<meta property="og:title" content="FlexBox Layout">
+<meta property="og:url" content="http://adabeauty.github.io/2015/12/08/FlexBox-Layout/CSS/index.html">
+<meta property="og:site_name" content="程序媛的Diary">
+<meta property="og:description" content="Introductionflexbox是css灵活盒布局模块，旨在提供一种更加高效的方法来布局、分配容器中的各个item之间的空间，即使他们的大小是未知或者动态的（因此才使用flex，意为灵活的）。
+其核心四星就是赋予容器去更改它的每个item的宽/高从而最好的填充可用空间（大多时候都是为了适应各种各样的显示设备和屏幕的大小）。一个灵活的容器可以扩展它的item去填充可用空间，也可以通过shrin">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="FlexBox Layout">
+<meta name="twitter:description" content="Introductionflexbox是css灵活盒布局模块，旨在提供一种更加高效的方法来布局、分配容器中的各个item之间的空间，即使他们的大小是未知或者动态的（因此才使用flex，意为灵活的）。
+其核心四星就是赋予容器去更改它的每个item的宽/高从而最好的填充可用空间（大多时候都是为了适应各种各样的显示设备和屏幕的大小）。一个灵活的容器可以扩展它的item去填充可用空间，也可以通过shrin">
+
+    
+    <link rel="alternative" href="/atom.xml" title="程序媛的Diary" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/jacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/jacman.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+
+  <body>
+    <header>
+      
+<div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.png" alt="程序媛的Diary" title="程序媛的Diary"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="程序媛的Diary">程序媛的Diary</a></h1>
+				<h2 class="blog-motto">永远不要对自己的记性过于自信</h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜單">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">Home</a></li>
+					
+						<li><a href="/archives">Archives</a></li>
+					
+						<li><a href="/about">About</a></li>
+					
+					<li>
+ 					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
+						<input type="hidden" name="q" value="site:adabeauty.github.io">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+  
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2015/12/08/FlexBox-Layout/CSS/" title="FlexBox Layout" itemprop="url">FlexBox Layout</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="Huan Wang" target="_blank" itemprop="author">Huan Wang</a>
+		
+  <p class="article-time">
+    <time datetime="2015-12-07T16:36:16.000Z" itemprop="datePublished"> 發表於 2015-12-08</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">文章目錄</strong>
+		
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Introduction"><span class="toc-number">1.</span> <span class="toc-text">Introduction</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#基本使用"><span class="toc-number">2.</span> <span class="toc-text">基本使用</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#parent(flex_container)_的属性"><span class="toc-number">2.1.</span> <span class="toc-text">parent(flex container) 的属性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#children(flex_items)_的属性"><span class="toc-number">2.2.</span> <span class="toc-text">children(flex items) 的属性</span></a></li></ol></li></ol>
+		
+		</div>
+		
+		<h1 id="Introduction">Introduction</h1><p>flexbox是css灵活盒布局模块，旨在提供一种更加高效的方法来布局、分配容器中的各个item之间的空间，即使他们的大小是未知或者动态的（因此才使用<code>flex</code>，意为灵活的）。</p>
+<p>其核心四星就是赋予容器去更改它的每个item的宽/高从而最好的填充可用空间（大多时候都是为了适应各种各样的显示设备和屏幕的大小）。一个灵活的<br>容器可以扩展它的item去填充可用空间，也可以通过<code>shrink</code>的方式来防止越界。</p>
+<p>和普通的布局不同的是，flex与方向无关（<code>block</code>是垂直相关的，而<code>inline</code>则是水平相关的）。这些普通的布局对于页面来说，可以正常工作，但是他们缺乏灵活性，从而很难支持大而复杂的应用，尤其是当定向发生变化、改变大小、拉伸或者缩进等等的时候。</p>
+<blockquote>
+<p>Note: FlexBox 布局尤其适用于应用中的component和小规模布局。而Grid想要做的是更大规模的布局。</p>
+</blockquote>
+<h1 id="基本使用">基本使用</h1><h2 id="parent(flex_container)_的属性">parent(flex container) 的属性</h2><ol>
+<li>display</li>
+<li>flex-direction</li>
+<li>flex-wrap</li>
+<li>flex-flow</li>
+<li>justify-content</li>
+<li>align-items</li>
+<li>align-content</li>
+</ol>
+<h2 id="children(flex_items)_的属性">children(flex items) 的属性</h2><ol>
+<li>order</li>
+<li>flex-grow</li>
+<li>flex-shrink</li>
+<li>flex-basis   </li>
+<li>flex</li>
+<li>align-self</li>
+</ol>
+  
+	</div>
+		<footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/CSS/">CSS</a>
+</div>
+
+
+</div>
+
+
+
+	<div class="article-share" id="share">
+	
+	  <div data-url="http://adabeauty.github.io/2015/12/08/FlexBox-Layout/CSS/" data-title="FlexBox Layout | 程序媛的Diary" data-tsina="null" class="share clearfix">
+	  </div>
+	
+	</div>
+
+
+</footer>
+
+   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+ <div class="prev" >
+ <a href="/2015/12/08/after和-before/CSS/" title="::after和::before">
+  <strong>上一篇：</strong><br/>
+  <span>
+  ::after和::before</span>
+</a>
+</div>
+
+
+<div class="next">
+<a href="/2015/12/08/CSS-书写顺序/CSS/"  title="CSS 书写顺序">
+ <strong>下一篇：</strong><br/> 
+ <span>CSS 书写顺序
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+
+<section id="comments" class="comment">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="顯示側邊欄"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">文章目錄</strong>
+ 
+ <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Introduction"><span class="toc-number">1.</span> <span class="toc-text">Introduction</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#基本使用"><span class="toc-number">2.</span> <span class="toc-text">基本使用</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#parent(flex_container)_的属性"><span class="toc-number">2.1.</span> <span class="toc-text">parent(flex container) 的属性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#children(flex_items)_的属性"><span class="toc-number">2.2.</span> <span class="toc-text">children(flex items) 的属性</span></a></li></ol></li></ol>
+ 
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="隱藏側邊欄"></a></div>
+<aside class="clearfix">
+
+  
+<div class="categorieslist">
+	<p class="asidetitle">分類</p>
+		<ul>
+		
+		  
+			<li><a href="/categories/CSS/" title="CSS">CSS<sup>3</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/Hexo/" title="Hexo">Hexo<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/Java/" title="Java">Java<sup>4</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/JavaScript/" title="JavaScript">JavaScript<sup>2</sup></a></li>
+		  
+		
+		  
+		
+		  
+			<li><a href="/categories/jQuery/" title="jQuery">jQuery<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/java/" title="java">java<sup>4</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/java-tools/" title="java tools">java tools<sup>2</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/数据库/" title="数据库">数据库<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/调试工具/" title="调试工具">调试工具<sup>1</sup></a></li>
+		  
+		
+		</ul>
+</div>
+
+
+  
+  <div class="archiveslist">
+    <p class="asidetitle"><a href="/archives">歸檔</a></p>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">November 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">October 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">July 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">2</span></li></ul>
+  </div>
+
+
+  
+  <div class="tagcloudlist">
+    <p class="asidetitle">標簽雲</p>
+    <div class="tagcloudlist clearfix">
+       <a href="/tags/AngularJs/" style="font-size: NaNpx;">AngularJs</a><a href="/tags/Hibernate/" style="font-size: NaNpx;">Hibernate</a><a href="/tags/barcode/" style="font-size: NaNpx;">barcode</a><a href="/tags/debug-方法/" style="font-size: NaNpx;">debug 方法</a><a href="/tags/hexo-configuration/" style="font-size: NaNpx;">hexo configuration</a><a href="/tags/java-web-开发/" style="font-size: NaNpx;">java web 开发</a><a href="/tags/java基础概念/" style="font-size: NaNpx;">java基础概念</a><a href="/tags/java数据类型/" style="font-size: NaNpx;">java数据类型</a><a href="/tags/java概念/" style="font-size: NaNpx;">java概念</a><a href="/tags/数据迁移/" style="font-size: NaNpx;">数据迁移</a><a href="/tags/测试/" style="font-size: NaNpx;">测试</a>
+    </div>
+  </div>
+
+
+  <div id="recentcomments" class="dsq-widget">
+    <p class="asidetitle">Recent Comments</p>
+        <script type="text/javascript" src="http://adabeauty.disqus.com/recent_comments_widget.js?num_items=10&hide_avatars=1&avatar_size=32&excerpt_length=100&hide_mods=0"></script>
+</div>
+
+
+  <div class="linkslist">
+  <p class="asidetitle">友情鏈接</p>
+    <ul>
+        
+          <li>
+            
+            	<a href="https://coderq.com" target="_blank" title="一个面向程序员交流分享的新一代社区">码农圈</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://www.cnbeta.com" target="_blank" title="cnBeta">cnBeta</a>
+            
+          </li>
+        
+    </ul>
+</div>
+
+  <div class="rsspart">
+	<a href="/atom.xml" target="_blank" title="rss">RSS 訂閱</a>
+</div>
+
+</aside>
+</div>
+
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<section class="info">
+		<p> Hello ,I&#39;m Ada in Xi&#39;an. <br/>
+			This is my blog, I hope you can find something you need there.</p>
+	</section>
+	 
+	<div class="social-font" class="clearfix">
+		
+		
+		<a href="https://github.com/adabeauty" target="_blank" class="icon-github" title="github"></a>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	</div>
+			
+		
+
+		<p class="copyright">
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2015 
+		
+		<a href="/about" target="_blank" title="Huan Wang">Huan Wang</a>
+		
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+  
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else{
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  c.click(function(){
+    ta.css('display', 'block').addClass('fadeIn');
+  });
+  o.click(function(){
+    ta.css('display', 'none');
+  });
+  $(window).scroll(function(){
+    ta.css("top",Math.max(140,320-$(this).scrollTop()));
+  });
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina'),
+      description = $this.attr('description');
+  var html = [
+  '<a href="#" class="overlay" id="qrcode"></a>',
+  '<div class="qrcode clearfix"><span>扫描二维码分享到微信朋友圈</span><a class="qrclose" href="#nothing"></a><strong>Loading...Please wait</strong><img id="qrcode-pic" data-src="http://s.jiathis.com/qrcode.php?url=' + encodedUrl + '"/></div>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="微信"></a>',
+  '<a href="http://widget.renren.com/dialog/share?resourceUrl=' + encodedUrl + '&srcUrl=' + encodedUrl + '&title=' + title +'" class="article-share-renren" target="_blank" title="人人"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="微博"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+  $('.article-share-qrcode').click(function(){
+    var imgSrc = $('#qrcode-pic').attr('data-src');
+    $('#qrcode-pic').attr('src', imgSrc);
+    $('#qrcode-pic').load(function(){
+        $('.qrcode strong').text(' ');
+    });
+  });
+});     
+</script>
+
+
+
+
+<script type="text/javascript">
+
+var disqus_shortname = 'adabeauty';
+
+(function(){
+  var dsq = document.createElement('script');
+  dsq.type = 'text/javascript';
+  dsq.async = true;
+  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+}());
+(function(){
+  var dsq = document.createElement('script');
+  dsq.type = 'text/javascript';
+  dsq.async = true;
+  dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+}());
+</script>
+
+
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
+
+
+
+<!-- Analytics Begin -->
+
+
+
+
+
+<!-- Analytics End -->
+
+<!-- Totop Begin -->
+
+	<div id="totop">
+	<a title="返回頂部"><img src="/img/scrollup.png"/></a>
+	</div>
+	<script src="/js/totop.js"></script>
+
+<!-- Totop End -->
+
+<!-- MathJax Begin -->
+<!-- mathjax config similar to math.stackexchange -->
+
+
+<!-- MathJax End -->
+
+<!-- Tiny_search Begin -->
+
+<!-- Tiny_search End -->
+
+  </body>
+</html>

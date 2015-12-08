@@ -1,0 +1,521 @@
+
+ <!DOCTYPE HTML>
+<html >
+<head>
+  <meta charset="UTF-8">
+  
+    <title>::after和::before | 程序媛的Diary</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    
+    <meta name="author" content="Huan Wang">
+    
+
+    
+    <meta name="description" content="介绍::after和::before实际都是伪元素，它们允许我们从无需在HTML中修改，便可通过CSS中向页面插入内容但却不会影响已有的DOM。使用::after和::before可在已有的DOM元素上之后或者之前添加新内容。
+
+E:before/E::before设置在对象前（依据对象树的逻辑结构）发生的内容。用来和content属性一起使用
+E:after/E::after设置在对象后（依据对">
+<meta property="og:type" content="article">
+<meta property="og:title" content="::after和::before">
+<meta property="og:url" content="http://adabeauty.github.io/2015/12/08/after和-before/CSS/index.html">
+<meta property="og:site_name" content="程序媛的Diary">
+<meta property="og:description" content="介绍::after和::before实际都是伪元素，它们允许我们从无需在HTML中修改，便可通过CSS中向页面插入内容但却不会影响已有的DOM。使用::after和::before可在已有的DOM元素上之后或者之前添加新内容。
+
+E:before/E::before设置在对象前（依据对象树的逻辑结构）发生的内容。用来和content属性一起使用
+E:after/E::after设置在对象后（依据对">
+<meta property="og:image" content="/image/pseudo_element_browser_support.png">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="::after和::before">
+<meta name="twitter:description" content="介绍::after和::before实际都是伪元素，它们允许我们从无需在HTML中修改，便可通过CSS中向页面插入内容但却不会影响已有的DOM。使用::after和::before可在已有的DOM元素上之后或者之前添加新内容。
+
+E:before/E::before设置在对象前（依据对象树的逻辑结构）发生的内容。用来和content属性一起使用
+E:after/E::after设置在对象后（依据对">
+
+    
+    <link rel="alternative" href="/atom.xml" title="程序媛的Diary" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/jacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/jacman.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+
+  <body>
+    <header>
+      
+<div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.png" alt="程序媛的Diary" title="程序媛的Diary"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="程序媛的Diary">程序媛的Diary</a></h1>
+				<h2 class="blog-motto">永远不要对自己的记性过于自信</h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜單">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">Home</a></li>
+					
+						<li><a href="/archives">Archives</a></li>
+					
+						<li><a href="/about">About</a></li>
+					
+					<li>
+ 					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
+						<input type="hidden" name="q" value="site:adabeauty.github.io">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+  
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2015/12/08/after和-before/CSS/" title="::after和::before" itemprop="url">::after和::before</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="Huan Wang" target="_blank" itemprop="author">Huan Wang</a>
+		
+  <p class="article-time">
+    <time datetime="2015-12-08T15:19:06.000Z" itemprop="datePublished"> 發表於 2015-12-08</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">文章目錄</strong>
+		
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#介绍"><span class="toc-number">1.</span> <span class="toc-text">介绍</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#content_的值类型"><span class="toc-number">2.</span> <span class="toc-text">content 的值类型</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#:_VS_::"><span class="toc-number">2.1.</span> <span class="toc-text">: VS ::</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#浏览器支持情况"><span class="toc-number">2.2.</span> <span class="toc-text">浏览器支持情况</span></a></li></ol></li></ol>
+		
+		</div>
+		
+		<h1 id="介绍">介绍</h1><p><code>::after</code>和<code>::before</code>实际都是伪元素，它们允许我们从无需在HTML中修改，便可通过CSS中向页面插入内容但却不会影响已有的DOM。<br>使用<code>::after</code>和<code>::before</code>可在已有的DOM元素上之后或者之前添加新内容。</p>
+<ul>
+<li>E:before/E::before设置在对象前（依据对象树的逻辑结构）发生的内容。用来和content属性一起使用</li>
+<li>E:after/E::after设置在对象后（依据对象树的逻辑结构）发生的内容。用来和content属性一起使用</li>
+</ul>
+<p>例如，当我们在CSS使用<code>::after</code>的时候：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">div::after &#123;</span><br><span class="line">  content: <span class="string">"hi"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>实际上它的效果就会跟下面这段代码一样：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;div&gt;</span><br><span class="line">  &lt;!-- div 内部的结果 --&gt;</span><br><span class="line">  hi</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
+<h1 id="content_的值类型">content 的值类型</h1><p>对于<code>content</code>的值可以是以下四种类型：</p>
+<ol>
+<li>String: <code>content: &quot;a string&quot;;</code> 对于特殊字符需要使用转义字符（unicode entity）。</li>
+<li>Image: <code>content: url(/path/to/image.jpg);</code>图片插入的尺寸就是它的确切尺寸，而且它的大小是不能改变的。</li>
+<li>Nothing：<code>content: &quot;&quot;;</code> 这种方式对于clearfix清除浮动或者插入background-images 背景图片是非常有用的，而且这种情况下的图片大小是可以改变的，可通过设置高和宽或者background-size来改变图片大小 。</li>
+<li>A counter：<code>content: counter(li);</code> 配合marker使用对于<a href="http://www.456bereastreet.com/archive/201105/styling_ordered_list_numbers/" target="_blank" rel="external">styling list</a>来说非常有用。<blockquote>
+<p>Notes: 需要注意的是content中是不可以插入HTML的</p>
+</blockquote>
+</li>
+</ol>
+<h2 id=":_VS_::">: VS ::</h2><p>首先所有支持<code>::</code>的浏览器均支持<code>:</code>语法，但是只有IE8只支持<code>:</code>。所以说为了提供对各种浏览器的更好支持，推荐使用<code>:</code>。</p>
+<p><code>::</code>是一种用来从伪元素选择器中辨别为元素内容的新格式，只要不使用IE8，那么你就可以放心的使用<code>::</code>了。</p>
+<h2 id="浏览器支持情况">浏览器支持情况</h2><ul>
+<li>Firefox 3.5- 不允许为元素使用absolute positioning</li>
+<li>对于In Opera 9.2，在伪元素内部，空格总会显示出来</li>
+<li>IE 8 不支持在伪元素上使用z-index<br><img src="/image/pseudo_element_browser_support.png" alt="浏览器支持情况"></li>
+</ul>
+<audio controls autoplay style="margin-top: 50px"><br>  <source src="/music/background-music.mp3" type="audio/mpeg"><br>Your browser does not support the audio element.<br></audio>
+  
+	</div>
+		<footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/CSS/">CSS</a>
+</div>
+
+
+</div>
+
+
+
+	<div class="article-share" id="share">
+	
+	  <div data-url="http://adabeauty.github.io/2015/12/08/after和-before/CSS/" data-title="::after和::before | 程序媛的Diary" data-tsina="null" class="share clearfix">
+	  </div>
+	
+	</div>
+
+
+</footer>
+
+   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+
+<div class="next">
+<a href="/2015/12/08/FlexBox-Layout/CSS/"  title="FlexBox Layout">
+ <strong>下一篇：</strong><br/> 
+ <span>FlexBox Layout
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+
+<section id="comments" class="comment">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="顯示側邊欄"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">文章目錄</strong>
+ 
+ <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#介绍"><span class="toc-number">1.</span> <span class="toc-text">介绍</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#content_的值类型"><span class="toc-number">2.</span> <span class="toc-text">content 的值类型</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#:_VS_::"><span class="toc-number">2.1.</span> <span class="toc-text">: VS ::</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#浏览器支持情况"><span class="toc-number">2.2.</span> <span class="toc-text">浏览器支持情况</span></a></li></ol></li></ol>
+ 
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="隱藏側邊欄"></a></div>
+<aside class="clearfix">
+
+  
+<div class="categorieslist">
+	<p class="asidetitle">分類</p>
+		<ul>
+		
+		  
+			<li><a href="/categories/CSS/" title="CSS">CSS<sup>3</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/Hexo/" title="Hexo">Hexo<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/Java/" title="Java">Java<sup>4</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/JavaScript/" title="JavaScript">JavaScript<sup>2</sup></a></li>
+		  
+		
+		  
+		
+		  
+			<li><a href="/categories/jQuery/" title="jQuery">jQuery<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/java/" title="java">java<sup>4</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/java-tools/" title="java tools">java tools<sup>2</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/数据库/" title="数据库">数据库<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/调试工具/" title="调试工具">调试工具<sup>1</sup></a></li>
+		  
+		
+		</ul>
+</div>
+
+
+  
+  <div class="archiveslist">
+    <p class="asidetitle"><a href="/archives">歸檔</a></p>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">November 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">October 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">July 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">2</span></li></ul>
+  </div>
+
+
+  
+  <div class="tagcloudlist">
+    <p class="asidetitle">標簽雲</p>
+    <div class="tagcloudlist clearfix">
+       <a href="/tags/AngularJs/" style="font-size: NaNpx;">AngularJs</a><a href="/tags/Hibernate/" style="font-size: NaNpx;">Hibernate</a><a href="/tags/barcode/" style="font-size: NaNpx;">barcode</a><a href="/tags/debug-方法/" style="font-size: NaNpx;">debug 方法</a><a href="/tags/hexo-configuration/" style="font-size: NaNpx;">hexo configuration</a><a href="/tags/java-web-开发/" style="font-size: NaNpx;">java web 开发</a><a href="/tags/java基础概念/" style="font-size: NaNpx;">java基础概念</a><a href="/tags/java数据类型/" style="font-size: NaNpx;">java数据类型</a><a href="/tags/java概念/" style="font-size: NaNpx;">java概念</a><a href="/tags/数据迁移/" style="font-size: NaNpx;">数据迁移</a><a href="/tags/测试/" style="font-size: NaNpx;">测试</a>
+    </div>
+  </div>
+
+
+  <div id="recentcomments" class="dsq-widget">
+    <p class="asidetitle">Recent Comments</p>
+        <script type="text/javascript" src="http://adabeauty.disqus.com/recent_comments_widget.js?num_items=10&hide_avatars=1&avatar_size=32&excerpt_length=100&hide_mods=0"></script>
+</div>
+
+
+  <div class="linkslist">
+  <p class="asidetitle">友情鏈接</p>
+    <ul>
+        
+          <li>
+            
+            	<a href="https://coderq.com" target="_blank" title="一个面向程序员交流分享的新一代社区">码农圈</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://www.cnbeta.com" target="_blank" title="cnBeta">cnBeta</a>
+            
+          </li>
+        
+    </ul>
+</div>
+
+  <div class="rsspart">
+	<a href="/atom.xml" target="_blank" title="rss">RSS 訂閱</a>
+</div>
+
+</aside>
+</div>
+
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<section class="info">
+		<p> Hello ,I&#39;m Ada in Xi&#39;an. <br/>
+			This is my blog, I hope you can find something you need there.</p>
+	</section>
+	 
+	<div class="social-font" class="clearfix">
+		
+		
+		<a href="https://github.com/adabeauty" target="_blank" class="icon-github" title="github"></a>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	</div>
+			
+		
+
+		<p class="copyright">
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2015 
+		
+		<a href="/about" target="_blank" title="Huan Wang">Huan Wang</a>
+		
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+  
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else{
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  c.click(function(){
+    ta.css('display', 'block').addClass('fadeIn');
+  });
+  o.click(function(){
+    ta.css('display', 'none');
+  });
+  $(window).scroll(function(){
+    ta.css("top",Math.max(140,320-$(this).scrollTop()));
+  });
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina'),
+      description = $this.attr('description');
+  var html = [
+  '<a href="#" class="overlay" id="qrcode"></a>',
+  '<div class="qrcode clearfix"><span>扫描二维码分享到微信朋友圈</span><a class="qrclose" href="#nothing"></a><strong>Loading...Please wait</strong><img id="qrcode-pic" data-src="http://s.jiathis.com/qrcode.php?url=' + encodedUrl + '"/></div>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="微信"></a>',
+  '<a href="http://widget.renren.com/dialog/share?resourceUrl=' + encodedUrl + '&srcUrl=' + encodedUrl + '&title=' + title +'" class="article-share-renren" target="_blank" title="人人"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="微博"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+  $('.article-share-qrcode').click(function(){
+    var imgSrc = $('#qrcode-pic').attr('data-src');
+    $('#qrcode-pic').attr('src', imgSrc);
+    $('#qrcode-pic').load(function(){
+        $('.qrcode strong').text(' ');
+    });
+  });
+});     
+</script>
+
+
+
+
+<script type="text/javascript">
+
+var disqus_shortname = 'adabeauty';
+
+(function(){
+  var dsq = document.createElement('script');
+  dsq.type = 'text/javascript';
+  dsq.async = true;
+  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+}());
+(function(){
+  var dsq = document.createElement('script');
+  dsq.type = 'text/javascript';
+  dsq.async = true;
+  dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+}());
+</script>
+
+
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
+
+
+
+<!-- Analytics Begin -->
+
+
+
+
+
+<!-- Analytics End -->
+
+<!-- Totop Begin -->
+
+	<div id="totop">
+	<a title="返回頂部"><img src="/img/scrollup.png"/></a>
+	</div>
+	<script src="/js/totop.js"></script>
+
+<!-- Totop End -->
+
+<!-- MathJax Begin -->
+<!-- mathjax config similar to math.stackexchange -->
+
+
+<!-- MathJax End -->
+
+<!-- Tiny_search Begin -->
+
+<!-- Tiny_search End -->
+
+  </body>
+</html>
